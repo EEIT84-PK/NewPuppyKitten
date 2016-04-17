@@ -14,12 +14,12 @@ import javax.servlet.http.HttpSession;
 public class ChatServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		String id=request.getParameter("id");
 		HttpSession session = request.getSession();
 		session.setAttribute("id", id);
 		String contextPath = request.getContextPath();
 		response.sendRedirect(contextPath + "/_600_websocket_back.jsp");
-						
 		
 	}
 }
