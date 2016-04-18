@@ -25,7 +25,7 @@
 				<div class="sub">
 					<ul>
 					
-						<li><a href='<c:url value="/_200_shop_index.jsp"/>'>購物中心</a></li>
+						<li><a href='<c:url value="/shop/shopBackAction_5.action"/>'>購物中心</a></li>
 						<li><a href='<c:url value="/_200_shop_car.jsp"/>'>購物車</a></li>
 						<li><a href='<c:url value="/_200_shop_back_update_1.jsp"/>'>後台系統</a></li>
 					</ul>
@@ -76,9 +76,9 @@
 				<li><a href="">聯絡我們<img
 						src="<%=request.getContextPath()%>/images/phone.png" width="15px"></a></li>
 						
-				<li><a href="">購物車<img
+				<li><a href="<%=request.getContextPath()%>/_200_shop_car.jsp">購物車<img
 						src="<%=request.getContextPath()%>/images/cart.png" width="15px"></a></li>
-				<li><a href='<c:url value="/login/selectmember.action" ></c:url>'>會員中心</a></li>
+				<li><a href='<c:url value="/member/Interceptor.action" ></c:url>'>會員中心</a></li>
 		<c:choose>
 			<c:when test="${session.loginOK==null}">
 				<li><a href="<%=request.getContextPath()%>/_500_insert.jsp">註冊</a></li>
