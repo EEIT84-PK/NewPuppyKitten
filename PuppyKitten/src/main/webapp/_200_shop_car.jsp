@@ -12,6 +12,7 @@
 	$(function() {
 		$('.buy_order').hide();
 		$('#fa').hide();
+		$('#ja').hide();
 	});
 </script>
 <style type="text/css">
