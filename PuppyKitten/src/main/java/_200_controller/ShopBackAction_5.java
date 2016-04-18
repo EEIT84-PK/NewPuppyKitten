@@ -2,17 +2,16 @@ package _200_controller;
 
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+
 import org.apache.struts2.interceptor.ServletRequestAware;
 import com.opensymphony.xwork2.ActionSupport;
 import _200_model.ShopBean;
 import _200_model.ShopService;
 
-@SuppressWarnings("serial")
-public class ShopBackAction_3 extends ActionSupport implements ServletRequestAware {
+public class ShopBackAction_5 extends ActionSupport implements ServletRequestAware {
 
-	private HttpServletRequest request;
 	private ShopBean shopbean;
-	private String use="";
+	private HttpServletRequest request;
 
 	public ShopBean getShopbean() {
 		return shopbean;
@@ -22,27 +21,24 @@ public class ShopBackAction_3 extends ActionSupport implements ServletRequestAwa
 		this.shopbean = shopbean;
 	}
 
-	public String getUse() {
-		return use;
+	public HttpServletRequest getRequest() {
+		return request;
 	}
 
-	public void setUse(String use) {
-		this.use = use;
+	public void setRequest(HttpServletRequest request) {
+		this.request = request;
 	}
 
 	@Override
 	public void setServletRequest(HttpServletRequest request) {
 		this.request = request;
+
 	}
 
 	public String execute() {
-		if(use.equals("update")){
-			return "update";
-		}else{
-			ShopService service = new ShopService();
-			List<ShopBean> select_list = service.select(shopbean);
-			request.setAttribute("select_list", select_list);
+		ShopService service = new ShopService();
+		List<ShopBean> select_list = service.select(shopbean);
+			request.getSession().setAttribute("select_list", select_list);
 			return "success";
-		}
 	}
 }

@@ -117,7 +117,8 @@ color: red;
 				庫存數量：<input type="text" name="shopbean.PRO_STOCK" value="${shopbean.PRO_STOCK}"><span class="errorInsert">${errors.errorInsertStock[0]}</span><br><br> 					   
 				商品照片：<input type="file" name="PRO_IMAGE"><span class="errorInsert">${errors.errorInsertImage[0]}</span><br><br> 				   
 				商品介紹：<br>
-				<textarea id="content" rows="10" cols="80" name="shopbean.PRO_BODY"></textarea>		
+
+				<textarea id="content" rows="15" cols="80" name="shopbean.PRO_BODY"></textarea>		
 				<br> <input type="submit" value="新增上架">
 			</form>
 			

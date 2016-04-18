@@ -68,7 +68,7 @@ public class ShopDAO implements ShopDAO_interface {
 			query.setParameter(0, animal);
 			list = query.list();
 			session.getTransaction().commit();
-		} catch (RuntimeException ex) {
+		} catch (Exception ex) {
 			session.getTransaction().rollback();
 			throw ex;
 		}
