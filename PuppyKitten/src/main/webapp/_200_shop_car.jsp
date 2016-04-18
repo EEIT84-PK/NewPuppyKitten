@@ -83,6 +83,7 @@
 		</form>
 		<form action="<%=request.getContextPath()%>/shop/shopBackAction_10" method="post">
 				<input type="submit" value="下一步" onclick="location" style="cursor: pointer;">
+				<input id="ja" type="text" name="shop_Buy_Bean.BUY_USER_ID" value="${session.memberID}">
 		</form>
 	</section>
 	<c:import url="/import/footer.jsp"></c:import>

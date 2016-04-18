@@ -78,9 +78,9 @@ public class ShopBackAction_10 extends ActionSupport implements ServletRequestAw
 		Integer total = 0;
 		for (Shop_Buy_Bean bean : list) {
 			price += bean.getBUY_LITTLE_TOTAL();
-			total = price+80;
-			request.getSession().setAttribute("total", total);
 		}
+		total = price + 80;
+		request.getSession().setAttribute("total", total);
 
 		return "success";
 	}
