@@ -29,13 +29,14 @@ public class MemberService {
 		dbMemberBean.setMEM_PHONE(bean.getMEM_PHONE());
 		dao.update(dbMemberBean);
 		return bean;
-
 	}
+
 	public MemberBean insert(MemberBean bean) {
 		dao.insert(bean);
 		return bean;
 	}
 
+	// 登入驗證
 	public MemberBean login(String account, String password) {
 		List<MemberBean> list = dao.select(account);
 		for (MemberBean bean : list) {
@@ -46,40 +47,81 @@ public class MemberService {
 			}
 		}
 		return null;
-
 	}
-   
+
+	public Boolean cheangepwd(String newpassword, String account) {
+		MemberBean memberBean = dao.selectMemberByAccount(account);
+		if (memberBean != null) {
+			memberBean.setMEM_PASSWORD(newpassword.getBytes());
+			dao.update(memberBean);
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+
+
+	public Boolean checkemailaccount(String email, String account) {
+		MemberBean memberBean = dao.selectMemberByAccount(account);
+		if (memberBean != null && email.equals(memberBean.getMEM_EMAIL())
+				&& account.equals(memberBean.getMEM_ACCOUNT())) {
+			return true;
+
+		} else {
+			return false;
+		}
+	}
+
+	public MemberBean selectMemberpwdByAccount(String account) {
+
+		return dao.selectMemberBypwdaccount(account);
+	}
+    
+	public Boolean cheagenewpassword(String account, String password) {
 	
-    //更改密碼
-	public Boolean cheangePassword(String newPassword,Integer id){
-		MemberBean memberBean=selectMemberById(id);
-		if(memberBean!=null){
-			memberBean.setMEM_PASSWORD(newPassword.getBytes());
-            dao.update(memberBean);
-            return true;
+	   MemberBean memberBean = selectMemberpwdByAccount(account);
+			if(memberBean!=null){
+	        memberBean.setMEM_PASSWORD(password.getBytes());
+			dao.update(memberBean);
+			return true;
+			
 		}else{
 			return false;
 		}
 	}
-	//確認密碼是否正確
-	public Boolean checkpassword(String password,Integer id){
-		MemberBean memberBean=dao.selectMemberByMemId(id);
-		byte[] temp=memberBean.getMEM_PASSWORD();
-		String pwd=new String(temp);
-		if(memberBean!=null&&password.equals(pwd)){
-			return false;
-		}else{
-		return true;
-		
-	}
 	
+	// 更改密碼
+	public Boolean cheangePassword(String newPassword, Integer id) {
+		MemberBean memberBean = selectMemberById(id);
+		if (memberBean != null) {
+			memberBean.setMEM_PASSWORD(newPassword.getBytes());
+			dao.update(memberBean);
+			return true;
+		} else {
+			return false;
+		}
 	}
+	// 確認密碼是否正確
+	public Boolean checkpassword(String password, Integer id) {
+		MemberBean memberBean = dao.selectMemberByMemId(id);
+		byte[] temp = memberBean.getMEM_PASSWORD();
+		String pwd = new String(temp);
+		if (memberBean != null && password.equals(pwd)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	// 確認帳號是否存在
 	public Boolean checkAccount(String account) {
 		MemberBean memberBean = dao.selectMemberByAccount(account);
 		if (memberBean != null && account.equals(memberBean.getMEM_ACCOUNT())) {
+
 			return true;
 		} else {
+
 			return false;
 		}
 
@@ -90,13 +132,10 @@ public class MemberService {
 	}
 
 	public MemberBean selectMemberById(final Integer memId) {
-
 		return dao.selectMemberByMemId(memId);
 	}
 
-	
-
-	// email寄信
+	// email認證
 	public static boolean sendemail(String email, String user, String checkcode) {
 		String to = email;
 		String from = "PuppyKitten84@gmail.com";
@@ -108,15 +147,17 @@ public class MemberService {
 		props.put("mail.smtp.starttls.enable", "true");
 		props.put("mail.smtp.host", host);
 		props.put("mail.smtp.port", "587");
-		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
-			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication(username, password);
-			}
-		});
+		Session session = Session.getInstance(props,
+				new javax.mail.Authenticator() {
+					protected PasswordAuthentication getPasswordAuthentication() {
+						return new PasswordAuthentication(username, password);
+					}
+				});
 		try {
 			Message message = new MimeMessage(session);
 			message.setFrom(new InternetAddress(from));
-			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
+			message.setRecipients(Message.RecipientType.TO,
+					InternetAddress.parse(to));
 			message.setSubject("米沃貓窩會員認證");// 主旨
 			message.setText(user + "你好!您的驗證碼為" + checkcode);// 內文
 			Transport.send(message);
@@ -125,4 +166,37 @@ public class MemberService {
 		}
 		return false;
 	}
-}
+
+	public static boolean sendpwdemail(String email, String user, String newpwd) {
+		String to = email;
+		String from = "PuppyKitten84@gmail.com";
+		final String username = "PuppyKitten84@gmail.com";
+		final String password = "PK123456789";
+		String host = "smtp.gmail.com";
+		Properties props = new Properties();
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.smtp.starttls.enable", "true");
+		props.put("mail.smtp.host", host);
+		props.put("mail.smtp.port", "587");
+		Session session = Session.getInstance(props,
+				new javax.mail.Authenticator() {
+					protected PasswordAuthentication getPasswordAuthentication() {
+						return new PasswordAuthentication(username, password);
+					}
+				});
+		try {
+			Message message = new MimeMessage(session);
+			message.setFrom(new InternetAddress(from));
+			message.setRecipients(Message.RecipientType.TO,
+					InternetAddress.parse(to));
+			message.setSubject("米沃貓窩忘記密碼");// 主旨
+			message.setText(user + "帳戶你好!您的新密碼為" + newpwd);// 內文
+			Transport.send(message);
+		} catch (MessagingException e) {
+			throw new RuntimeException(e);
+		}
+		return false;
+	}
+
+	}
+

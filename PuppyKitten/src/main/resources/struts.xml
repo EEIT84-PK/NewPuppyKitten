@@ -182,6 +182,7 @@
 		</action>
 	</package>
 
+	
 	<package name="loginPackage" namespace="/login" extends="struts-default">
 		<action name="loginAction" class="_500_controller.LoginAction">
 			<result name="success">/index.jsp</result>
@@ -191,12 +192,8 @@
 			<result name="success">/index.jsp</result>
 		</action>
 		<action name="insertAction" class="_500_controller.InsertAction">
-			<result name="success">/index.jsp</result>
+			<result name="success">/_500_insertsuccess.jsp</result>
 			<result name="input">/_500_insert.jsp</result>
-		</action>
-		<action name="forgetpassword" class="_500_controller.ForgetPasswordAction">
-		   <result name="success"></result>
-           <result name="input"></result>		
 		</action>
 		<action name="selectmember" class="_500_controller.SelectAction">
 			<result name="success">/_500_select.jsp</result>
@@ -209,31 +206,13 @@
 			<result name="success">/index.jsp</result>
 			<result name="input">/_500_updatepassword.jsp</result>
 		</action>
-		
+		<action name="forgetPassword" class="_500_controller.ForgetPasswordAction">
+			<result name="success">/_500_forgetpasswordok.jsp</result>
+			<result name="input">/_500_forgetpassword.jsp</result>
+		</action>
 	</package>
+
 	
 
-<!-- 	攔截器 -->
-	<package name="memberPackage" namespace="/member" extends="struts-default">
-	<interceptors>
-	<interceptor class="_500_interceptor.AuthenticationInterceptor"
-	name="authentication" />
-	</interceptors>
-	<global-results>
-	<result name="input">/_500_login.jsp</result>
-	</global-results>
-<!-- 	<action name="updatemember" class="_500_controller.SelectAction"> -->
-<!-- 	<result name="success">/_500_update.jsp</result> -->
-<!-- 	</action> -->
 
-	<action name="member" class="_500_controller.SelectAction">
-	<interceptor-ref name="authentication"/>
-	<result>/_500_select.jsp</result>
-	</action>
-
-	<action name="*">
-	<interceptor-ref name="authentication"/>
-	<result>/member/{1}.jsp</result>
-	</action>
-	</package>
 </struts>
