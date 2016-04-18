@@ -4,6 +4,7 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
 	<constant name="struts.action.excludePattern" value="^ws://.+$" />
+
 	<constant name="struts.custom.i18n.resources" value="i18n"></constant>
 	<constant name="struts.devMode" value="true"></constant> <!-- 開發模式的設定 預設為false 更改為true -->
 
@@ -216,6 +217,9 @@
 		<action name="loginAction" class="_500_controller.LoginAction">
 			<result name="success">/index.jsp</result>
 			<result name="input">/_500_login.jsp</result>
+		</action>
+		<action name="loginBackAction" class="_500_controller.LoginBackAction">
+			<result name="success">/index_back.jsp</result>
 		</action>
 		<action name="logoutAction" class="_500_controller.LogoutAction">
 			<result name="success">/index.jsp</result>
