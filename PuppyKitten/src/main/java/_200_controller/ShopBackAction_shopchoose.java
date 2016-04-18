@@ -13,7 +13,7 @@ import _200_model.ShopService;
 import _200_model.Shop_Buy_Bean;
 import _500_model.MemberBean;
 
-public class ShopBackAction_7 extends ActionSupport implements ServletRequestAware {
+public class ShopBackAction_shopchoose extends ActionSupport implements ServletRequestAware {
 
 	private HttpServletRequest request;
 	private ShopBean shopbean;

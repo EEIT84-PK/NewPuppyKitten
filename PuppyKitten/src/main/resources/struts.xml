@@ -33,7 +33,7 @@
 
 	<package name="shopPackage" namespace="/shop" extends="struts-default">
 
-		<action name="shopBackAction_1" class="_200_controller.ShopBackAction_1">
+		<action name="shopBackAction_insert" class="_200_controller.ShopBackAction_insert">
 
 			<interceptor-ref name="fileUpload">
 				<param name="allowedTypes">image/bmp,image/png,image/gif,image/jpeg,image/pjpeg,image/x-png</param>
@@ -45,47 +45,47 @@
 			<result name="input">/_200_shop_back_insert.jsp</result>
 		</action>
 
-		<action name="shopBackAction_2" class="_200_controller.ShopBackAction_2">
-			<result name="success">/_200_shop_back_update_2.jsp</result>
-			<result name="input">/_200_shop_back_update_2.jsp</result>
+		<action name="shopBackAction_update" class="_200_controller.ShopBackAction_update">
+			<result name="success">/_200_shop_back_update.jsp</result>
+			<result name="input">/_200_shop_back_update.jsp</result>
 		</action>
 
-		<action name="shopBackAction_3" class="_200_controller.ShopBackAction_3">
-			<result name="success">/_200_shop_back_update_1.jsp</result>
-			<result name="update">/_200_shop_back_update_2.jsp</result>
+		<action name="shopBackAction_select" class="_200_controller.ShopBackAction_select">
+			<result name="success">/_200_shop_back_select.jsp</result>
+			<result name="update">/_200_shop_back_update.jsp</result>
 		</action>
 
-		<action name="shopBackAction_4" class="_200_controller.ShopBackAction_4">
-			<result name="success">/_200_shop_back_update_1.jsp</result>
-			<result name="input">/_200_shop_back_update_1.jsp</result>
+		<action name="shopBackAction_delete" class="_200_controller.ShopBackAction_delete">
+			<result name="success">/_200_shop_back_select.jsp</result>
+			<result name="input">/_200_shop_back_select.jsp</result>
 		</action>
 
-		<action name="shopBackAction_5" class="_200_controller.ShopBackAction_5">
+		<action name="shopBackAction_goshop" class="_200_controller.ShopBackAction_goshop">
 			<result name="success">/_200_shop_index.jsp</result>
 			<result name="input">/index.jsp</result>
 		</action>
 
-		<action name="shopBackAction_6" class="_200_controller.ShopBackAction_6">
+		<action name="shopBackAction_shopindex" class="_200_controller.ShopBackAction_shopindex">
 			<result name="success">/_200_shop_choose.jsp</result>
 		</action>
 
-		<action name="shopBackAction_7" class="_200_controller.ShopBackAction_7">
+		<action name="shopBackAction_shopchoose" class="_200_controller.ShopBackAction_shopchoose">
 			<result name="success">/_200_shop_index.jsp</result>
 		</action>
 
-		<action name="shopBackAction_8" class="_200_controller.ShopBackAction_8">
+		<action name="shopBackAction_cardelete" class="_200_controller.ShopBackAction_cardelete">
 			<result name="success">/_200_shop_car.jsp</result>
 		</action>
 
-		<action name="shopBackAction_9" class="_200_controller.ShopBackAction_9">
+		<action name="shopBackAction_carrefresh" class="_200_controller.ShopBackAction_carrefresh">
 			<result name="success">/_200_shop_car.jsp</result>
 		</action>
 
-		<action name="shopBackAction_10" class="_200_controller.ShopBackAction_10">
+		<action name="shopBackAction_carsend" class="_200_controller.ShopBackAction_carsend">
 			<result name="success">/_200_shop_order.jsp</result>
 		</action>
 
-		<action name="shopBackAction_11" class="_200_controller.ShopBackAction_11">
+		<action name="shopBackAction_ordersend" class="_200_controller.ShopBackAction_ordersend">
 			<result name="success">/_200_shop_finish.jsp</result>
 		</action>
 	</package>

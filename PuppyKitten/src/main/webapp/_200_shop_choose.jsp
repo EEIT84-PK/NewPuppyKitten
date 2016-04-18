@@ -124,7 +124,7 @@ $(function(){
 								</div>
 								<div class="choose_pro6">
 									<div class="choose_pro5">
-											<form action="<%=request.getContextPath()%>/shop/shopBackAction_7" method="post">
+											<form action="<%=request.getContextPath()%>/shop/shopBackAction_shopchoose" method="post">
 												購買數量：<input type="number" name="shop_Buy_Bean.BUY_NUMBER" value="1">
 													<input class="button1" type="submit" value="加入購物車" style="font-size: 14px;">
 													<input class="wo" type="text" name="shop_Buy_Bean.BUY_PRO_ID" value="${shopbean.PRO_ID}">

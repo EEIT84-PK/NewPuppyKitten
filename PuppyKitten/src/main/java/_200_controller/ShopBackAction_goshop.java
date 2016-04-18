@@ -8,7 +8,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import _200_model.ShopBean;
 import _200_model.ShopService;
 
-public class ShopBackAction_5 extends ActionSupport implements ServletRequestAware {
+public class ShopBackAction_goshop extends ActionSupport implements ServletRequestAware {
 
 	private ShopBean shopbean;
 	private HttpServletRequest request;

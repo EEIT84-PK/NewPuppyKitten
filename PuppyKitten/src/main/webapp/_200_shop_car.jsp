@@ -1,5 +1,5 @@
 <%@ page import="java.net.URI"%>
-<%@ page import="_200_controller.ShopBackAction_9"%>
+<%@ page import="_200_controller.ShopBackAction_carrefresh"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -13,6 +13,10 @@
 		$('.buy_order').hide();
 		$('#fa').hide();
 		$('#ja').hide();
+		
+// 		$('.del_pro').click(function(){
+// 			$('.pro_tr').hide();
+// 		})
 	});
 </script>
 <style type="text/css">
@@ -52,17 +56,17 @@
 				<c:when test="${not empty shop_Buy_list}">
 					<c:forEach var="buy" items="${shop_Buy_list}">
 
-						<tbody>
-							<tr>
+						<tbody >
+							<tr class="pro_tr">
 								<td>${buy.BUY_PRO_ID}</td>
 								<td>${buy.BUY_NAME}</td>
 								<td>${buy.BUY_NUMBER}</td>
 								<td>${buy.BUY_NEW_PRICE}</td>
 								<td>${buy.BUY_LITTLE_TOTAL}</td>
 								<td>
-									<form action="<%=request.getContextPath()%>/shop/shopBackAction_8" method="post">
+									<form action="<%=request.getContextPath()%>/shop/shopBackAction_cardelete" method="post">
 										<input class="buy_order" type="text" name="shop_Buy_Bean.BUY_ID" value="${buy.BUY_ID}"> 
-										<input type="submit" value="移除" style="cursor: pointer;">
+										<input class="del_pro" type="submit" value="移除" style="cursor: pointer;">
 									</form>
 								</td>
 							</tr>
@@ -78,11 +82,11 @@
 				</tr>
 			</tfoot>
 		</table>
-		<form action="<%=request.getContextPath()%>/shop/shopBackAction_9" method="post">
+		<form action="<%=request.getContextPath()%>/shop/shopBackAction_carrefresh" method="post">
 			<input id="fa" type="text" name="shop_Buy_Bean.BUY_USER_ID" value="${session.memberID}">
 			<input type="submit" value="整理購物清單" style="cursor: pointer;">
 		</form>
-		<form action="<%=request.getContextPath()%>/shop/shopBackAction_10" method="post">
+		<form action="<%=request.getContextPath()%>/shop/shopBackAction_carsend" method="post">
 				<input type="submit" value="下一步" onclick="location" style="cursor: pointer;">
 				<input id="ja" type="text" name="shop_Buy_Bean.BUY_USER_ID" value="${session.memberID}">
 		</form>

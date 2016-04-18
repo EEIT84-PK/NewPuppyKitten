@@ -83,7 +83,7 @@ line-height: 40px;
 					<br>
 					
 					 			
-				<form action="<%=request.getContextPath()%>/shop/shopBackAction_11" method="post">
+				<form action="<%=request.getContextPath()%>/shop/shopBackAction_ordersend" method="post">
 
 							<input type="submit" value="確認送出" style="cursor: pointer;">
 								<input class="ka" type="text" name="shop_Order_Bean.ORDER_USER_NAME" value="${session.loginOK}">

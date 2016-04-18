@@ -10,7 +10,7 @@ import _200_model.Shop_Buy_Bean;
 import _500_model.MemberBean;
 
 
-public class ShopBackAction_8 extends ActionSupport implements ServletRequestAware {
+public class ShopBackAction_cardelete extends ActionSupport implements ServletRequestAware {
 
 	private HttpServletRequest request;
 	private Shop_Buy_Bean shop_Buy_Bean;

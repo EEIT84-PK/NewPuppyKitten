@@ -15,7 +15,7 @@ import _200_model.ShopBean;
 import _200_model.ShopService;
 
 @SuppressWarnings("serial")
-public class ShopBackAction_2 extends ActionSupport implements ServletRequestAware {
+public class ShopBackAction_update extends ActionSupport implements ServletRequestAware {
 
 	private HttpServletRequest request;
 	private ShopBean shopbean;

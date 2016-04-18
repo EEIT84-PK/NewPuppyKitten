@@ -84,7 +84,7 @@ $(function(){
 	<section>
 		<article style="width: 1500px; background-color: white;">
 		<h2>商品維護</h2><h2 style="color: red">${updateOK}</h2>
-			<form action="<%=request.getContextPath()%>/shop/shopBackAction_2" method="post" enctype="multipart/form-data">
+			<form action="<%=request.getContextPath()%>/shop/shopBackAction_update" method="post" enctype="multipart/form-data">
 				商品編號：<input type="text" name="shopbean.PRO_ID" id="update_number" value="${shopbean.PRO_ID}"><br><br> 
 				商品類型：<select id="sel_1">
 					<option>請選擇</option>

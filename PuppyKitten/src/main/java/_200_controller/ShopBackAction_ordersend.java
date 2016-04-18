@@ -16,7 +16,7 @@ import _200_model.Shop_Buy_Bean;
 import _200_model.Shop_Order_Bean;
 import _500_model.MemberBean;
 
-public class ShopBackAction_11 extends ActionSupport implements ServletRequestAware {
+public class ShopBackAction_ordersend extends ActionSupport implements ServletRequestAware {
 
 	private HttpServletRequest request;
 	private ShopBean shopBean;

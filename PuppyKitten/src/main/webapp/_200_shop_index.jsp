@@ -141,7 +141,7 @@ border-radius: 5px;
 								
 								<div class="index_pro2">
 
-									<a href='<c:url value="/shop/shopBackAction_6">
+									<a href='<c:url value="/shop/shopBackAction_shopindex">
 									<c:param name="shopbean.PRO_ID">${shop.PRO_ID}</c:param>
 									<c:param name="shopbean.PRO_ANIMAL">${shop.PRO_ANIMAL}</c:param>
 									<c:param name="shopbean.PRO_KIND">${shop.PRO_KIND}</c:param>
@@ -159,7 +159,7 @@ border-radius: 5px;
 									</a>
 									
 								</div>
-								<form action="<%=request.getContextPath()%>/shop/shopBackAction_6" method="post">
+								<form action="<%=request.getContextPath()%>/shop/shopBackAction_shopindex" method="post">
 								<div class="index_pro3">
 									<span>建議售價：<span>${shop.PRO_PRICE}</span>元</span><br>
 									<span>剩餘數量：<span>${shop.PRO_STOCK}</span>個

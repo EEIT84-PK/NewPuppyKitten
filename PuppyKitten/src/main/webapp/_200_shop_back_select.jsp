@@ -36,7 +36,7 @@ $(function(){
 		<h2>${delete_OK}</h2>
 		<article>
 			<form
-				action="<%=request.getContextPath()%>/shop/shopBackAction_3.action"
+				action="<%=request.getContextPath()%>/shop/shopBackAction_select.action"
 				method="post">
 				<input class="btn_1" type="submit" value="查詢">
 			</form>
@@ -62,7 +62,7 @@ $(function(){
 							<tbody>
 							
 								<c:forEach var="sel" items="${select_list}">
-								<form action="<%=request.getContextPath()%>/shop/shopBackAction_4" method="post">
+								<form action="<%=request.getContextPath()%>/shop/shopBackAction_delete" method="post">
 									<tr>
 										<td>${sel.PRO_ID}</td>
 										<td>${sel.PRO_ANIMAL}</td>
@@ -71,7 +71,7 @@ $(function(){
 										<td>${sel.PRO_PRICE}</td>
 
 
-								<td><a href='<c:url value="/shop/shopBackAction_3">
+								<td><a href='<c:url value="/shop/shopBackAction_select">
 									<c:param name="shopbean.PRO_ID">${sel.PRO_ID}</c:param>
 									<c:param name="shopbean.PRO_ANIMAL">${sel.PRO_ANIMAL}</c:param>
 									<c:param name="shopbean.PRO_KIND">${sel.PRO_KIND}</c:param>

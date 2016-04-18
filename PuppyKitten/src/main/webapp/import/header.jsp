@@ -25,9 +25,9 @@
 				<div class="sub">
 					<ul>
 					
-						<li><a href='<c:url value="/shop/shopBackAction_5.action"/>'>購物中心</a></li>
+						<li><a href='<c:url value="/shop/shopBackAction_goshop.action"/>'>購物中心</a></li>
 						<li><a href='<c:url value="/_200_shop_car.jsp"/>'>購物車</a></li>
-						<li><a href='<c:url value="/_200_shop_back_update_1.jsp"/>'>後台系統</a></li>
+						<li><a href='<c:url value="/_200_shop_back_select.jsp"/>'>後台系統</a></li>
 					</ul>
 				</div>
 			</div>
