@@ -188,6 +188,9 @@
 			<result name="success">/index.jsp</result>
 			<result name="input">/_500_login.jsp</result>
 		</action>
+		<action name="loginBackAction" class="_500_controller.LoginBackAction">
+			<result name="success">/index_back.jsp</result>
+		</action>
 		<action name="logoutAction" class="_500_controller.LogoutAction">
 			<result name="success">/index.jsp</result>
 		</action>

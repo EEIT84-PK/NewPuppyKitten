@@ -14,7 +14,7 @@ public class LoginBackAction extends ActionSupport implements ServletRequestAwar
 
 	public String execute(){
 		HttpSession session=req.getSession();
-		session.setAttribute("backLoginOK", "管理員");
+		session.setAttribute("loginOK", "後台管理員");
 		return SUCCESS;
 	}
 
