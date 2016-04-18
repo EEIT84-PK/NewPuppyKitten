@@ -21,7 +21,7 @@
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
 		<article>
-		<h1>寄送eamil到你信箱去</h1>
+		<h3>新密碼已寄到你信箱</h3>
 			
 			
         </article>

@@ -22,9 +22,8 @@ td {
 	<section>
 		<article>
 			<h1 style="font-size: 50px;">會員資料(個人資料)</h1>
-
 			<table border="1" style="border-collapse: collapse;">
-
+             
 				<tr>
 					<td>姓名:</td>
 					<td>${bean.MEM_NAME}</td>
@@ -50,6 +49,7 @@ td {
 					<td>${bean.MEM_EMAIL}</td>
 				</tr>
 			</table>
+			
 			<form
 				action="<%=request.getContextPath()%>/_500_update.jsp">
 				<input type="submit" value="修改資料">
