@@ -96,7 +96,8 @@ color: red;
 					<option value="精選罐頭" <c:if test="${shopbean.PRO_KIND eq '精選罐頭'}">selected="selected"</c:if> >精選罐頭</option>
 					<option value="嚴選零嘴" <c:if test="${shopbean.PRO_KIND eq '嚴選零嘴'}">selected="selected"</c:if> >嚴選零嘴</option>
 					<option value="休閒玩具" <c:if test="${shopbean.PRO_KIND eq '休閒玩具'}">selected="selected"</c:if> >休閒玩具</option>
-					<option value="生活用品" <c:if test="${shopbean.PRO_KIND eq '生活用品'}">selected="selected"</c:if> >生活用品</option>
+					<option value="清潔用品" <c:if test="${shopbean.PRO_KIND eq '清潔用品'}">selected="selected"</c:if> >清潔用品</option>
+					<option value="生活雜物" <c:if test="${shopbean.PRO_KIND eq '生活雜物'}">selected="selected"</c:if> >生活雜物</option>
 					<option value="衣著打扮" <c:if test="${shopbean.PRO_KIND eq '衣著打扮'}">selected="selected"</c:if> >衣著打扮</option>
 				</select><span class="errorInsert">${errors.errorInsertKind[0]}</span><br><br>
 				<input type="text" id="val_2" name="shopbean.PRO_KIND" value="${shopbean.PRO_KIND}">		

@@ -1,5 +1,7 @@
 package _200_controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.interceptor.ServletRequestAware;
@@ -33,6 +35,11 @@ public class ShopBackAction_delete extends ActionSupport implements ServletReque
 		int id = service.delete(shopbean.getPRO_ID());
 		if (id != 0) {
 			request.setAttribute("delete_OK", "刪除成功");
+//			System.out.println("papa");
+//			List<ShopBean> select_list = service.selectShop(shopbean);
+//			request.setAttribute("select_list", select_list);
+			List<ShopBean> select_list = service.selectShop(shopbean);
+			request.setAttribute("select_list", select_list);
 			return "success";
 		} else {
 			return "input";
