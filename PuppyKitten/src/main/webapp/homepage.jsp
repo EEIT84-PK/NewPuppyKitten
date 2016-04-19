@@ -67,7 +67,7 @@ $(function(){
 </head>
 <body>
 <h1 id="logo" style="font-family:meow;font-size:105px;text-shadow: 1px 1px 5px #400000;margin-left: 30px;">米沃貓窩</h1>
-	<div id="adBlock" style="box-shadow: 0px 0px 12px #400000;">
+	<div id="adBlock" style="box-shadow: 0px 0px 12px #AAAAAA;">
 		<ul class="list">
 			<li><img src="images/ad/01.png"></li>
 			<li><img src="images/ad/02.png"></li>
