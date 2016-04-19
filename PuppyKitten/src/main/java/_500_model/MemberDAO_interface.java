@@ -12,5 +12,6 @@ public interface MemberDAO_interface {
 	public List<MemberBean> selectmember();
 	public List<MemberBean> selectId(String MEM_ACCOUNT);
 	public List<MemberBean> selectId2(Integer MEM_ID);
+	public MemberBean selectMemberBypwdaccount(String account);
 
 }

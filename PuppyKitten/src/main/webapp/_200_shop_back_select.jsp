@@ -7,6 +7,11 @@
 <script src="<%=request.getContextPath()%>/jquery/jquery-2.2.2.min.js"></script>
 <script src="<%=request.getContextPath()%>/jquery/jquery-ui.min.js"></script>
 <%-- <c:import url="/import/head.jsp"></c:import> --%>
+<script type="text/javascript">
+$(function(){
+	$('.sel_PRO_ID').hide();
+})
+</script>
 <style type="text/css">
 .pro_1 {
 	float: left;
@@ -31,7 +36,7 @@
 		<h2>${delete_OK}</h2>
 		<article>
 			<form
-				action="<%=request.getContextPath()%>/shop/shopBackAction_3.action"
+				action="<%=request.getContextPath()%>/shop/shopBackAction_select.action"
 				method="post">
 				<input class="btn_1" type="submit" value="查詢">
 			</form>
@@ -57,7 +62,7 @@
 							<tbody>
 							
 								<c:forEach var="sel" items="${select_list}">
-								<form action="<%=request.getContextPath()%>/shop/shopBackAction_4" method="post">
+								<form action="<%=request.getContextPath()%>/shop/shopBackAction_delete" method="post">
 									<tr>
 										<td>${sel.PRO_ID}</td>
 										<td>${sel.PRO_ANIMAL}</td>
@@ -66,8 +71,7 @@
 										<td>${sel.PRO_PRICE}</td>
 
 
-										<td><a
-											href='<c:url value="/shop/shopBackAction_3">
+								<td><a href='<c:url value="/shop/shopBackAction_select">
 									<c:param name="shopbean.PRO_ID">${sel.PRO_ID}</c:param>
 									<c:param name="shopbean.PRO_ANIMAL">${sel.PRO_ANIMAL}</c:param>
 									<c:param name="shopbean.PRO_KIND">${sel.PRO_KIND}</c:param>
@@ -83,11 +87,10 @@
 									<c:param name="use">update</c:param>
 									</c:url>'>編輯</a></td>
 
-										<th><input id="sel_PRO_ID" type="text" name="shopbean.PRO_ID"  value="${sel.PRO_ID}" >
-											<input id="val_1" type="text" name="shopbean.PRO_ANIMAL" value="${shopbean.PRO_ANIMAL}">
+										<td><input class="sel_PRO_ID" type="text" name="shopbean.PRO_ID"  value="${sel.PRO_ID}" >
 										
 										<input type="submit" value="移除"
-											style="cursor: pointer; margin: 5px;"></th>
+											style="cursor: pointer; margin: 5px;"></td>
 									</tr>
 									</form>
 								</c:forEach>

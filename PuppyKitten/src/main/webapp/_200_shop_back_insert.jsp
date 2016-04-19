@@ -83,7 +83,7 @@ color: red;
 	<section>
 		<article style="width: 1500px; background-color: white;">
 			<h2>新品上市</h2><h2 style="color: red" id="insert_1">${insertOK}</h2>
-			<form action="<%=request.getContextPath()%>/shop/shopBackAction_1.action" method="post" enctype="multipart/form-data">
+			<form action="<%=request.getContextPath()%>/shop/shopBackAction_insert.action" method="post" enctype="multipart/form-data">
 				商品類型：<select id="sel_1" >
 					<option>請選擇</option>					
 					<option value="汪星人" <c:if test="${shopbean.PRO_ANIMAL eq '汪星人'}">selected="selected"</c:if> >汪星人</option>
@@ -117,12 +117,13 @@ color: red;
 				庫存數量：<input type="text" name="shopbean.PRO_STOCK" value="${shopbean.PRO_STOCK}"><span class="errorInsert">${errors.errorInsertStock[0]}</span><br><br> 					   
 				商品照片：<input type="file" name="PRO_IMAGE"><span class="errorInsert">${errors.errorInsertImage[0]}</span><br><br> 				   
 				商品介紹：<br>
-				<textarea id="content" rows="10" cols="80" name="shopbean.PRO_BODY"></textarea>		
+
+				<textarea id="content" rows="15" cols="80" name="shopbean.PRO_BODY"></textarea>		
 				<br> <input type="submit" value="新增上架">
 			</form>
 			
 <%-- 			<s:actionerror/> --%>
-<%-- 			<s:form action="/shop/shopBackAction_1.action" method="post" --%>
+<%-- 			<s:form action="/shop/shopBackAction_insert.action" method="post" --%>
 <%-- 				enctype="multipart/form-data" theme="simple"> --%>
 <%-- 				商品類型：<s:select id="sel_1" list="{'請選擇','汪星人','喵星人'}"></s:select> --%>
 <%-- 				<s:div class="errorInsert">${errors.errorInsertAnimal[0]}</s:div> --%>

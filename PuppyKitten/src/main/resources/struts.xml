@@ -3,7 +3,8 @@
 	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
-	<constant name="struts.action.excludePattern" value="^ws://.+$"/>
+	<constant name="struts.action.excludePattern" value="^ws://.+$" />
+
 	<constant name="struts.custom.i18n.resources" value="i18n"></constant>
 	<constant name="struts.devMode" value="true"></constant> <!-- 開發模式的設定 預設為false 更改為true -->
 
@@ -33,7 +34,7 @@
 
 	<package name="shopPackage" namespace="/shop" extends="struts-default">
 
-		<action name="shopBackAction_1" class="_200_controller.ShopBackAction_1">
+		<action name="shopBackAction_insert" class="_200_controller.ShopBackAction_insert">
 
 			<interceptor-ref name="fileUpload">
 				<param name="allowedTypes">image/bmp,image/png,image/gif,image/jpeg,image/pjpeg,image/x-png</param>
@@ -45,19 +46,48 @@
 			<result name="input">/_200_shop_back_insert.jsp</result>
 		</action>
 
-		<action name="shopBackAction_2" class="_200_controller.ShopBackAction_2">
-			<result name="success">/_200_shop_back_update_2.jsp</result>
-			<result name="input">/_200_shop_back_update_2.jsp</result>
+		<action name="shopBackAction_update" class="_200_controller.ShopBackAction_update">
+			<result name="success">/_200_shop_back_update.jsp</result>
+			<result name="input">/_200_shop_back_update.jsp</result>
 		</action>
 
-		<action name="shopBackAction_3" class="_200_controller.ShopBackAction_3">
-			<result name="success">/_200_shop_back_update_1.jsp</result>
-			<result name="update">/_200_shop_back_update_2.jsp</result>
+		<action name="shopBackAction_select" class="_200_controller.ShopBackAction_select">
+			<result name="success">/_200_shop_back_select.jsp</result>
+			<result name="update">/_200_shop_back_update.jsp</result>
 		</action>
 
-		<action name="shopBackAction_4" class="_200_controller.ShopBackAction_4">
-			<result name="success">/_200_shop_back_update_1.jsp</result>
-			<result name="input">/_200_shop_back_update_1.jsp</result>
+		<action name="shopBackAction_delete" class="_200_controller.ShopBackAction_delete">
+			<result name="success">/_200_shop_back_select.jsp</result>
+			<result name="input">/_200_shop_back_select.jsp</result>
+		</action>
+
+		<action name="shopBackAction_goshop" class="_200_controller.ShopBackAction_goshop">
+			<result name="success">/_200_shop_index.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+
+		<action name="shopBackAction_shopindex" class="_200_controller.ShopBackAction_shopindex">
+			<result name="success">/_200_shop_choose.jsp</result>
+		</action>
+
+		<action name="shopBackAction_shopchoose" class="_200_controller.ShopBackAction_shopchoose">
+			<result name="success">/_200_shop_index.jsp</result>
+		</action>
+
+		<action name="shopBackAction_cardelete" class="_200_controller.ShopBackAction_cardelete">
+			<result name="success">/_200_shop_car.jsp</result>
+		</action>
+
+		<action name="shopBackAction_carrefresh" class="_200_controller.ShopBackAction_carrefresh">
+			<result name="success">/_200_shop_car.jsp</result>
+		</action>
+
+		<action name="shopBackAction_carsend" class="_200_controller.ShopBackAction_carsend">
+			<result name="success">/_200_shop_order.jsp</result>
+		</action>
+
+		<action name="shopBackAction_ordersend" class="_200_controller.ShopBackAction_ordersend">
+			<result name="success">/_200_shop_finish.jsp</result>
 		</action>
 	</package>
 
@@ -174,14 +204,13 @@
 	<package name="petUpdatePackage" namespace="/petUpdate"
 		extends="struts-default">
 		<action name="petUpdateAction" class="_400_controller.PetUpdateAction">
-			<result name="success">/_400_update.jsp</result>			
+			<result name="success">/_400_update.jsp</result>
 		</action>
 		<action name="petUpdate2Action" class="_400_controller.PetUpdate2Action">
 			<result name="success">/_400_update.jsp</result>
 			<result name="input">/_400_update.jsp</result>
 		</action>
-	</package>
-	
+	</package>	
 	<package name="petBlockadePackage" namespace="/petBlockade"
 		extends="struts-default">
 		<action name="petBlockadeAction" class="_400_controller.PetBlockadeAction">
@@ -196,23 +225,21 @@
 		<action name="blockadeDeleteAction" class="_400_controller.BlockadeDeleteAction">
 			<result name="success">/_400_blockade_back.jsp</result>
 		</action>
-	</package>	
-	
+	</package>
 	<package name="loginPackage" namespace="/login" extends="struts-default">
 		<action name="loginAction" class="_500_controller.LoginAction">
 			<result name="success">/index.jsp</result>
 			<result name="input">/_500_login.jsp</result>
 		</action>
+		<action name="loginBackAction" class="_500_controller.LoginBackAction">
+			<result name="success">/index_back.jsp</result>
+		</action>
 		<action name="logoutAction" class="_500_controller.LogoutAction">
 			<result name="success">/index.jsp</result>
 		</action>
 		<action name="insertAction" class="_500_controller.InsertAction">
-			<result name="success">/index.jsp</result>
+			<result name="success">/_500_insertsuccess.jsp</result>
 			<result name="input">/_500_insert.jsp</result>
-		</action>
-		<action name="forgetpassword" class="_500_controller.ForgetPasswordAction">
-		   <result name="success"></result>
-           <result name="input"></result>		
 		</action>
 		<action name="selectmember" class="_500_controller.SelectAction">
 			<result name="success">/_500_select.jsp</result>
@@ -225,31 +252,30 @@
 			<result name="success">/index.jsp</result>
 			<result name="input">/_500_updatepassword.jsp</result>
 		</action>
-		
-	</package>
+		<action name="forgetPassword" class="_500_controller.ForgetPasswordAction">
+			<result name="success">/_500_forgetpasswordok.jsp</result>
+			<result name="input">/_500_forgetpassword.jsp</result>
+		</action>
 	
+	</package>
 
-<!-- 	攔截器 -->
-	<package name="memberPackage" namespace="/member" extends="struts-default">
-	<interceptors>
-	<interceptor class="_500_interceptor.AuthenticationInterceptor"
-	name="authentication" />
-	</interceptors>
-	<global-results>
-	<result name="input">/_500_login.jsp</result>
-	</global-results>
-<!-- 	<action name="updatemember" class="_500_controller.SelectAction"> -->
-<!-- 	<result name="success">/_500_update.jsp</result> -->
-<!-- 	</action> -->
-
-	<action name="member" class="_500_controller.SelectAction">
-	<interceptor-ref name="authentication"/>
-	<result>/_500_select.jsp</result>
-	</action>
-
-	<action name="*">
-	<interceptor-ref name="authentication"/>
-	<result>/member/{1}.jsp</result>
-	</action>
+	<package name="AuthenticationPackage" namespace="/member" extends="struts-default">
+		<interceptors>
+			<interceptor name="authentication" class="_500_interceptor.AuthenticationInterceptor" />
+			<interceptor-stack name="myAuthenticationDefault">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="authentication" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myAuthenticationDefault" />
+		<global-results>
+			<result name="input">/_500_login.jsp</result>
+		</global-results>
+		<action name="Interceptor" class="_500_interceptor.Member">
+			<result>/_500_member.jsp</result>
+		</action>
+		<action name="*">
+			<result>{1}.jsp</result>
+		</action>
 	</package>
 </struts>

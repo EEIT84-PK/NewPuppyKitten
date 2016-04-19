@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,9 +9,11 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Insert title here</title>
 		<script type="text/javascript">
+			
+
+		
 			var websocket = new WebSocket("ws://localhost:8080/PuppyKitten/chatEndpoint.chat");
 			websocket.onopen = function processOpen(){
-				websocket.send("open");
 			}
 			websocket.onmessage = function processMessage(message) {
 				var jsonData = JSON.parse(message.data);
@@ -28,9 +30,14 @@
 				});
 			});
 		</script>
+
+		
 	</head>
 	<body>
 		<textarea id="area" readonly="readonly" rows="10" cols="45"></textarea><br>
+		<form action="ChatServlet.controller">
+		傳送給<input type="text" name="id"><input type="submit" value="確認">
+		</form>
 		<input type="text" id="text" size="50" /><input id="sendmsg" type="button" value="送出" />
 
 		

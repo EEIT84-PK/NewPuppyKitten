@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="_200_model.Shop_Buy_Bean" table="Product_body">
+		<id name="BUY_ID" column="BUY_ID">
+			<generator class="identity"></generator>
+		</id>
+		<property name="BUY_PRO_ID" column="BUY_PRO_ID"></property>
+		<property name="BUY_USER_ID" column="BUY_USER_ID"></property>
+		<property name="BUY_NAME" column="BUY_NAME"></property>
+		<property name="BUY_NUMBER" column="BUY_NUMBER"></property>
+		<property name="BUY_OLD_PRICE" column="BUY_OLD_PRICE"></property>
+		<property name="BUY_NEW_PRICE" column="BUY_NEW_PRICE"></property>
+		<property name="BUY_LITTLE_TOTAL" column="BUY_LITTLE_TOTAL"></property>
+		<property name="BUY_LARGE_TOTAL" column="BUY_LARGE_TOTAL"></property>
+
+	</class>
+
+</hibernate-mapping>

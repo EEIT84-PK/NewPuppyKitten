@@ -84,7 +84,7 @@ $(function(){
 	<section>
 		<article style="width: 1500px; background-color: white;">
 		<h2>商品維護</h2><h2 style="color: red">${updateOK}</h2>
-			<form action="<%=request.getContextPath()%>/shop/shopBackAction_2" method="post" enctype="multipart/form-data">
+			<form action="<%=request.getContextPath()%>/shop/shopBackAction_update" method="post" enctype="multipart/form-data">
 				商品編號：<input type="text" name="shopbean.PRO_ID" id="update_number" value="${shopbean.PRO_ID}"><br><br> 
 				商品類型：<select id="sel_1">
 					<option>請選擇</option>
@@ -94,20 +94,22 @@ $(function(){
 					<input id="val_1" type="text" name="shopbean.PRO_ANIMAL" value="${shopbean.PRO_ANIMAL}">
 				商品種類：<select id="sel_2">
 					<option>請選擇</option>
-					<option value="主食乾糧" <c:if test="${shopbean.PRO_KIND == '主食乾糧'}">selected="selected"</c:if> >主食乾糧</option>
-					<option value="外出專用" <c:if test="${shopbean.PRO_KIND == '外出專用'}">selected="selected"</c:if> >外出專用</option>
-					<option value="精選罐頭" <c:if test="${shopbean.PRO_KIND == '精選罐頭'}">selected="selected"</c:if> >精選罐頭</option>
-					<option value="嚴選零嘴" <c:if test="${shopbean.PRO_KIND == '嚴選零嘴'}">selected="selected"</c:if> >嚴選零嘴</option>
-					<option value="休閒玩具" <c:if test="${shopbean.PRO_KIND == '休閒玩具'}">selected="selected"</c:if> >休閒玩具</option>
-					<option value="生活用品" <c:if test="${shopbean.PRO_KIND == '生活用品'}">selected="selected"</c:if> >生活用品</option>
-					<option value="衣著打扮" <c:if test="${shopbean.PRO_KIND == '衣著打扮'}">selected="selected"</c:if> >衣著打扮</option>
-					</select><span class="errorUpdate">${errors.errorUpdateKind[0]}</span><br><br><input id="val_2" type="text" name="shopbean.PRO_KIND" value="shopbean.PRO_KIND"> 
+					<option value="主食乾糧" <c:if test="${shopbean.PRO_KIND eq '主食乾糧'}">selected="selected"</c:if> >主食乾糧</option>
+					<option value="外出專用" <c:if test="${shopbean.PRO_KIND eq '外出專用'}">selected="selected"</c:if> >外出專用</option>
+					<option value="精選罐頭" <c:if test="${shopbean.PRO_KIND eq '精選罐頭'}">selected="selected"</c:if> >精選罐頭</option>
+					<option value="嚴選零嘴" <c:if test="${shopbean.PRO_KIND eq '嚴選零嘴'}">selected="selected"</c:if> >嚴選零嘴</option>
+					<option value="休閒玩具" <c:if test="${shopbean.PRO_KIND eq '休閒玩具'}">selected="selected"</c:if> >休閒玩具</option>
+					<option value="生活用品" <c:if test="${shopbean.PRO_KIND eq '生活用品'}">selected="selected"</c:if> >生活用品</option>
+					<option value="衣著打扮" <c:if test="${shopbean.PRO_KIND eq '衣著打扮'}">selected="selected"</c:if> >衣著打扮</option>
+					</select><span class="errorUpdate">${errors.errorUpdateKind[0]}</span><br><br>
+					<input id="val_2" type="text" name="shopbean.PRO_KIND" value="${shopbean.PRO_KIND}"> 
 				商品名稱：<input type="text" name="shopbean.PRO_NAME" value="${shopbean.PRO_NAME}"><span class="errorUpdate">${errors.errorUpdateName[0]}</span><br><br> 
 				優惠方案：<select id="sel_3" >
 					<option>請選擇</option>
 					<option value="指定價格" <c:if test="${shopbean.PRO_KIND == '指定價格'}">selected="selected"</c:if> >指定價格</option>
 					<option value="買幾送幾" <c:if test="${shopbean.PRO_KIND == '買幾送幾'}">selected="selected"</c:if> >買幾送幾</option>
-					</select><span class="errorUpdate">${errors.errorUpdateProject[0]}</span><br><br><input id="val_3" type="text" name="shopbean.PRO_PROJECT" value="shopbean.PRO_PROJECT"> 
+					</select><span class="errorUpdate">${errors.errorUpdateProject[0]}</span><br><br>
+					<input id="val_3" type="text" name="shopbean.PRO_PROJECT" value="${shopbean.PRO_PROJECT}"> 
 				<span id="price_5">
 				指定價格：<input type="text" name="shopbean.PRO_PRICE" id="price_1" value="${shopbean.PRO_PRICE}"><span class="errorInsert">${errors.errorInsertPrice[0]}</span>
 				<br><br></span>	
@@ -117,9 +119,9 @@ $(function(){
 				</span>	
 				商品重量：<input type="text" name="shopbean.PRO_WEIGHT" value="${shopbean.PRO_WEIGHT}"><br><br> 	
 				庫存數量：<input type="text" name="shopbean.PRO_STOCK" value="${shopbean.PRO_STOCK}"><span class="errorUpdate">${errors.errorUpdateStock[0]}</span><br><br> 
-				商品照片：<input type="file" name="PRO_IMAGE" value="${shopbean.PRO_BODY}"><span class="errorUpdate">${errors.errorUpdateImage[0]}</span><br><br> 
+				商品照片：<input type="file" name="PRO_IMAGE" value="${shopbean.PRO_IMAGE}"><span class="errorUpdate">${errors.errorUpdateImage[0]}</span><br><br> 
 				商品介紹：<br>
-				<textarea name="shopbean.PRO_BODY" id="content" rows="10" cols="80" ></textarea>
+				<textarea name="shopbean.PRO_BODY"  id="content" rows="10" cols="80" ></textarea>
 				<script>
 					CKEDITOR.replace('shopbean.PRO_BODY', {});
 				</script>

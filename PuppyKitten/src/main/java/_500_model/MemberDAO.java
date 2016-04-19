@@ -41,14 +41,12 @@ public class MemberDAO implements MemberDAO_interface {
 		}
 		return list;
 	}
-
-	@SuppressWarnings("unchecked")
-	@Override
-	public MemberBean selectMemberByAccount(String account) {
+	public MemberBean selectMemberBypwdaccount(String account){
 		MemberBean memberBean = null;
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
-		Query query = session.createQuery("from MemberBean where MEM_ACCOUNT=:account");
+		Query query = session
+				.createQuery("from MemberBean where MEM_ACCOUNT=:account");
 
 		try {
 			if (account != null && !account.isEmpty()) {
@@ -57,7 +55,32 @@ public class MemberDAO implements MemberDAO_interface {
 				memberBean = list.get(0);
 
 			}
-		} catch (Exception e) {
+		} catch (RuntimeException e) {
+
+		}
+
+		return memberBean;
+
+	}
+	
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public MemberBean selectMemberByAccount(String account) {
+		MemberBean memberBean = null;
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		Query query = session
+				.createQuery("from MemberBean where MEM_ACCOUNT=:account");
+
+		try {
+			if (account != null && !account.isEmpty()) {
+				query.setParameter("account", account);
+				List<MemberBean> list = query.list();
+				memberBean = list.get(0);
+
+			}
+		} catch (RuntimeException e) {
 
 		}
 
@@ -78,22 +101,22 @@ public class MemberDAO implements MemberDAO_interface {
 		}
 
 	}
-    
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public MemberBean selectMemberByMemId(Integer memberId) {
 		MemberBean memberBean = null;
-		Session session = HibernateUtil.getSessionFactory().getCurrentSession();	
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		try {
 			session.beginTransaction();
-			Query query=session.createQuery("from MemberBean where MEM_ID=?");
+			Query query = session.createQuery("from MemberBean where MEM_ID=?");
 			query.setParameter(0, memberId);
 			List<MemberBean> memberBeans = query.list();
-			if(!memberBeans.isEmpty()){
+			if (!memberBeans.isEmpty()) {
 				memberBean = memberBeans.get(0);
 			}
 		} catch (RuntimeException e) {
-           throw e;
+			throw e;
 		}
 		return memberBean;
 	}
@@ -106,7 +129,7 @@ public class MemberDAO implements MemberDAO_interface {
 		try {
 			session.beginTransaction();
 			Query query = session.createQuery("from MemberBean");
-			list=query.list();
+			list = query.list();
 		} catch (RuntimeException e) {
 			throw e;
 		}

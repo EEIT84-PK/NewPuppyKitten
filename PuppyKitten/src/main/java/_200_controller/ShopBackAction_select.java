@@ -8,7 +8,7 @@ import _200_model.ShopBean;
 import _200_model.ShopService;
 
 @SuppressWarnings("serial")
-public class ShopBackAction_3 extends ActionSupport implements ServletRequestAware {
+public class ShopBackAction_select extends ActionSupport implements ServletRequestAware {
 
 	private HttpServletRequest request;
 	private ShopBean shopbean;
@@ -44,7 +44,5 @@ public class ShopBackAction_3 extends ActionSupport implements ServletRequestAwa
 			request.setAttribute("select_list", select_list);
 			return "success";
 		}
-		
-		
 	}
 }

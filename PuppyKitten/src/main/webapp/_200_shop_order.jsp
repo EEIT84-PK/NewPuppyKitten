@@ -5,11 +5,22 @@
 <html>
 <head>
 <c:import url="/import/head.jsp"></c:import>
+<script type="text/javascript">
+$(function(){
+	$('.ka').hide();
+});
+</script>
 <style type="text/css">
 fieldset {
 	border-radius: 12px;
 }
 
+.art{
+border-radius: 12px;
+width: 1500px; 
+background-color: white; 
+line-height: 40px;
+}
 .pro_1 {
 	float: left;
 	margin: 10px;
@@ -23,94 +34,88 @@ fieldset {
 	font-size: 15px
 }
 </style>
-<script type="text/javascript">
-	$win.bind('scroll resize', function() {
-		var $this = $(this);
 
-		// 控制 #abgne_float_ad 的移動
-		$ad.stop().animate({
-			top : $this.scrollTop() + $this.height() - _height - _diffY,
-			left : $this.scrollLeft() + $this.width() - _width - _diffX
-		}, _moveSpeed);
-	}).scroll();
-</script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>米沃貓窩 -後台系統</title>
 </head>
 <body>
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
-
-		<article
-			style="width: 1500px; background-color: white; line-height: 40px;">
+		<article class="art">
 			<fieldset>
-				<form action="/shop/shopbackAction" method="get">
-					訂購人姓名：<input type="text" name="" size="10"> <input
-						type="radio">先生 <input type="radio">小姐<br>
-					身分證字號：<input type="text" name=""> 生日 西元 &nbsp&nbsp <input
-						type="text" size="4" name="">年&nbsp&nbsp <input type="text"
-						size="4" name="">月&nbsp&nbsp <input type="text" size="4" name="">日<br>
-					信用卡卡號：<select name="">
-						<option>MasterCard</option>
-						<option>VISA</option>
-						<option>JCB</option>
-					</select> <input type="text" size="4" name="">- <input type="text" size="4" name="">-
-					<input type="text" size="4" name="">- <input type="text" size="4" name="">
-					有效期限：<select name="">
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-						<option>6</option>
-						<option>7</option>
-						<option>8</option>
-						<option>9</option>
-						<option>10</option>
-						<option>11</option>
-						<option>12</option>
-					</select>月 <select name="">
-						<option>2016</option>
-						<option>2017</option>
-						<option>2018</option>
-						<option>2019</option>
-						<option>2020</option>
-						<option>2021</option>
-						<option>2022</option>
-						<option>2023</option>
-						<option>2024</option>
-						<option>2025</option>
-						<option>2026</option>
-						<option>2027</option>
-						<option>2028</option>
-						<option>2029</option>
-						<option>2030</option>
-					</select>年 &nbsp&nbsp (限台灣核發之信用卡)<br> 手機號碼： <input type="text" name="">
-					信用卡帳單地址：<input type="text" size="50" name="">
+			<h3>購買資訊</h3>
+					<table style="border:3px #cccccc solid; cellpadding: 10; border=1 ; ">
+						<tr>
+							<th style="width: 100px;">商品編號</th>
+							<th style="width: 350px;">商品名稱</th>
+							<th style="width: 100px;">商品售價</th>
+							<th style="width: 100px;">購買數量</th>
+							<th style="width: 100px;">小計</th>
+						</tr>
+			<c:choose>
+				<c:when test="${not empty shop_Buy_list}">
+					<c:forEach var="buy" items="${shop_Buy_list}">
+						<tr>
+							<td>${buy.BUY_PRO_ID}</td>
+							<td>${buy.BUY_NAME}</td>
+							<td>${buy.BUY_NEW_PRICE}</td>
+							<td>${buy.BUY_NUMBER}</td>
+							<td>${buy.BUY_LITTLE_TOTAL}</td>
+						</tr>
+					</c:forEach>
+				</c:when>
+			</c:choose>
+						<tr>
+							<td colspan="5">訂單金額為：${sessionScope.total}元(內含運費80元)<br> 付款方式為：貨到付款 </td>  
+						</tr>
+					</table>
+				<span>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
+				<h3>配送資訊</h3>
+					收貨人姓名：<input type="text" value="${session.loginOK}" size="10"><br> 
+					連絡電話：<input type="text" value="${session.memberPHONE}"><br>
+					配送地址：<input type="text" value="${session.memberADD}" size="50">
 
 					<table>
 						<tr>
 							<th style="vertical-align: bottom;"></th>
 						</tr>
 					</table>
-				</form>
-				<span>--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
-				<form action="/shop/shopbackAction" method="get">
-					收貨人姓名：<input type="text" name="pro_id" size="10"> <input
-						type="radio">先生 <input type="radio">小姐<br>
-					手機號碼：<input type="text" name=""><br> 收貨地址：<input
-						type="text" name="" size="50">
+					<br>
+					
+					 			
+				<form action="<%=request.getContextPath()%>/shop/shopBackAction_ordersend" method="post">
 
-					<table>
-						<tr>
-							<th style="vertical-align: bottom;"></th>
-						</tr>
-					</table>
-					<br> <input type="submit" value="確認送出" style="cursor: pointer;">
+							<input type="submit" value="確認送出" style="cursor: pointer;">
+								<input class="ka" type="text" name="shop_Order_Bean.ORDER_USER_NAME" value="${session.loginOK}">
+								<input class="ka" type="text" name="shop_Order_Bean.ORDER_USER_ADD" value="${session.memberADD}">
+								<input class="ka" type="text" name="shop_Order_Bean.ORDER_USER_PHONE" value="${session.memberPHONE}">
+								<input class="ka" type="text" name="shop_Order_Bean.ORDER_TOTAL_PRICE" value="${sessionScope.total}">
+<%-- 								<input class="ka" type="text" name="shop_Order_Bean.ORDER_DATE" value="${sessionScope.buytime}"> --%>
+								<input class="ka" type="text"  name="shop_Buy_Bean.BUY_USER_ID" value="${session.memberID}">
+
 				</form>
+				
+<%-- 				<form action="<%=request.getContextPath()%>/shop/shopBackAction_11" method="post"> --%>
+<%-- 					<c:choose> --%>
+<%-- 						<c:when test="${not empty shop_Buy_list}"> --%>
+<%-- 							<c:forEach var="buy" items="${shop_Buy_list}"> --%>
+<!-- 							<input type="submit" value="確認送出" style="cursor: pointer;"> -->
+<%-- 								<input class="ka" type="text" name="shop_Order_Bean.ORDER_PRO_ID" value="${buy.BUY_PRO_ID}"> --%>
+<%-- 								<input class="ka" type="text" name="shop_Order_Bean.ORDER_USER_ID" value="${session.loginOK}"> --%>
+<%-- 								<input class="ka" type="text" name="shop_Order_Bean.ORDER_USER_ADD" value="${session.memberADD}"> --%>
+<%-- 								<input class="ka" type="text" name="shop_Order_Bean.ORDER_USER_PHONE" value="${session.memberPHONE}"> --%>
+<%-- 								<input class="ka" type="text" name="shop_Order_Bean.ORDER_PRO_NAME" value="${buy.BUY_NAME}"> --%>
+<%-- 								<input class="ka" type="text" name="shop_Order_Bean.ORDER_BUY_NUMBER" value="${buy.BUY_NUMBER}"> --%>
+<%-- 								<input class="ka" type="text" name="shop_Order_Bean.ORDER_OLD_PRICE" value="${buy.BUY_NEW_PRICE}"> --%>
+<%-- 								<input class="ka" type="text" name="shop_Order_Bean.ORDER_NEW_PRICE" value="${buy.BUY_LITTLE_TOTAL}"> --%>
+<%-- 								<input class="ka" type="text" name="shop_Order_Bean.ORDER_TOTAL_PRICE" value="${sessionScope.total}"> --%>
+<%-- 							</c:forEach> --%>
+<%-- 						</c:when> --%>
+<%-- 					</c:choose> --%>
+<!-- 				</form> -->
+				
 			</fieldset>
 		</article>
-
 	</section>
 	<c:import url="/import/footer.jsp"></c:import>
 </body>
