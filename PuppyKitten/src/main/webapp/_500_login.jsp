@@ -14,6 +14,7 @@
 	<section>
 		<article>
 			<h1 style="font-size: 50px;">登入會員</h1>
+			<font color="red"><b>${errorMsg}<br></b></font>
 			<form action="<%=request.getContextPath()%>/login/loginAction.action" method="post">
 				帳號:<input type="text" name="account" value=""><span
 					style="color: red">${errors.account[0]}</span><br> 密碼:<input
