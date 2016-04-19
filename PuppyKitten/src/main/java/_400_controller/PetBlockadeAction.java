@@ -134,9 +134,13 @@ public class PetBlockadeAction extends ActionSupport implements ServletRequestAw
 				for(int q=0;q<blockBean.size();q++){
 					if(blockBean.get(q).getBLOCKADE_MENID().toString().equals(petBean.get(number).getPET_OWN_ID().toString())){
 						number++;
-						if (number == petBean.size()) {
-							session.setAttribute("end", "已經沒有可感興趣的對象");
-							return "end";
+						if (petBean.get(number).getPET_OWN_ID().toString()
+								.equals(session.getAttribute("memberID").toString())) {
+							number++;
+							if (number == petBean.size()) {
+								session.setAttribute("end", "已經沒有可感興趣的對象");
+								return "end";
+							}
 						}else{
 							if ((!(petBean.get(number).getPET_KING().equals(selectKing.get(0).getPET_KING())))
 									|| (petBean.get(number).getPET_KING().equals(selectKing.get(0).getPET_KING())
@@ -146,8 +150,8 @@ public class PetBlockadeAction extends ActionSupport implements ServletRequestAw
 									session.setAttribute("end", "已經沒有可感興趣的對象");
 									return "end";
 								}
-							}
-						}
+							}							
+						}						
 					}else{
 						break;
 					}

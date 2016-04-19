@@ -180,6 +180,7 @@
 		extends="struts-default">
 		<action name="petRelationLikeAction" class="_400_controller.PetRelationLikeAction">
 			<result name="success">/_400_relation.jsp</result>
+			<result name="end">/_400_friendship_end.jsp</result>
 		</action>
 	</package>
 
@@ -218,6 +219,7 @@
 		extends="struts-default">
 		<action name="petBlockadeAction" class="_400_controller.PetBlockadeAction">
 			<result name="success">/_400_friendship.jsp</result>
+			<result name="end">/_400_friendship_end.jsp</result>
 		</action>
 		<action name="petBlockadeBackAction" class="_400_controller.PetBlockadeBackAction">
 			<result name="success">/_400_blockade_back.jsp</result>
