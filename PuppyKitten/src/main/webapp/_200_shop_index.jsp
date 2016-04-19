@@ -8,6 +8,31 @@
 <script type="text/javascript">
 $(function(){
 	$('.hi').hide();
+	
+	$('.ra_cat').hide();
+	$('.ra_dog').hide();
+// 	$('.val_animal').hide();
+// 	$('.val_kind').hide();
+	
+	$('#sel_animal').change(function(){
+		$('.val_animal').val($(this).val());
+		
+		if($('.val_animal').val()=="汪星人"){
+			$('.ra_cat').hide();
+			$('.ra_dog').show();
+		}else if($('.val_animal').val()=="喵星人"){
+			$('.ra_cat').show();
+			$('.ra_dog').hide();
+		}
+	});
+	$('.ra_cat').click(function(){
+		$('.val_kind').val($(this).val());
+	});
+	
+	$('.ra_dog').click(function(){
+		$('.val_kind').val($(this).val());
+	});
+	
 	});
 </script>
 <style type="text/css">
@@ -91,19 +116,6 @@ border-radius: 5px;
  	background:whitesmoke; 
 }
 
-.btn_1 {
-	width: 90px;
-	height: 30px;
-	font-size: 15px;
-	cursor: pointer;
-}
-
-.btn_2 {
-	width: 120px;
-	height: 30px;
-	font-size: 15px;
-}
-
 .shop_img:hover {opacity: 0.7;}
 
 </style>
@@ -114,33 +126,39 @@ border-radius: 5px;
 <body>
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
-
 		<article style="width: 1500px; background-color: white;">
-			
-				<input class="btn_1" type="submit" name="dog" value="汪星人"> <input
-					class="btn_1" type="submit" name="cat" value="喵星人"> <select
-					class="btn_1">
-					<option>主食乾糧</option>
-					<option>外出專用</option>
-					<option>精選罐頭</option>
-					<option>嚴選零嘴</option>
-					<option>休閒玩具</option>
-					<option>生活用品</option>
-					<option>衣著打扮</option>
-				</select> 
-<!-- 				<input class="btn_2" type="text" name="search_something" placeholder="Search">  -->
-				<input class="btn_1" type="submit" value="搜尋"><br>
-				<c:choose>
-					<c:when test="${not empty select_list}">
-						<c:forEach var="shop" items="${select_list}">
-							<div class="pro_1">
-							
-								<div class="index_pro1">
-									<span>${shop.PRO_NAME}</span>
-								</div>
-								
+				<form action="<%=request.getContextPath()%>/shop/shopBackAction_searchproduct" method="post">
+				<select id="sel_animal">
+					<option>請選擇</option>
+					<option>汪星人</option>
+					<option>喵星人</option>
+				</select>
+				<input class="val_animal" type="text" name="shopBean.PRO_ANIMAL">
+				<input class="val_kind" type="text">
+				<input class="ra_dog" type="radio" name="shopBean.PRO_KIND" value="主食乾糧"><span class="ra_dog">主食乾糧</span>
+				<input class="ra_dog" type="radio" name="shopBean.PRO_KIND" value="外出專用"><span class="ra_dog">外出專用</span>
+				<input class="ra_dog" type="radio" name="shopBean.PRO_KIND" value="嚴選零嘴"><span class="ra_dog">嚴選零嘴</span>
+				<input class="ra_dog" type="radio" name="shopBean.PRO_KIND" value="休閒玩具"><span class="ra_dog">休閒玩具</span>
+				<input class="ra_dog" type="radio" name="shopBean.PRO_KIND" value="衣著打扮"><span class="ra_dog">衣著打扮</span>
+				
+				<input class="ra_cat" type="radio" name="shopBean.PRO_KIND" value="主食乾糧"><span class="ra_cat">主食乾糧</span>
+				<input class="ra_cat" type="radio" name="shopBean.PRO_KIND" value="外出專用"><span class="ra_cat">外出專用</span>
+				<input class="ra_cat" type="radio" name="shopBean.PRO_KIND" value="精選罐頭"><span class="ra_cat">精選罐頭</span>
+				<input class="ra_cat" type="radio" name="shopBean.PRO_KIND" value="嚴選零嘴"><span class="ra_cat">嚴選零嘴</span>
+				<input class="ra_cat" type="radio" name="shopBean.PRO_KIND" value="休閒玩具"><span class="ra_cat">休閒玩具</span>
+				<input class="ra_cat" type="radio" name="shopBean.PRO_KIND" value="清潔用品"><span class="ra_cat">清潔用品</span>
+				<input class="ra_cat" type="radio" name="shopBean.PRO_KIND" value="生活雜物"><span class="ra_cat">生活雜物</span>
+				<input class="ra_cat" type="radio" name="shopBean.PRO_KIND" value="衣著打扮"><span class="ra_cat">衣著打扮</span>
+				<input type="submit" value="搜尋"><br>
+				</form>
+			<c:choose>
+				<c:when test="${not empty select_list}">
+					<c:forEach var="shop" items="${select_list}">
+						<div class="pro_1">
+							<div class="index_pro1">
+								<span>${shop.PRO_NAME}</span>
+							</div>
 								<div class="index_pro2">
-
 									<a href='<c:url value="/shop/shopBackAction_shopindex">
 									<c:param name="shopbean.PRO_ID">${shop.PRO_ID}</c:param>
 									<c:param name="shopbean.PRO_ANIMAL">${shop.PRO_ANIMAL}</c:param>
@@ -157,9 +175,8 @@ border-radius: 5px;
 									<c:param name="choose">choose</c:param>
 									</c:url>'><img class="shop_img" src="${shop.PRO_IMAGE}"  width="130" height="150">
 									</a>
-									
 								</div>
-								<form action="<%=request.getContextPath()%>/shop/shopBackAction_shopindex" method="post">
+							<form action="<%=request.getContextPath()%>/shop/shopBackAction_shopindex" method="post">
 								<div class="index_pro3">
 									<span>建議售價：<span>${shop.PRO_PRICE}</span>元</span><br>
 									<span>剩餘數量：<span>${shop.PRO_STOCK}</span>個
@@ -175,11 +192,14 @@ border-radius: 5px;
 									<input class="hi" type="text" name="shopbean.PRO_STOCK" value="${shop.PRO_STOCK}">
 									<input class="hi" type="text" name="shopbean.PRO_IMAGE" value="${shop.PRO_IMAGE}">
 								</div>
-								</form>
-							</div>
-						</c:forEach>
-					</c:when>
-				</c:choose>
+							</form>
+						</div>
+					</c:forEach>
+				</c:when>
+				<c:otherwise>
+				<b>${select_404 }</b>
+				</c:otherwise>
+			</c:choose>
 		</article>
 	</section>
 	<c:import url="/import/footer.jsp"></c:import>

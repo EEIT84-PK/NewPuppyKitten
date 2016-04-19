@@ -35,11 +35,11 @@ $(function(){
 	<section>
 		<h2>${delete_OK}</h2>
 		<article>
-			<form
-				action="<%=request.getContextPath()%>/shop/shopBackAction_select.action"
-				method="post">
-				<input class="btn_1" type="submit" value="查詢">
-			</form>
+<!-- 			<form -->
+<%-- 				action="<%=request.getContextPath()%>/shop/shopBackAction_select.action" --%>
+<!-- 				method="post"> -->
+<!-- 				<input class="btn_1" type="submit" value="查詢"> -->
+<!-- 			</form> -->
 			<input class="btn_1" type="submit" value="新增商品"
 				onclick="location.href='<%=request.getContextPath()%>/_200_shop_back_insert.jsp'"
 				style="cursor: pointer;"><br>
@@ -88,9 +88,7 @@ $(function(){
 									</c:url>'>編輯</a></td>
 
 										<td><input class="sel_PRO_ID" type="text" name="shopbean.PRO_ID"  value="${sel.PRO_ID}" >
-										
-										<input type="submit" value="移除"
-											style="cursor: pointer; margin: 5px;"></td>
+										<input type="submit" value="移除" style="cursor: pointer; margin: 5px;"></td>
 									</tr>
 									</form>
 								</c:forEach>

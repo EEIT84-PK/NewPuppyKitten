@@ -17,13 +17,13 @@ public class ShopService {
 	}
 
 	// -----查詢方法------------------------------------------------------------
-	public List<ShopBean> select(ShopBean bean) {
+	public List<ShopBean> select(ShopBean shopbean) {
 
 		List<ShopBean> result = null;
-		if (bean == null) {
+		if (shopbean == null) {
 			result = dao.select_All();
 		} else {
-			ShopBean temp = dao.selectId(bean.getPRO_ID());
+			ShopBean temp = dao.selectId(shopbean.getPRO_ID());
 			if (temp != null) {
 				result = new ArrayList<ShopBean>();
 				result.add(temp);
@@ -32,13 +32,16 @@ public class ShopService {
 		return result;
 	}
 
-	public List<ShopBean> selectShop(ShopBean bean) {
+	public List<ShopBean> selectShop(ShopBean shopbean) {
 		List<ShopBean> result = null;
-		String animal = bean.getPRO_ANIMAL();
-		String kind = bean.getPRO_KIND();
-		if (animal == null || animal.trim().length() == 0) {
-			result = dao.select_Product(kind);
 
+		String animal = shopbean.getPRO_ANIMAL();
+		String kind = shopbean.getPRO_KIND();
+
+		if (animal != null && kind == null) {
+			result = dao.select_Product(animal);
+		} else if (animal == null && kind == null) {
+			result = dao.select_All();
 		} else {
 			result = dao.select_Product(animal, kind);
 		}
@@ -109,8 +112,8 @@ public class ShopService {
 		buy_dao.delete_car(id);
 		return id;
 	}
-	
-	public int delete_order(int id){
+
+	public int delete_order(int id) {
 		order_dao.delete(id);
 		return id;
 	}

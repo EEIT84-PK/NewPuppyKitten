@@ -43,6 +43,8 @@ public class ShopDAO implements ShopDAO_interface {
 	public List<ShopBean> select_Product(String animal, String kind) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		List<ShopBean> list;
+		System.out.println(animal);
+		System.out.println(kind);
 		try {
 			session.beginTransaction();
 			Query query = session.createQuery(SELECT_TWO_STMT);

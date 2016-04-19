@@ -53,7 +53,6 @@
 
 		<action name="shopBackAction_select" class="_200_controller.ShopBackAction_select">
 			<result name="success">/_200_shop_back_select.jsp</result>
-			<result name="update">/_200_shop_back_update.jsp</result>
 		</action>
 
 		<action name="shopBackAction_delete" class="_200_controller.ShopBackAction_delete">
@@ -88,6 +87,10 @@
 
 		<action name="shopBackAction_ordersend" class="_200_controller.ShopBackAction_ordersend">
 			<result name="success">/_200_shop_finish.jsp</result>
+		</action>
+		
+		<action name="shopBackAction_searchproduct" class="_200_controller.ShopBackAction_searchproduct">
+			<result name="success">/_200_shop_index.jsp</result>
 		</action>
 	</package>
 

@@ -1,5 +1,7 @@
 package _200_controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import com.opensymphony.xwork2.ActionSupport;
@@ -58,6 +60,14 @@ public class ShopBackAction_cardelete extends ActionSupport implements ServletRe
 	public String execute() {
 		ShopService service = new ShopService();
 		service.delete_car(shop_Buy_Bean.getBUY_ID());
+		
+		List<Shop_Buy_Bean> shop_Buy_list = service.select_buy(shop_Buy_Bean);
+		request.getSession().setAttribute("shop_Buy_list", shop_Buy_list);
+		Integer total=0;
+		for(Shop_Buy_Bean bean : shop_Buy_list){
+			total+=bean.getBUY_LITTLE_TOTAL();
+		}
+		request.getSession().setAttribute("total", total);
 		
 		return "success";
 	}

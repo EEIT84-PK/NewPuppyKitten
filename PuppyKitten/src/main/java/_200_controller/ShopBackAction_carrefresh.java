@@ -31,7 +31,6 @@ public class ShopBackAction_carrefresh extends ActionSupport implements ServletR
 
 	public String execute() {
 		ShopService service = new ShopService();
-		System.out.println(shop_Buy_Bean);
 		List<Shop_Buy_Bean> shop_Buy_list = service.select_buy(shop_Buy_Bean);
 		request.getSession().setAttribute("shop_Buy_list", shop_Buy_list);
 		Integer total=0;

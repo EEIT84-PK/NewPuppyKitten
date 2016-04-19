@@ -11,11 +11,11 @@
 <script type="text/javascript">
 	$(function() {
 		$('.buy_order').hide();
-		$('#fa').hide();
+		$('.fa').hide();
 		$('#ja').hide();
-		
-// 		$('.del_pro').click(function(){
-// 			$('.pro_tr').hide();
+
+// 		$('.del_pro').click(function() {
+// 			 			$('.pro_tr').css("background","red");
 // 		})
 	});
 </script>
@@ -56,7 +56,7 @@
 				<c:when test="${not empty shop_Buy_list}">
 					<c:forEach var="buy" items="${shop_Buy_list}">
 
-						<tbody >
+						<tbody>
 							<tr class="pro_tr">
 								<td>${buy.BUY_PRO_ID}</td>
 								<td>${buy.BUY_NAME}</td>
@@ -64,9 +64,15 @@
 								<td>${buy.BUY_NEW_PRICE}</td>
 								<td>${buy.BUY_LITTLE_TOTAL}</td>
 								<td>
-									<form action="<%=request.getContextPath()%>/shop/shopBackAction_cardelete" method="post">
-										<input class="buy_order" type="text" name="shop_Buy_Bean.BUY_ID" value="${buy.BUY_ID}"> 
-										<input class="del_pro" type="submit" value="移除" style="cursor: pointer;">
+									<form
+										action="<%=request.getContextPath()%>/shop/shopBackAction_cardelete"
+										method="post">
+										<input class="buy_order" type="text"
+											name="shop_Buy_Bean.BUY_ID" value="${buy.BUY_ID}"> 
+											<input class="fa" type="text" name="shop_Buy_Bean.BUY_USER_ID"
+											value="${session.memberID}"><input
+											class="del_pro" type="submit" value="移除"
+											style="cursor: pointer;">
 									</form>
 								</td>
 							</tr>
@@ -82,13 +88,19 @@
 				</tr>
 			</tfoot>
 		</table>
-		<form action="<%=request.getContextPath()%>/shop/shopBackAction_carrefresh" method="post">
-			<input id="fa" type="text" name="shop_Buy_Bean.BUY_USER_ID" value="${session.memberID}">
-			<input type="submit" value="整理購物清單" style="cursor: pointer;">
-		</form>
-		<form action="<%=request.getContextPath()%>/shop/shopBackAction_carsend" method="post">
-				<input type="submit" value="下一步" onclick="location" style="cursor: pointer;">
-				<input id="ja" type="text" name="shop_Buy_Bean.BUY_USER_ID" value="${session.memberID}">
+<!-- 		<form -->
+<%-- 			action="<%=request.getContextPath()%>/shop/shopBackAction_carrefresh" --%>
+<!-- 			method="post"> -->
+<!-- 			<input class="fa" type="text" name="shop_Buy_Bean.BUY_USER_ID" -->
+<%-- 				value="${session.memberID}"> <input type="submit" --%>
+<!-- 				value="整理購物清單" style="cursor: pointer;"> -->
+<!-- 		</form> -->
+		<form
+			action="<%=request.getContextPath()%>/shop/shopBackAction_carsend"
+			method="post">
+			<input type="submit" value="下一步" onclick="location"
+				style="cursor: pointer;"> <input id="ja" type="text"
+				name="shop_Buy_Bean.BUY_USER_ID" value="${session.memberID}">
 		</form>
 	</section>
 	<c:import url="/import/footer.jsp"></c:import>
