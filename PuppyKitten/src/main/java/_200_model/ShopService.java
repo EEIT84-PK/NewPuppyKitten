@@ -17,13 +17,13 @@ public class ShopService {
 	}
 
 	// -----查詢方法------------------------------------------------------------
-	public List<ShopBean> select(ShopBean shopbean) {
+	public List<ShopBean> select(ShopBean shopBean) {
 
 		List<ShopBean> result = null;
-		if (shopbean == null) {
+		if (shopBean == null) {
 			result = dao.select_All();
 		} else {
-			ShopBean temp = dao.selectId(shopbean.getPRO_ID());
+			ShopBean temp = dao.selectId(shopBean.getPRO_ID());
 			if (temp != null) {
 				result = new ArrayList<ShopBean>();
 				result.add(temp);
@@ -32,11 +32,11 @@ public class ShopService {
 		return result;
 	}
 
-	public List<ShopBean> selectShop(ShopBean shopbean) {
+	public List<ShopBean> selectShop(ShopBean shopBean) {
 		List<ShopBean> result = null;
 
-		String animal = shopbean.getPRO_ANIMAL();
-		String kind = shopbean.getPRO_KIND();
+		String animal = shopBean.getPRO_ANIMAL();
+		String kind = shopBean.getPRO_KIND();
 
 		if (animal != null && kind == null) {
 			result = dao.select_Product(animal);
@@ -55,7 +55,14 @@ public class ShopService {
 			result = buy_dao.select_all_car();
 		} else {
 			result = buy_dao.select_my_car(shop_Buy_Bean.getBUY_USER_ID());
-		}
+		} 
+		
+//	} else if (shop_Buy_Bean.getBUY_PRO_ID() == null && shop_Buy_Bean.getBUY_USER_ID() != null) {
+//		result = buy_dao.select_my_car(shop_Buy_Bean.getBUY_USER_ID());
+//	} else {
+//		result = buy_dao.select_tempcar_car(shop_Buy_Bean.getBUY_PRO_ID());
+//	}
+	
 		return result;
 	}
 
