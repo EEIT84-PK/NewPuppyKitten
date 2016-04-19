@@ -31,7 +31,6 @@ $(function(){
 <title>米沃貓窩 -購物車</title>
 </head>
 <body>
-	<%-- 	<c:import url="/import/header.jsp"></c:import> --%>
 	<section>
 		<h2>${delete_OK}</h2>
 		<article>
@@ -101,7 +100,6 @@ $(function(){
 				</c:choose>
 			
 		</article>
-		<%-- 	<c:import url="/import/footer.jsp"></c:import> --%>
 	</section>
 </body>
 </html>
