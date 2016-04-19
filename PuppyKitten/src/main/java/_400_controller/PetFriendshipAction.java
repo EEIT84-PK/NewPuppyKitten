@@ -156,6 +156,8 @@ public class PetFriendshipAction extends ActionSupport implements ServletRequest
 		PetImgBean Imgbean = petService.selectId2(petBean.get(number).getPET_ID());
 		session.setAttribute("petImg", Imgbean.getPET_IMAGE());
 		session.setAttribute("PetNumber", ((Integer) number).toString());
+		session.removeAttribute("match");
+		session.removeAttribute("blockade");
 		return "success";
 
 	}

@@ -20,7 +20,12 @@ public interface PetDAO_interface {
 	public List<PetRelationBean> selectId(String MYSELF, String LIKE,String STATUS);
 	public void update(PetRelationBean bean);
 	public void delete(PetRelationBean bean);
-	public void update(PetImgBean bean);	
+	public void update(PetImgBean bean);
+	public void insert(BlockadeBean bean);	
+	public List<BlockadeBean> selectBlockadeAll();
+	public List<BlockadeBean> selectBlockade(int BLOCKADE_MENID);
+	public void delete(BlockadeBean bean);
+		
 
 
 }

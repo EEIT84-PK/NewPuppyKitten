@@ -45,8 +45,18 @@ public class PetLikeAction extends ActionSupport implements ServletRequestAware 
 		Rbean.setINT_MENID_LIKE(petBean.get(number).getPET_OWN_ID().toString());// 正在感興趣對象的主人編號
 		Rbean.setINT_STATUS("like");
 
-		PetRelationBean RbeanInsert = petService.insert(Rbean);
+		PetRelationBean RbeanInsert = petService.insert(Rbean);	
+		
 		List<PetBean> selectKing = petService.selecPettId((Integer) session.getAttribute("memberID"));
+		
+		List<PetRelationBean> checkSelf = new ArrayList<PetRelationBean>();
+		checkSelf=petService.selectId(petBean.get(number).getPET_OWN_ID().toString(),selectKing.get(0).getPET_OWN_ID().toString(), "like");
+		session.removeAttribute("match");
+		System.out.println("checkSelf="+checkSelf);
+		if(!checkSelf.isEmpty()){
+			session.setAttribute("match", petBean.get(number).getPET_NAME());
+		}
+		
 		List<PetRelationBean> check = new ArrayList<PetRelationBean>();
 		List<PetRelationBean> check2 = new ArrayList<PetRelationBean>();
 		number++;		
@@ -114,7 +124,7 @@ public class PetLikeAction extends ActionSupport implements ServletRequestAware 
 		PetImgBean Imgbean = petService.selectId2(petBean.get(number).getPET_ID());
 		session.setAttribute("petImg", Imgbean.getPET_IMAGE());
 		session.setAttribute("PetNumber", ((Integer) number).toString());// 將此次number再丟進session給下一次用
-
+		session.removeAttribute("blockade");		
 		return "success";
 
 	}

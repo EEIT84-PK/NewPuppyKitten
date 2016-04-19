@@ -12,6 +12,8 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import _400_model.PetBean;
+
 public class MemberService {
 	MemberDAO_interface dao;
 
@@ -31,6 +33,12 @@ public class MemberService {
 		return bean;
 
 	}
+	
+	public MemberBean update2(MemberBean bean){
+		dao.update(bean);
+		return bean;
+	}
+	
 	public MemberBean insert(MemberBean bean) {
 		dao.insert(bean);
 		return bean;
@@ -87,15 +95,20 @@ public class MemberService {
 
 	public List<MemberBean> selectmember() {
 		return dao.selectmember();
-	}
-
-	public MemberBean selectMemberById(final Integer memId) {
+	}	
+	
+	public MemberBean selectMemberById(Integer memId) {
 
 		return dao.selectMemberByMemId(memId);
 	}
 
+	public List<MemberBean> selectMember(String  MEM_ACCOUNT) {		
+		return dao.selectId(MEM_ACCOUNT);
+	} 
 	
-
+	public List<MemberBean> selectMember2(Integer  MEM_ID) {		
+		return dao.selectId2(MEM_ID);
+	}
 	// email寄信
 	public static boolean sendemail(String email, String user, String checkcode) {
 		String to = email;

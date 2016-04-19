@@ -12,7 +12,6 @@
 			var websocket = new WebSocket("ws://localhost:8080/PuppyKitten/chatEndpoint.chat");
 			websocket.onopen = function processOpen(){
 				websocket.send("open");
-				websocket.protocol("123");
 			}
 			websocket.onmessage = function processMessage(message) {
 				var jsonData = JSON.parse(message.data);

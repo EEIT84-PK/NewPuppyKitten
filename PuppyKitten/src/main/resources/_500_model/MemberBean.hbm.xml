@@ -16,5 +16,6 @@
 		<property name="MEM_IDCARD" column="MEM_IDCARD" />
 		<property name="MEM_ADD" column="MEM_ADD" />
 		<property name="MEM_PHONE" column="MEM_PHONE" />
+		<property name="MEN_STATUS" column="MEN_STATUS" />
 	</class>
 </hibernate-mapping>
