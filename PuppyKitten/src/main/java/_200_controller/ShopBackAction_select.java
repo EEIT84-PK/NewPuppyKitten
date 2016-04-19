@@ -36,9 +36,11 @@ public class ShopBackAction_select extends ActionSupport implements ServletReque
 	}
 
 	public String execute() {
+		System.out.println("123");
 		if(use.equals("update")){
 			return "update";
 		}else{
+			System.out.println("456");
 			ShopService service = new ShopService();
 			List<ShopBean> select_list = service.select(shopbean);
 			request.setAttribute("select_list", select_list);

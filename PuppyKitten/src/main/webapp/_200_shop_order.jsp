@@ -71,9 +71,10 @@ line-height: 40px;
 					</table>
 				<span>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
 				<h3>配送資訊</h3>
-					收貨人姓名：<input type="text" value="${session.loginOK}" size="10"><br> 
-					連絡電話：<input type="text" value="${session.memberPHONE}"><br>
-					配送地址：<input type="text" value="${session.memberADD}" size="50">
+				<form action="<%=request.getContextPath()%>/shop/shopBackAction_ordersend" method="post">
+					收貨人姓名：<input type="text" name="shop_Order_Bean.ORDER_USER_NAME" value="${session.loginOK}" size="10"><br> 
+					連絡電話：<input type="text" name="shop_Order_Bean.ORDER_USER_PHONE" value="${session.memberPHONE}"><br>
+					配送地址：<input type="text" name="shop_Order_Bean.ORDER_USER_ADD" value="${session.memberADD}" size="50">
 
 					<table>
 						<tr>
@@ -83,12 +84,8 @@ line-height: 40px;
 					<br>
 					
 					 			
-				<form action="<%=request.getContextPath()%>/shop/shopBackAction_ordersend" method="post">
 
 							<input type="submit" value="確認送出" style="cursor: pointer;">
-								<input class="ka" type="text" name="shop_Order_Bean.ORDER_USER_NAME" value="${session.loginOK}">
-								<input class="ka" type="text" name="shop_Order_Bean.ORDER_USER_ADD" value="${session.memberADD}">
-								<input class="ka" type="text" name="shop_Order_Bean.ORDER_USER_PHONE" value="${session.memberPHONE}">
 								<input class="ka" type="text" name="shop_Order_Bean.ORDER_TOTAL_PRICE" value="${sessionScope.total}">
 <%-- 								<input class="ka" type="text" name="shop_Order_Bean.ORDER_DATE" value="${sessionScope.buytime}"> --%>
 								<input class="ka" type="text"  name="shop_Buy_Bean.BUY_USER_ID" value="${session.memberID}">
