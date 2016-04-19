@@ -61,28 +61,43 @@ public class ShopBackAction_ordersend extends ActionSupport implements ServletRe
 		this.request = request;
 	}
 
+	public void validate() {
+
+	}
+
 	public String execute() {
 		ShopService service = new ShopService();
-		
+
 		Date date = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String buydate = sdf.format(date);
-		
+
 		shop_Order_Bean.setORDER_DATE(buydate);
 		service.insert(shop_Order_Bean);
-		// 尚未補上當下訂購時間
+		// 當下訂購時間
 		List<Shop_Buy_Bean> list = service.select_buy(shop_Buy_Bean);
 		for (int i = 0; i < list.size(); i++) {
 			service.delete_car(list.get(i).getBUY_ID());
 		}
-
-		// String tol ="";
-		// List<Shop_Buy_Bean> list = service.select_buy(shop_Buy_Bean);
-		// request.getSession().setAttribute("list",list );
-		// for(int i=0;i<list.size();i++){
-		// tol += list.get(i).getBUY_NAME();
-		// }
-		// request.getSession().setAttribute("tol", tol);
+//		List<ShopBean> bean = service.select(shopBean);
+//
+//		for (int n = 0; n <= bean.size(); n++) {
+//
+// 			System.out.println(bean.get(n).getPRO_ID());//2012
+// 			System.out.println(bean.get(n).getPRO_STOCK());//100
+// 			
+//			shop_Buy_Bean.setBUY_PRO_ID(bean.get(n).getPRO_ID());  //2012
+//			
+//			List<Shop_Buy_Bean> num = service.select_buy(shop_Buy_Bean);
+//			
+//			System.out.println(num);
+//			
+//			Integer buynumber = num.get(0).getBUY_NUMBER();
+//
+//			shopBean.setPRO_STOCK(bean.get(n).getPRO_STOCK() - buynumber);
+//
+//			service.update(shopBean);
+//		}
 
 		return "success";
 	}

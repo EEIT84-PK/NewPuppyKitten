@@ -11,8 +11,8 @@ $(function(){
 	
 	$('.ra_cat').hide();
 	$('.ra_dog').hide();
-// 	$('.val_animal').hide();
-// 	$('.val_kind').hide();
+	$('.val_animal').hide();
+	$('.val_kind').hide();
 	
 	$('#sel_animal').change(function(){
 		$('.val_animal').val($(this).val());

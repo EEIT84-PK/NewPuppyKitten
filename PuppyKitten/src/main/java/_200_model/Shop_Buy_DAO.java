@@ -12,6 +12,7 @@ public class Shop_Buy_DAO implements Shop_Buy_DAO_interface{
 	private static final String SELECT_NAME = "from Shop_Buy_Bean where BUY_NAME=?";
 	private static final String SELECT_MY_CAR = "from Shop_Buy_Bean where BUY_USER_ID=? order by BUY_PRO_ID";
 	private static final String SELECT_ALL_CAR = "from Shop_Buy_Bean order by BUY_ID";
+	private static final String SELECT_TEMPCAR_CAR = "from Shop_Buy_Bean where BUY_ID=?";
 
 
 	@Override
@@ -38,6 +39,24 @@ public class Shop_Buy_DAO implements Shop_Buy_DAO_interface{
 		try {
 			session.beginTransaction();
 			Query query = session.createQuery(SELECT_MY_CAR);
+			query.setParameter(0, id);
+			list = query.list();
+			
+			session.getTransaction().commit();
+		} catch (RuntimeException ex) {
+			session.getTransaction().rollback();
+			throw ex;
+		}
+		return list;
+	}
+	
+	
+	public List<Shop_Buy_Bean> select_tempcar_car(int id) {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		List<Shop_Buy_Bean> list;
+		try {
+			session.beginTransaction();
+			Query query = session.createQuery(SELECT_TEMPCAR_CAR);
 			query.setParameter(0, id);
 			list = query.list();
 			
