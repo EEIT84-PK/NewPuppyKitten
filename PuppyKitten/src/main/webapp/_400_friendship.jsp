@@ -23,12 +23,7 @@ $(function() {
 <style type="text/css">	
 	article.article{
 		text-align:center;		
-	}
-	td{
-		width: 150px;
-		word-break:break-all;
-		text-align:left;						
-	}		
+	}			
 </style>
 <c:import url="/import/head.jsp"></c:import>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -43,14 +38,17 @@ $(function() {
 			<c:if test="${match !=null}">
 				<a class="link" href='<c:url value="/petRelationAll/petRelationaAllLikeAction.action" ></c:url>'>和${match}配對成功，看看誰和我互相感興趣</a><br>
 			</c:if>			
-						
+			<c:if test="${blockade !=null}">
+				<font color="red"><b>檢舉${petBean.PET_OWN_ID}${blockade}<br></b></font>
+			</c:if>		
 			<a class="link" href='<c:url value="/petLike/PetLikeAction.action" ></c:url>'><img src="<%=request.getContextPath()%>/images/_400/YES.png" width="150" height="60"></a>
 			<a class="link" href='<c:url value="/petNotLike/PetNotLikeAction.action" ></c:url>'><img src="<%=request.getContextPath()%>/images/_400/NO.png" width="150" height="60"></a>
 			<div style="padding-left: 330px;">
 				<table >				
 					<tr>
 					<td class="td"><img src="${petImg}" width="300" height="300"></td>
-					<td class="td" style="background:rgba(255, 255, 215, 0.8);">${PET_AGE}<b style="font-weight: bloder;">歲</b>，${petBean.PET_SEX}<BR>
+					<td class="td" style="background:rgba(255, 255, 215, 0.8);width: 150px;word-break:break-all;
+		text-align:left;">${PET_AGE}<b style="font-weight: bloder;">歲</b>，${petBean.PET_SEX}<BR>
 					<b style="font-weight: bloder;">名字：</b>${petBean.PET_NAME } <br>
 					<b style="font-weight: bloder;">體重：</b>${petBean.PET_WEIGHT}kg<BR>
 					<b style="font-weight: bloder;">種類：</b>${petBean.PET_KING}<br>
@@ -58,10 +56,7 @@ $(function() {
 					<b style="font-weight: bloder;">介紹：</b>${petBean.PET_BODY}</td>			
 					
 				</table>
-				<button type="button" id="button">檢舉此人</button><br>
-				<c:if test="${blockade !=null}">
-					<font color="red"><b>檢舉${petBean.PET_OWN_ID}${blockade}<br></b></font>
-				</c:if>
+				<button type="button" id="button">檢舉此人</button><br>				
 				
 			</div>
 						<div id="dialog" title="封鎖原因">

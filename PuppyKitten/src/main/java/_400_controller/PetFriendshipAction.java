@@ -8,6 +8,8 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.interceptor.ServletRequestAware;
 import com.opensymphony.xwork2.ActionSupport;
+
+import _400_model.BlockadeBean;
 import _400_model.PetBean;
 import _400_model.PetImgBean;
 import _400_model.PetRelationBean;
@@ -49,6 +51,29 @@ public class PetFriendshipAction extends ActionSupport implements ServletRequest
 			}
 
 			while (number < petBean.size()) {
+				List<BlockadeBean>blockBean=petService.selectBlockadeAll();
+				for(int q=0;q<blockBean.size();q++){
+					if(blockBean.get(q).getBLOCKADE_MENID().toString().equals(petBean.get(number).getPET_OWN_ID().toString())){
+						number++;
+						if (number == petBean.size()) {
+							session.setAttribute("end", "已經沒有可感興趣的對象");
+							return "end";
+						}else{
+							if ((!(petBean.get(number).getPET_KING().equals(selectKing.get(0).getPET_KING())))
+									|| (petBean.get(number).getPET_KING().equals(selectKing.get(0).getPET_KING())
+											&& petBean.get(number).getPET_SEX().equals(selectKing.get(0).getPET_SEX()))){
+								number++;
+								if (number == petBean.size()) {
+									session.setAttribute("end", "已經沒有可感興趣的對象");
+									return "end";
+								}
+							}
+						}
+						
+					}else{
+						break;
+					}
+				}				
 				if (petBean.get(number).getPET_KING().equals(selectKing.get(0).getPET_KING())
 						&& (!(petBean.get(number).getPET_SEX().equals(selectKing.get(0).getPET_SEX())))) { // 如果是同類而且非同性的話
 					check = petService.selectId(session.getAttribute("memberID").toString(),
@@ -82,6 +107,28 @@ public class PetFriendshipAction extends ActionSupport implements ServletRequest
 			}
 		} else {// 如果第一筆不是自己
 			while (number < petBean.size()) {
+				List<BlockadeBean>blockBean=petService.selectBlockadeAll();
+				for(int q=0;q<blockBean.size();q++){
+					if(blockBean.get(q).getBLOCKADE_MENID().toString().equals(petBean.get(number).getPET_OWN_ID().toString())){
+						number++;
+						if (number == petBean.size()) {
+							session.setAttribute("end", "已經沒有可感興趣的對象");
+							return "end";
+						}else{
+							if ((!(petBean.get(number).getPET_KING().equals(selectKing.get(0).getPET_KING())))
+									|| (petBean.get(number).getPET_KING().equals(selectKing.get(0).getPET_KING())
+											&& petBean.get(number).getPET_SEX().equals(selectKing.get(0).getPET_SEX()))){
+								number++;
+								if (number == petBean.size()) {
+									session.setAttribute("end", "已經沒有可感興趣的對象");
+									return "end";
+								}
+							}
+						}
+					}else{
+						break;
+					}
+				}				
 				if (petBean.get(number).getPET_KING().equals(selectKing.get(0).getPET_KING())
 						&& (!(petBean.get(number).getPET_SEX().equals(selectKing.get(0).getPET_SEX())))) { // 如果是同類而且非同性的話
 					check = petService.selectId(session.getAttribute("memberID").toString(),

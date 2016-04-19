@@ -67,6 +67,7 @@ public class BlockadeInsertAction extends ActionSupport implements ServletReques
 				Bbean.setBLOCKADE_THING(bean.get(j).getBLOCKADE_THING());
 				BlockadeBean BDelete=petService.delete(Bbean);
 				bean.remove(j);
+				break;
 			}
 		}		
 		
@@ -76,16 +77,14 @@ public class BlockadeInsertAction extends ActionSupport implements ServletReques
 			}			
 		}
 		
-		if(list.isEmpty()){
-			System.out.println("111111");
+		if(list.isEmpty()){			
 			session.removeAttribute("Blocklist");
 			session.setAttribute("noBlock", "目前沒任何人被檢舉");
-		}else{
-			System.out.println("222222");
+		}else{			
 			session.removeAttribute("noBlock");
 			session.setAttribute("Blocklist", list);
 		}		
-		System.out.println("test="+session.getAttribute("Blocklist"));
+		
 		return "success";
 	}
 }
