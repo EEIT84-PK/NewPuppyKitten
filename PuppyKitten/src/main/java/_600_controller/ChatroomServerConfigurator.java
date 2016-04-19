@@ -6,11 +6,16 @@ import javax.websocket.server.*;
 
 public class ChatroomServerConfigurator extends ServerEndpointConfig.Configurator {
 	public void modifyHandshake(ServerEndpointConfig sec, HandshakeRequest request, HandshakeResponse response) {
-		if (((HttpSession) request.getHttpSession()).getAttribute("loginOK") == null) {
+		System.out.println("12313213123"+((HttpSession)request.getHttpSession()).getAttribute("id"));
+		sec.getUserProperties().put("id", ((HttpSession)request.getHttpSession()).getAttribute("id"));
+		if (((HttpSession) request.getHttpSession()).getAttribute("loginOK") == null
+				&& ((HttpSession) request.getHttpSession()).getAttribute("backLoginOK") == null) {
 			sec.getUserProperties().put("username", "訪客");
-		} else{
+		} else if(((HttpSession) request.getHttpSession()).getAttribute("backLoginOK") == null){
 			sec.getUserProperties().put("username",
 					((HttpSession) request.getHttpSession()).getAttribute("loginOK").toString());
+		}else{
+			sec.getUserProperties().put("username", "管理員");
 		}
 
 	}

@@ -39,7 +39,11 @@ public class PetNotLikeAction extends ActionSupport implements ServletRequestAwa
 		String numberStr = (String) req.getSession().getAttribute("PetNumber");
 		session.removeAttribute("PetNumber");// 為了避免之後要再傳值有衝突
 												// 所以把原本的number從session移除
-		int number = Integer.parseInt(numberStr); // 將String轉成Integer(此number為正在感興趣的對象編號)
+		int number = 0;
+		if(numberStr!=null){
+			 number= Integer.parseInt(numberStr); // 將String轉成Integer(此number為正在感興趣的對象編號)
+		}
+		
 		List<PetBean> petBean = petService.selectAll();
 
 		PetRelationBean Rbean = new PetRelationBean();
@@ -116,7 +120,8 @@ public class PetNotLikeAction extends ActionSupport implements ServletRequestAwa
 		PetImgBean Imgbean = petService.selectId2(petBean.get(number).getPET_ID());
 		session.setAttribute("petImg", Imgbean.getPET_IMAGE());
 		session.setAttribute("PetNumber", ((Integer) number).toString());// 將此次number再丟進session給下一次用
-
+		session.removeAttribute("match");
+		session.removeAttribute("blockade");
 		return "success";
 
 	}

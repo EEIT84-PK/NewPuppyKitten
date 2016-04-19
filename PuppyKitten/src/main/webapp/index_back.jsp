@@ -63,7 +63,7 @@
 
 					<td class="msl"><a href="">寵物新知</a></td>
 					<td class="msl"><a href="">精品購物</a></td>
-					<td class="msl"><a href="">寵物聯誼</a></td>
+					<td class="msl"><a href='<c:url value="/petBlockade/petBlockadeBackAction.action" ></c:url>'>封鎖區</a></td>
 					<td class="msl"><a href="">寵物旅遊</a></td>
 					<td class="msl"><a href="">討論區</a></td>
 					<td class="msl"><a

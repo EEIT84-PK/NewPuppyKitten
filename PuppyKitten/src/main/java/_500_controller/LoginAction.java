@@ -1,12 +1,7 @@
 package _500_controller;
-
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
-
-import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -50,18 +45,22 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 	public String execute() throws Exception {
 		MemberBean bean = service.login(account, password);
+		List<MemberBean>bean2=service.selectMember(account);
+		System.out.println("bean2="+bean2.get(0).getMEN_STATUS());
 		if (bean == null) {
 			this.addFieldError("loginerror", "沒有此帳號或密碼錯誤");
-			return INPUT;
-		} else {
+			return INPUT; 
+		} else if((bean!=null)&&bean2.get(0).getMEN_STATUS().equals("1")){			
              session.put("loginOK", bean.getMEM_NAME());
              session.put("memberID", bean.getMEM_ID());
              session.put("memberADD", bean.getMEM_ADD());
              session.put("memberPHONE", bean.getMEM_PHONE());
              
 			return SUCCESS;
+		}else{
+			this.addFieldError("loginerror", "此帳號已被封鎖");
+			return INPUT;
 		}
-
 	}
 
 }

@@ -38,6 +38,7 @@
 		<mapping resource="_400_model/PetSortCatBean.hbm.xml" />
 		<mapping resource="_400_model/PetSortDogBean.hbm.xml" />
 		<mapping resource="_400_model/PetRelationBean.hbm.xml" />
+		<mapping resource="_400_model/BlockadeBean.hbm.xml" />
 		<mapping resource="_500_model/MemberBean.hbm.xml" />
 
 		

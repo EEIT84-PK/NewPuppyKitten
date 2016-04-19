@@ -90,6 +90,39 @@ public class PetDAO implements PetDAO_interface{
 		return list;
 	}
 	
+	@Override
+	public List<BlockadeBean> selectBlockadeAll() {
+		List<BlockadeBean> list = null;
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		try {
+			session.beginTransaction();
+			Query query = session.createQuery("from BlockadeBean");			
+			list = query.list();
+			session.getTransaction().commit();
+		} catch (RuntimeException ex) {
+			session.getTransaction().rollback();
+			throw ex;
+		}
+		return list;
+	}
+	
+	@Override
+	public List<BlockadeBean> selectBlockade(int BLOCKADE_MENID) {
+		List<BlockadeBean> list = null;
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		try {
+			session.beginTransaction();
+			Query query = session.createQuery("from BlockadeBean where BLOCKADE_MENID=?");
+			query.setParameter(0, BLOCKADE_MENID);
+			list = query.list();
+			session.getTransaction().commit();
+		} catch (RuntimeException ex) {
+			session.getTransaction().rollback();
+			throw ex;
+		}
+		return list;
+	}
+	
 	public PetImgBean selectId2(int PET_ID){
 		PetImgBean bean = null;
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
@@ -147,7 +180,33 @@ public class PetDAO implements PetDAO_interface{
 			throw ex;
 		}
 	}
-
+	
+	@Override
+	public void insert(BlockadeBean bean) {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		try {			
+			session.beginTransaction();
+			session.save(bean);
+			session.getTransaction().commit();
+		} catch (RuntimeException ex) {
+			session.getTransaction().rollback();
+			throw ex;
+		}
+	}
+	
+	@Override
+	public void delete(BlockadeBean bean) {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		try {
+			session.beginTransaction();
+			session.delete(bean);
+			session.getTransaction().commit();
+		} catch (RuntimeException ex) {
+			session.getTransaction().rollback();
+			throw ex;
+		}
+	}
+	
 	@Override
 	public void delete(int PET_ID) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();

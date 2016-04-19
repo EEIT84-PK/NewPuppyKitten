@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+		<class name="_400_model.BlockadeBean" table="blockade">
+		
+			<id name="BLOCKADE_MENID" column="BLOCKADE_MENID"></id>
+			<property name="BLOCKADE_THING" column="BLOCKADE_THING" />
+			
+
+		</class>
+</hibernate-mapping>

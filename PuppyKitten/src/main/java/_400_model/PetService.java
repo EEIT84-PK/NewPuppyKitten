@@ -33,6 +33,14 @@ public class PetService {
 		return petDAO.selectRelationAll();
 	}
 	
+	public List<BlockadeBean>selectBlockadeAll(){
+		return petDAO.selectBlockadeAll();
+	}
+	
+	public List<BlockadeBean>selectBlockade(Integer BLOCKADE_MENID){
+		return petDAO.selectBlockade(BLOCKADE_MENID);
+	}
+	
 	public PetSortCatBean selectSortCat(String PET_SORT_ID){
 		return petDAO.selectSortCat(PET_SORT_ID);
 	}
@@ -55,7 +63,18 @@ public class PetService {
 		return bean;
 	}
 	
-
+	
+	public BlockadeBean insert(BlockadeBean bean){
+		
+		petDAO.insert(bean);
+		return bean;
+	}
+	
+	public BlockadeBean delete(BlockadeBean bean){
+		petDAO.delete(bean);
+		return bean;
+	} 
+	
 	public int delete(int PET_ID) {
 		petDAO.delete(PET_ID);
 		return PET_ID;

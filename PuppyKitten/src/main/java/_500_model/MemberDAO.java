@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
+import _400_model.PetRelationBean;
 import hibernate.util.HibernateUtil;
 
 public class MemberDAO implements MemberDAO_interface {
@@ -134,5 +135,39 @@ public class MemberDAO implements MemberDAO_interface {
 		}
 		return list;
 	}
-
+	
+	@Override
+	public List<MemberBean> selectId(String MEM_ACCOUNT) {
+		List<MemberBean> list = null;
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		try {
+			session.beginTransaction();			
+			Query query = session.createQuery("from MemberBean where MEM_ACCOUNT=? ");			
+			query.setParameter(0, MEM_ACCOUNT);			
+			list = query.list();
+			session.getTransaction().commit();
+		} catch (RuntimeException ex) {
+			session.getTransaction().rollback();
+			throw ex;
+		}
+		return list;
+	}
+	
+	@Override
+	public List<MemberBean> selectId2(Integer MEM_ID) {
+		List<MemberBean> list = null;
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		try {
+			session.beginTransaction();			
+			Query query = session.createQuery("from MemberBean where MEM_ID=? ");			
+			query.setParameter(0, MEM_ID);			
+			list = query.list();
+			session.getTransaction().commit();
+		} catch (RuntimeException ex) {
+			session.getTransaction().rollback();
+			throw ex;
+		}
+		return list;
+	}
+	
 }

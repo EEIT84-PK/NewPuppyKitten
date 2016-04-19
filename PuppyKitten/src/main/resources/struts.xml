@@ -213,9 +213,22 @@
 			<result name="success">/_400_update.jsp</result>
 			<result name="input">/_400_update.jsp</result>
 		</action>
+	</package>	
+	<package name="petBlockadePackage" namespace="/petBlockade"
+		extends="struts-default">
+		<action name="petBlockadeAction" class="_400_controller.PetBlockadeAction">
+			<result name="success">/_400_friendship.jsp</result>
+		</action>
+		<action name="petBlockadeBackAction" class="_400_controller.PetBlockadeBackAction">
+			<result name="success">/_400_blockade_back.jsp</result>
+		</action>
+		<action name="blockadeInsertAction" class="_400_controller.BlockadeInsertAction">
+			<result name="success">/_400_blockade_back.jsp</result>
+		</action>
+		<action name="blockadeDeleteAction" class="_400_controller.BlockadeDeleteAction">
+			<result name="success">/_400_blockade_back.jsp</result>
+		</action>
 	</package>
-
-	
 	<package name="loginPackage" namespace="/login" extends="struts-default">
 		<action name="loginAction" class="_500_controller.LoginAction">
 			<result name="success">/index.jsp</result>
