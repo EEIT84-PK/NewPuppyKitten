@@ -109,16 +109,15 @@ public class UpdateAction extends ActionSupport implements ServletRequestAware {
 	}
 	public String execute() throws Exception {
 		MemberService service = new MemberService();
-		
-       	if (memberBean != null) {
+	 	if (memberBean != null) {
        		service.update(memberBean);
        		HttpSession session = request.getSession();
-    		MemberBean memberBean = service.selectMemberById((Integer)session.getAttribute("memberID"));
     		session.setAttribute("loginOK", memberBean.getMEM_NAME());
-  
+          
        		return SUCCESS;
 		} else {
 			return INPUT;
 		}
 	}
 }
+

@@ -89,7 +89,7 @@
 		<action name="shopBackAction_ordersend" class="_200_controller.ShopBackAction_ordersend">
 			<result name="success">/_200_shop_finish.jsp</result>
 		</action>
-		
+
 		<action name="shopBackAction_searchproduct" class="_200_controller.ShopBackAction_searchproduct">
 			<result name="success">/_200_shop_index.jsp</result>
 		</action>
@@ -181,6 +181,7 @@
 		extends="struts-default">
 		<action name="petRelationLikeAction" class="_400_controller.PetRelationLikeAction">
 			<result name="success">/_400_relation.jsp</result>
+			<result name="end">/_400_friendship_end.jsp</result>
 		</action>
 	</package>
 
@@ -214,11 +215,12 @@
 			<result name="success">/_400_update.jsp</result>
 			<result name="input">/_400_update.jsp</result>
 		</action>
-	</package>	
+	</package>
 	<package name="petBlockadePackage" namespace="/petBlockade"
 		extends="struts-default">
 		<action name="petBlockadeAction" class="_400_controller.PetBlockadeAction">
 			<result name="success">/_400_friendship.jsp</result>
+			<result name="end">/_400_friendship_end.jsp</result>
 		</action>
 		<action name="petBlockadeBackAction" class="_400_controller.PetBlockadeBackAction">
 			<result name="success">/_400_blockade_back.jsp</result>
@@ -230,6 +232,14 @@
 			<result name="success">/_400_blockade_back.jsp</result>
 		</action>
 	</package>
+	<package name="blockadeSelectPackage" namespace="/blockadeSelect" extends="struts-default">
+		<action name="blockadeSelectAction" class="_400_controller.BlockadeSelectAction">
+			<result name="success">/_400_blockade_select_back.jsp</result>
+		</action>
+		<action name="blockadeUpdateAction" class="_400_controller.BlockadeUpdateAction">
+			<result name="success">/_400_blockade_select_back.jsp</result>
+		</action>	
+	</package>	
 	<package name="loginPackage" namespace="/login" extends="struts-default">
 		<action name="loginAction" class="_500_controller.LoginAction">
 			<result name="success">/index.jsp</result>
@@ -260,12 +270,16 @@
 			<result name="success">/_500_forgetpasswordok.jsp</result>
 			<result name="input">/_500_forgetpassword.jsp</result>
 		</action>
-	
+		<action name="selectAllAction" class="_500_controller.SelectAllAction">
+			<result name="success">/_500_selectAll.jsp</result>
+		</action>
 	</package>
 
-	<package name="AuthenticationPackage" namespace="/member" extends="struts-default">
+	<package name="AuthenticationPackage" namespace="/member"
+		extends="struts-default">
 		<interceptors>
-			<interceptor name="authentication" class="_500_interceptor.AuthenticationInterceptor" />
+			<interceptor name="authentication"
+				class="_500_interceptor.AuthenticationInterceptor" />
 			<interceptor-stack name="myAuthenticationDefault">
 				<interceptor-ref name="defaultStack" />
 				<interceptor-ref name="authentication" />
