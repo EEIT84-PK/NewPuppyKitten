@@ -102,7 +102,7 @@ public class ShopBackAction_update extends ActionSupport implements ServletReque
 
 	public String execute() {
 		ShopService service = new ShopService();
-		File saved = new File(ServletActionContext.getServletContext().getRealPath("/_200_images" + PRO_IMAGEFileName));
+		File saved = new File(ServletActionContext.getServletContext().getRealPath("/_200_images/" + PRO_IMAGEFileName));
 		InputStream inStream = null;
 		OutputStream outStream = null;
 
@@ -116,10 +116,10 @@ public class ShopBackAction_update extends ActionSupport implements ServletReque
 			while ((len = inStream.read(b)) != -1)
 				outStream.write(b, 0, len);
 			shopbean.setPRO_IMAGE(
-					ServletActionContext.getServletContext().getRealPath("/_200_images" + PRO_IMAGEFileName));
+					ServletActionContext.getServletContext().getRealPath("/_200_images/" + PRO_IMAGEFileName));
 			ShopBean bean = service.update(shopbean);
 			if (bean != null) {
-				request.setAttribute("updateOK", "Update OK");
+				request.setAttribute("updateOK", "修改成功");
 				return "success";
 			}
 		} catch (Exception e) {
