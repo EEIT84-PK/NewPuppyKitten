@@ -1,4 +1,4 @@
-package iiiedu.xubear.jsp.puppyKitten;
+package iiiedu.xubear.jsp.PuppyKitten;
 
 import javax.servlet.GenericServlet;
 import javax.servlet.ServletException;
