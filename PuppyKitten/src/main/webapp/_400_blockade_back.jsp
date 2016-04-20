@@ -15,6 +15,7 @@
 	<section>
 		<article>
 			<h1>後台封鎖</h1>
+			<a href='<c:url value="/blockadeSelect/blockadeSelectAction.action" ></c:url>'>查看已被封鎖名單</a><BR>
 			<font color="red"><b>${noBlock}<br></b></font>
 			<table border="1" style="border-collapse: collapse; width: 400px;"
 				id="listTable">
@@ -26,11 +27,11 @@
 				
 					<c:forEach var="sort" items="${Blocklist}">
 						<tr>
-							<td class="imgclick" align='center' valign="middle"><a href='<c:url value=".action?PET_OWN_ID=${sort.BLOCKADE_MENID}" ></c:url>'>${sort.BLOCKADE_MENID}</a></td>
+							<td class="imgclick" align='center' valign="middle">${sort.BLOCKADE_MENID}</td>
 							<td align='center' valign="middle">${sort.BLOCKADE_THING}</td>
 							<td align='center' valign="middle">
 							<a href='<c:url value="/petBlockade/blockadeInsertAction.action?MEM_ID=${sort.BLOCKADE_MENID}" ></c:url>'>確定封鎖</a><BR>
-							<a href='<c:url value="/petBlockade/blockadeDeleteAction.action?MEM_ID=${sort.BLOCKADE_MENID}" ></c:url>'>解除封鎖</a>
+							<a href='<c:url value="/petBlockade/blockadeDeleteAction.action?MEM_ID=${sort.BLOCKADE_MENID}" ></c:url>'>解除檢舉</a>
 							</td>						
 						</tr>					
 					</c:forEach>

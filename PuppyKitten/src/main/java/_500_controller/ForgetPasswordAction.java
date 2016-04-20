@@ -85,11 +85,10 @@ public class ForgetPasswordAction extends ActionSupport implements
 		boolean is = service.checkemailaccount(bean.getMEM_EMAIL(),
 				bean.getMEM_ACCOUNT());
 		if (is) {
-
-		} else {
-			this.addFieldError("MEM_EMAIL", "沒有此email跟帳號");
+			
+		}else{
+			this.addFieldError("MEM_EMAIL", "沒有此email跟帳號");}
 		}
-	}
 
 	public String execute() throws Exception {
 		MemberService service = new MemberService();
