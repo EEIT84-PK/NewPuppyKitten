@@ -376,11 +376,8 @@ color: red;
 			</form>
 							
 						</div>
-						<br><br><br><br><br><br><br><br><br><br><br><br>
+
 					</section>
-							
-							
-					
 					
 				<!-- About Me -->
 					<section id="member" class="three">
