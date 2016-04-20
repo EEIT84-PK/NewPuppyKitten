@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="_200_model.Shop_Order_Bean" table="Product_order_body">
+		<id name="ORDER_ID" column="ORDER_ID">
+			<generator class="identity"></generator>
+		</id>
+		<property name="ORDER_PRO_ID" column="ORDER_PRO_ID"></property>
+		<property name="ORDER_USER_NAME" column="ORDER_USER_NAME"></property>
+		<property name="ORDER_USER_ADD" column="ORDER_USER_ADD"></property>
+		<property name="ORDER_USER_PHONE" column="ORDER_USER_PHONE"></property>
+		<property name="ORDER_DATE" column="ORDER_DATE"></property>
+		<property name="ORDER_PRO_NAME" column="ORDER_PRO_NAME"></property>
+		<property name="ORDER_BUY_BODY" column="ORDER_BUY_BODY"></property>
+		<property name="ORDER_BUY_NUMBER" column="ORDER_BUY_NUMBER"></property>
+		<property name="ORDER_OLD_PRICE" column="ORDER_OLD_PRICE"></property>
+		<property name="ORDER_NEW_PRICE" column="ORDER_NEW_PRICE"></property>
+		<property name="ORDER_TOTAL_PRICE" column="ORDER_TOTAL_PRICE"></property>
+
+	</class>
+
+</hibernate-mapping>
