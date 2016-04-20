@@ -70,7 +70,7 @@ public class ShopDAO implements ShopDAO_interface {
 			query.setParameter(0, animal);
 			list = query.list();
 			session.getTransaction().commit();
-		} catch (Exception ex) {
+		} catch (RuntimeException ex) {
 			session.getTransaction().rollback();
 			throw ex;
 		}

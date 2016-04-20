@@ -42,22 +42,22 @@
 			</interceptor-ref>
 
 			<interceptor-ref name="defaultStack"></interceptor-ref>
-			<result name="success">/_200_shop_back_insert.jsp</result>
-			<result name="input">/_200_shop_back_insert.jsp</result>
+			<result name="success">/back_index.jsp</result>
+			<result name="input">/back_index.jsp</result>
 		</action>
 
 		<action name="shopBackAction_update" class="_200_controller.ShopBackAction_update">
-			<result name="success">/_200_shop_back_update.jsp</result>
-			<result name="input">/_200_shop_back_update.jsp</result>
+			<result name="success">/back_index.jsp</result>
+			<result name="input">/back_index.jsp</result>
 		</action>
 
 		<action name="shopBackAction_select" class="_200_controller.ShopBackAction_select">
-			<result name="success">/_200_shop_back_select.jsp</result>
-			<result name="update">/_200_shop_back_update.jsp</result>
+			<result name="success">/back_index.jsp</result>
+			<result name="update">/back_index.jsp</result>
 		</action>
 
 		<action name="shopBackAction_delete" class="_200_controller.ShopBackAction_delete">
-			<result name="success">/_200_shop_back_select.jsp</result>
+			<result name="success">/back_index.jsp</result>
 			<result name="input">/_200_shop_back_select.jsp</result>
 		</action>
 
@@ -246,7 +246,8 @@
 			<result name="input">/_500_login.jsp</result>
 		</action>
 		<action name="loginBackAction" class="_500_controller.LoginBackAction">
-			<result name="success">/index_back.jsp</result>
+			<result name="success">/back_index.jsp</result>
+			<result name="input">/back_login.jsp</result>
 		</action>
 		<action name="logoutAction" class="_500_controller.LogoutAction">
 			<result name="success">/index.jsp</result>
