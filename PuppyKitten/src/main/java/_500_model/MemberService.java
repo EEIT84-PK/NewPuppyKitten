@@ -182,7 +182,7 @@ public class MemberService {
 		}
 		return false;
 	}
-
+  //忘記密碼
 	public static boolean sendpwdemail(String email, String user, String newpwd) {
 		String to = email;
 		String from = "PuppyKitten84@gmail.com";
