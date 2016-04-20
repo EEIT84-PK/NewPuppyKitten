@@ -41,18 +41,18 @@
 					<tr>
 						<td><span
 							style="font-size: 15px; font-family: cursive; color: #DDDDDD">帳號：</span><input
-							class="text_input" type="text" name="username" value=""></td>
-						<td style="padding-left: 30px;"><span>${errors.usererror[0]}</span></td>
+							class="text_input" type="text" name="username" value="${username}"></td>
+						<td style="padding-left: 30px;color:red;"><span>${errors.usererror[0]}</span></td>
 					</tr>
 					<tr>
 						<td><span
 							style="font-size: 15px; font-family: cursive; color: #DDDDDD">密碼：</span><input
-							class="text_input" type="text" name="password" value=""></td>
-						<td style="padding-left: 30px;"><span>${errors.pswderror[0]}</span></td>
+							class="text_input" type="password" name="password" value=""></td>
+						<td style="padding-left: 30px;color:red;"><span>${errors.pswderror[0]}</span></td>
 					</tr>
 					<tr>
-						<td style="text-align: center"><input type="submit" value="登入系統" style="cursor: pointer"></td>
-						<td style="padding-left: 30px;"><span>${errors.loginerror[0]}</span></td>
+						<td style="padding-left: 100px;"><input type="submit" value="登入系統" style="cursor: pointer"></td>
+						<td style="padding-left: 30px;color:red;"><span>${errors.loginerror[0]}</span></td>
 					</tr>
 				</table>
 			</form>

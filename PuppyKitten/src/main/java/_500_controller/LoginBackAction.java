@@ -31,9 +31,13 @@ public class LoginBackAction extends ActionSupport implements ServletRequestAwar
 		if(password.trim().length()==0){
 			addFieldError("pswderror", "密碼不得為空白");
 		}
-		if(!username.equals("username")||!password.equals("sa123456")){
-			addFieldError("loginerror", "沒有此後台管理帳號或密碼錯誤");
+		
+		if(username.trim().length()!=0&&password.trim().length()!=0){
+			if(!username.equals("username")||!password.equals("sa123456")){
+				addFieldError("loginerror", "沒有此後台管理帳號或密碼錯誤");
+			}
 		}
+		
 		
 	}
 	
