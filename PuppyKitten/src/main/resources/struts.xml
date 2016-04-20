@@ -89,7 +89,7 @@
 		<action name="shopBackAction_ordersend" class="_200_controller.ShopBackAction_ordersend">
 			<result name="success">/_200_shop_finish.jsp</result>
 		</action>
-		
+
 		<action name="shopBackAction_searchproduct" class="_200_controller.ShopBackAction_searchproduct">
 			<result name="success">/_200_shop_index.jsp</result>
 		</action>
@@ -215,7 +215,7 @@
 			<result name="success">/_400_update.jsp</result>
 			<result name="input">/_400_update.jsp</result>
 		</action>
-	</package>	
+	</package>
 	<package name="petBlockadePackage" namespace="/petBlockade"
 		extends="struts-default">
 		<action name="petBlockadeAction" class="_400_controller.PetBlockadeAction">
@@ -270,12 +270,16 @@
 			<result name="success">/_500_forgetpasswordok.jsp</result>
 			<result name="input">/_500_forgetpassword.jsp</result>
 		</action>
-	
+		<action name="selectAllAction" class="_500_controller.SelectAllAction">
+			<result name="success">/_500_selectAll.jsp</result>
+		</action>
 	</package>
 
-	<package name="AuthenticationPackage" namespace="/member" extends="struts-default">
+	<package name="AuthenticationPackage" namespace="/member"
+		extends="struts-default">
 		<interceptors>
-			<interceptor name="authentication" class="_500_interceptor.AuthenticationInterceptor" />
+			<interceptor name="authentication"
+				class="_500_interceptor.AuthenticationInterceptor" />
 			<interceptor-stack name="myAuthenticationDefault">
 				<interceptor-ref name="defaultStack" />
 				<interceptor-ref name="authentication" />
