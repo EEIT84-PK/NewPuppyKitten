@@ -52,7 +52,7 @@
 		</action>
 
 		<action name="shopBackAction_select" class="_200_controller.ShopBackAction_select">
-			<result name="success">/_200_shop_back_select.jsp</result>
+			<result name="success">/back_index.jsp</result>
 			<result name="update">/_200_shop_back_update.jsp</result>
 		</action>
 
