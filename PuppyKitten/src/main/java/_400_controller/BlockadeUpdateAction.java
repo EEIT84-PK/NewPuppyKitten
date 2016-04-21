@@ -40,7 +40,6 @@ public class BlockadeUpdateAction extends ActionSupport implements ServletReques
 	public String execute(){
 		MemberService mService=new MemberService();
 		HttpSession session=req.getSession();		
-		System.out.println("!!!="+req.getParameter("MEM_ID"));
 		List<MemberBean>mBean=mService.selectMember2(Integer.parseInt(req.getParameter("MEM_ID")));			
 		bean.setMEM_ACCOUNT(mBean.get(0).getMEM_ACCOUNT());
 		bean.setMEM_ADD(mBean.get(0).getMEM_ADD());

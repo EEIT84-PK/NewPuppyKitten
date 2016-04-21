@@ -125,6 +125,9 @@
 		<action name="PetSelectAction" class="_400_controller.PetSelectAction">
 			<result name="success">/_400_select.jsp</result>
 		</action>
+		<action name="PetSelectAllAction" class="_400_controller.PetSelectAllAction">
+			<result name="success">/back_index.jsp</result>
+		</action>
 	</package>
 
 	<package name="petInterceptorPackage" namespace="/petInterceptor"
@@ -223,24 +226,24 @@
 			<result name="end">/_400_friendship_end.jsp</result>
 		</action>
 		<action name="petBlockadeBackAction" class="_400_controller.PetBlockadeBackAction">
-			<result name="success">/_400_blockade_back.jsp</result>
+			<result name="success">/back_index.jsp</result>
 		</action>
 		<action name="blockadeInsertAction" class="_400_controller.BlockadeInsertAction">
-			<result name="success">/_400_blockade_back.jsp</result>
+			<result name="success">/back_index.jsp</result>
 		</action>
 		<action name="blockadeDeleteAction" class="_400_controller.BlockadeDeleteAction">
-			<result name="success">/_400_blockade_back.jsp</result>
+			<result name="success">/back_index.jsp</result>
 		</action>
 	</package>
 	<package name="blockadeSelectPackage" namespace="/blockadeSelect" extends="struts-default">
 		<action name="blockadeSelectAction" class="_400_controller.BlockadeSelectAction">
-			<result name="success">/_400_blockade_select_back.jsp</result>
+			<result name="success">/back_index.jsp</result>
 		</action>
 		<action name="blockadeUpdateAction" class="_400_controller.BlockadeUpdateAction">
-			<result name="success">/_400_blockade_select_back.jsp</result>
+			<result name="success">/back_index.jsp</result>
 		</action>
 		<action name="blockadeSelectOneAction" class="_400_controller.BlockadeSelectOneAction">
-			<result name="success">/_400_blockade_select_back.jsp</result>
+			<result name="success">/back_index.jsp</result>
 		</action>	
 	</package>	
 	<package name="loginPackage" namespace="/login" extends="struts-default">

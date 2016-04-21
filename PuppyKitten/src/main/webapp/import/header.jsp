@@ -36,7 +36,7 @@
 				<div class="sub">
 					<ul>
 						<li><a href='<c:url value="/petInterceptor/petIndex.action" ></c:url>'>寵物大廳</a></li>
-						<li><a href='<c:url value="/petBlockade/petBlockadeBackAction.action" ></c:url>'>封鎖區</a></li>						
+<%-- 						<li><a href='<c:url value="/petBlockade/petBlockadeBackAction.action" ></c:url>'>封鎖區</a></li>						 --%>
 					</ul>
 				</div>
 			</div>

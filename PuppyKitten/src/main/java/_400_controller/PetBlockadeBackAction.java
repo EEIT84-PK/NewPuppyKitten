@@ -44,7 +44,7 @@ public class PetBlockadeBackAction extends ActionSupport implements ServletReque
 			session.removeAttribute("noBlock");
 			session.setAttribute("Blocklist", list);	
 		}
-		
+		System.out.println("123="+session.getAttribute("Blocklist"));
 		return "success";
 	}
 }

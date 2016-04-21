@@ -148,6 +148,12 @@
 					<li><a href="#member" id="portfolio-link"
 						class="skel-layers-ignoreHref"><span class="icon fa-th"
 							style="font-size: 22px;">會員資訊管理</span></a></li>
+					<li><a href="#pet" id="about-link"
+						class="skel-layers-ignoreHref"><span class="icon fa-th"
+							style="font-size: 22px;">寵物資訊管理</span></a></li>
+					<li><a href="#block" id="about-link"
+						class="skel-layers-ignoreHref"><span class="icon fa-th"
+							style="font-size: 22px;">檢舉封鎖管理</span></a></li>
 					<li><a href="#travel" id="about-link"
 						class="skel-layers-ignoreHref"><span class="icon fa-th"
 							style="font-size: 22px;">旅遊資訊管理</span></a></li>
@@ -476,10 +482,11 @@
 					method="get">
 					<input  type="submit"  value="查詢" style="font-size:15px;float: left; height: 25px">
 				</form>
+				
 				<c:choose>
 					<c:when test="${not empty select}">
 						<div style="border-bottem: 1px solid #DDDDDD;">
-							<b style="font-size: 25px;">會員資料</b> <br> <br>
+							<b style="font-size: 25px;">會員資料</b> <br><br>
 						</div>
 						<table id="datable" border="1"
 							style="border-collpace: collapse; width: 1600px">
@@ -523,17 +530,161 @@
 		<!-- <header>標籤請勿變更，格式部分請參照上方區塊當作模板去做修改，----分隔線------------------------------------------------->
 		<!-- 非自己區塊的欄位 請勿變動，如有問題請詢問誌中/資文---分隔線------------------------------------------------------------>
 		<!-- 很重要所以說第一次，很重要所以說第二次，很重要所以說第三次-------------------------------------------------------------->
-		<section id="member" class="three">
+		<section id="pet" class="three">
 			<div class="container" style="min-height: 800px">
 				<header>
-					<h2 style="text-align: left">會員管理</h2>
+					<h2 style="text-align: left">寵物管理</h2>
 				</header>
-
-
+				<form
+					action="<%=request.getContextPath()%>/petSelect/PetSelectAllAction.action#pet"
+					method="get">
+					<input  type="submit"  value="查詢" style="font-size:15px;float: left; height: 25px">
+				</form>
+				
+				<c:choose>
+					<c:when test="${not empty PetList}">
+						<div style="border-bottem: 1px solid #DDDDDD;">
+							<b style="font-size: 25px;">寵物資料</b> <br><br>
+						</div>
+						<table id="datable" border="1"
+							style="border-collpace: collapse; width: 1350px">
+							<thead>
+								<tr style="background: rgba(255, 255, 215, 0.4);">
+									<th>會員編號</th>
+									<th>寵物編號</th>
+									<th>姓名</th>
+									<th>年齡</th>
+									<th>體重</th>
+									<th>種類</th>
+									<th>品種</th>
+									<th>性別</th>
+									<th>照片</th>
+									<th>介紹</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach var="pet" items="${PetList}">
+									<tr>
+										<td style="width: 100px;font-size:20px;" align='center' valign="middle"><img src="${pet.PET_IMAGE}" width="100" height="100"></td>
+										<td style="width: 100px;font-size:20px;" align='center' valign="middle">${pet.PET_ID}</td>
+										<td style="width: 100px;font-size:20px;" align='center' valign="middle">${pet.PET_OWN_ID}</td>
+										<td style="width: 100px;font-size:20px;" align='center' valign="middle">${pet.PET_NAME}</td>
+										<td style="width: 50px;font-size:20px;" align='center' valign="middle">${pet.PET_AGE}</td>
+										<td style="width: 50px;font-size:20px;" align='center' valign="middle">${pet.PET_WEIGHT}</td>										
+										<td style="width: 50px;font-size:20px;" align='center' valign="middle">${pet.PET_KING}</td>
+										<td style="width: 100px;font-size:20px;" align='center' valign="middle">${pet.PET_SORT_NAME}</td>
+										<td style="width: 50px;font-size:20px;" align='center' valign="middle">${pet.PET_SEX}</td>										
+										<td style="width: 650px;font-size:20px;" align='center' valign="middle">${pet.PET_BODY}</td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
+					</c:when>
+				</c:choose>	
 
 			</div>
 		</section>
+		
+		<section id="block" class="three">
+			<div class="container" style="min-height: 800px">
+				<header>
+					<h2 style="text-align: left">檢舉管理</h2>
+				</header>
+				<form action="<%=request.getContextPath()%>/petBlockade/petBlockadeBackAction.action#block"	method="GET">
+					<input  type="submit"  value="查詢" style="font-size:15px;float: left; height: 25px">
+				</form>
+				<div style="float: left;padding-left:30px;">
+					<a href='<c:url value="/blockadeSelect/blockadeSelectAction.action#blockSelect" ></c:url>'>查看已被封鎖名單</a>
+				</div>
+				<BR>
+				<div style="float: left;padding-left:30px;">
+					<font ><b>${noBlock}<br></b></font>
+				</div>
+			
+				
+					<c:choose>
+					<c:when test="${not empty Blocklist}">
+						<div style="border-bottem: 1px solid #DDDDDD;">
+							<b style="font-size: 25px;">檢舉名單</b> <br><br>
+						</div>						
+						<table id="datable" border="1"
+							style="border-collpace: collapse; width: 500px;">
+							<thead>
+								<tr style="background: rgba(255, 255, 215, 0.4);">
+									<th>會員編號</th>
+									<th>檢舉內容</th>
+									<th>操作</th>									
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach var="block" items="${Blocklist}">
+									<tr>
+										<td style="width: 150px;font-size:20px;" align='center' valign="middle">${block.BLOCKADE_MENID}</td>
+										<td style="width: 150px;font-size:20px;" align='center' valign="middle">${block.BLOCKADE_THING}</td>
+										<td style="width: 200px;font-size:20px;" align='center' valign="middle">
+											<a href='<c:url value="/petBlockade/blockadeInsertAction.action?MEM_ID=${block.BLOCKADE_MENID}#block" ></c:url>'>確定封鎖</a>
+											<a href='<c:url value="/petBlockade/blockadeDeleteAction.action?MEM_ID=${block.BLOCKADE_MENID}#block" ></c:url>'>解除檢舉</a>
+										</td>										
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
+					</c:when>
+				</c:choose>				
 
+			</div>
+		</section>
+		
+		<section id="blockSelect" class="three">
+			<div class="container" style="min-height: 800px">
+				<header>
+					<h2 style="text-align: left">封鎖管理</h2>
+				</header>
+				<div style="float: left;padding-left:30px;">
+					<font color="black"><b>${noSelectOne}<br></b></font>
+					<font color="red"><b>${noSelect}<br></b></font>
+				</div>
+					
+					<form action="<%=request.getContextPath()%>/blockadeSelect/blockadeSelectOneAction.action#blockSelect"	method="GET">
+						<input type="text" name="MEM_ID" style="font-size: 16px; width: 20%"/>						
+						<input  type="submit"  value="查詢" style="font-size:15px;float: right; height: 25px;margin-right:1000px;">
+					</form>			
+				
+					<c:choose>
+					<c:when test="${not empty Selectlist}">
+					<br>
+						<div style="border-bottem: 1px solid #DDDDDD;">
+							<b style="font-size: 25px;float:left;">封鎖名單</b> <br><br>
+						</div>	
+									
+						<table id="datable" border="1"
+							style="border-collpace: collapse; width: 500px;">
+							<thead>
+								<tr style="background: rgba(255, 255, 215, 0.4);">
+									<th>封鎖會員</th>
+									<th>被鎖姓名</th>
+									<th>操作</th>									
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach var="blockSelect" items="${Selectlist}">
+									<tr>
+										<td style="width: 150px;font-size:20px;" align='center' valign="middle">${blockSelect.MEM_ID}</td>
+										<td style="width: 150px;font-size:20px;" align='center' valign="middle">${blockSelect.MEM_NAME}</td>
+										<td style="width: 200px;font-size:20px;" align='center' valign="middle">
+											<a href='<c:url value="/blockadeSelect/blockadeUpdateAction.action?MEM_ID=${blockSelect.MEM_ID}#blockSelect" ></c:url>'>解除封鎖</a>											
+										</td>										
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
+						
+					</c:when>
+				</c:choose>	
+
+			</div>
+		</section>
+		
 		<!-- 旅遊資訊管理--請在DIV區塊內編輯即可--section內的id就是該區塊的書籤----分隔線-------------------------------------------->
 		<!-- <header>標籤請勿變更，格式部分請參照上方區塊當作模板去做修改，----分隔線------------------------------------------------->
 		<!-- 非自己區塊的欄位 請勿變動，如有問題請詢問誌中/資文---分隔線------------------------------------------------------------>
