@@ -2,13 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC>
-<!--
-	Prologue by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-		<!-- Scripts -->
 			<script src="<%=request.getContextPath()%>/assets/js/jquery.min.js"></script>
 			<script src="<%=request.getContextPath()%>/assets/js/jquery.scrolly.min.js"></script>
 			<script src="<%=request.getContextPath()%>/assets/js/jquery.scrollzer.min.js"></script>
@@ -30,17 +24,13 @@ $(function(){
 					<script>
 					//1.找到位置     2.先取值     3.放入指定位置     4.不必要顯示區域隱藏
 						$(function(){
-// 							$('#insert_1').hide();
 							$('#price_5').hide();
 							$('#price_6').hide();
-							
 							
 							$('#val_1').hide();
 							$('#sel_1').change(function(){
 								$('#val_1').val($(this).val());
 							}); 
-							
-							
 							
 							$('#val_2').hide();
 							$('#sel_2').change(function(){
@@ -63,14 +53,11 @@ $(function(){
 							});
 						});
 					</script>
-					
-					
 					<script type="text/javascript">
 $(function(){
 	$('#sel_7 :selected').text('${shopbean.PRO_ANIMAL}');
 	$('#sel_8 :selected').text('${shopbean.PRO_KIND}');
 	$('#sel_9 :selected').text('${shopbean.PRO_PROJECT}');
-
 	
 	$('#price_55').hide();
 	$('#price_66').hide();
@@ -104,8 +91,6 @@ $(function(){
 
 </script>
 
-
-
 										<script type="text/javascript">
 	$win.bind('scroll resize', function() {
 		var $this = $(this);
@@ -129,11 +114,6 @@ $(function(){
 color: red;
 }
 
-/* .btn_1 { */
-/* 	width: 90px; */
-/* 	height: 30px; */
-/* 	font-size: 15px */
-/* } */
 </style>
 	</head>
 	<body>
@@ -142,18 +122,11 @@ color: red;
 				<div class="top">
 					<!-- Logo -->
 						<div id="logo">
-							<span class="<%=request.getContextPath()%>/image avatar48"><img src="<%=request.getContextPath()%>/images/avatar.jpg" alt="" /></span>
-							<p>Hyperspace Engineer</p>
+							<span class="<%=request.getContextPath()%>/image avatar48"><img src="<%=request.getContextPath()%>/images/manager.png" alt="" style="width: 100px"/></span>
+							<p style="font-size: 20px;color: white">管理員，您好！</p>
 						</div>
 					<!-- Nav -->
 						<nav id="nav">
-							<!--
-								Prologue's nav expects links in one of two formats:
-								1. Hash link (scrolls to a different section within the page)
-								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
-								2. Standard link (sends the user to another page/site)
-								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
-							-->
 							<ul>
 								<li><a href="#top" id="top-linkcontact-link" class="skel-layers-ignoreHref"><span class="icon fa-home" style="font-size: 22px;">首頁</span></a></li>
 								<li><a href="#product" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-th" style="font-size: 22px;">商品資訊管理</span></a></li>
@@ -166,11 +139,8 @@ color: red;
 				<div class="bottom">
 					<!-- Social Icons -->
 						<ul class="icons">
-							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-							<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+							<li><a href="https://www.facebook.com/%E7%B1%B3%E6%B2%83%E8%B2%93%E7%AA%A9-150232665031651/?fref=ts" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="/index.jsp" class="icon fa-github"><span class="label">米沃貓窩寵物精品網</span></a></li>
 						</ul>
 				</div>
 			</div>
@@ -187,8 +157,7 @@ color: red;
 						</div>
 					</section>
 					
-					
-				<!-- product_list -->
+				<!--商品清單-->
 					<section id="product" class="three">
 						<div class="container">
 
@@ -204,13 +173,10 @@ color: red;
 					<input class="btn_1" type="submit" value="新增商品" 
 					onclick="location.href='<%=request.getContextPath()%>/back_index.jsp#insert'"
 					style="cursor: pointer;text-align: left;font-size: 15px;float: left;margin: 5px;"><br><br>
-					<div style="width:1300px;">
 							<c:choose>
-							
 					<c:when test="${not empty select_list}">
-				
-					
-					
+					<div style="width:1300px;">
+
 						<table border="1" style="width:1100px;">
 							<thead>
 								<tr>
@@ -233,6 +199,7 @@ color: red;
 										<td style="font-size: 20px;text-align: center;">${sel.PRO_NAME}</td>
 										<td style="font-size: 20px;text-align: center;">${sel.PRO_PRICE}</td>
 								<td style="font-size: 15px;text-align: center;">
+								<!-- 直接將參數放置網址列傳入 -->
 									<a href='<c:url value="/shop/shopBackAction_select.action?shopbean.PRO_ID=${sel.PRO_ID }
 									&shopbean.PRO_ANIMAL=${sel.PRO_ANIMAL }
 									&shopbean.PRO_KIND=${sel.PRO_KIND }
@@ -246,7 +213,6 @@ color: red;
 									&shopbean.PRO_IMAGE=${sel.PRO_IMAGE }									
 									&shopbean.PRO_BODY=${sel.PRO_BODY }
 									&use=update#update">				
-									
 									</c:url>'>編輯</a></td>
 										<td style="text-align: center;"><input class="sel_PRO_ID" type="text" name="shopbean.PRO_ID"  value="${sel.PRO_ID}" >
 										<input type="submit" value="移除" style="cursor: pointer;font-size: 10px;margin: 0px;"></td>
@@ -263,15 +229,13 @@ color: red;
 						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 						</section>
 						
-						
-			<!-- insert -->
+			<!--新增商品 -->
 					<section id="insert">
 					
 						<div class="container">
 							<header>
 							<h2 style="text-align: left">新增商品</h2>
 							</header>
-							
 							<h2 style="color: red; font-size: 30px;text-align: left" id="insert_1">${insertOK}</h2>
 			<form action="<%=request.getContextPath()%>/shop/shopBackAction_insert#insert" method="post" enctype="multipart/form-data">
 				<div style="float: left;">商品名稱：</div><input type="text" name="shopbean.PRO_NAME" value="${shopbean.PRO_NAME}" style="font-size: 16px;width: 50%"><span class="errorInsert">${errors.errorInsertName[0]}</span><br><br>
@@ -292,7 +256,6 @@ color: red;
 					<option value="衣著打扮" <c:if test="${shopbean.PRO_KIND eq '衣著打扮'}">selected="selected"</c:if> >衣著打扮</option>
 				</select><span class="errorInsert">${errors.errorInsertKind[0]}</span><br><br>
 				<input type="text" id="val_2" name="shopbean.PRO_KIND" value="${shopbean.PRO_KIND}">		
-				 			
 				<div style="float: left;">優惠方案：</div><select id="sel_3" style="font-size: 16px;width: 50%">
 					<option>請選擇</option>
 					<option value="指定價格" <c:if test="${shopbean.PRO_PROJECT eq '指定價格'}">selected="selected"</c:if> >指定價格</option>
@@ -309,21 +272,18 @@ color: red;
 				<div style="float: left;">庫存數量：</div><input type="text" name="shopbean.PRO_STOCK" value="${shopbean.PRO_STOCK}" style="font-size: 16px;width: 50%"><span class="errorInsert">${errors.errorInsertStock[0]}</span><br><br> 					   
 				<div style="float: left;">商品照片：</div><br><input type="file" name="PRO_IMAGE" style="cursor: pointer;font-size: 15px;float: left;"><br><span class="errorInsert">${errors.errorInsertImage[0]}</span><br><br> 				   
 				<div style="float: left;">商品介紹：</div><br>
-
 				<textarea id="content" cols="50" rows="6" name="shopbean.PRO_BODY"></textarea>		
 				<br> <input type="submit" value="新增上架" style="cursor: pointer;font-size: 15px;float: left;">
 			</form>
 						</div>
 						<br><br><br><br><br><br><br><br><br><br><br><br>
 					</section>
-							
-				<!-- update -->
+				<!-- 編輯商品 -->
 					<section id="update">
 						<div class="container">
 							<header>
 							<h2 style="text-align: left">編輯商品</h2>
 							</header>
-							
 							<h2 style="color: red; font-size: 30px;text-align: left">${updateOK}</h2>
 			<form action="<%=request.getContextPath()%>/shop/shopBackAction_update#update" method="post" enctype="multipart/form-data">
 				<div style="float: left;">商品名稱：</div><input type="text" name="shopbean.PRO_NAME" value="${shopbean.PRO_NAME}" style="font-size: 16px;width: 50%"><span class="errorUpdate">${errors.errorUpdateName[0]}</span><br><br>
@@ -345,7 +305,6 @@ color: red;
 					<option value="衣著打扮" <c:if test="${shopbean.PRO_KIND eq '衣著打扮'}">selected="selected"</c:if> >衣著打扮</option>
 					</select><span class="errorUpdate">${errors.errorUpdateKind[0]}</span><br><br>
 					<input id="val_8" type="text" name="shopbean.PRO_KIND" value="${shopbean.PRO_KIND}"> 
-				 
 				<div style="float: left;">優惠方案：</div><select id="sel_9" style="font-size: 16px;width: 50%">
 					<option>請選擇</option>
 					<option value="指定價格" <c:if test="${shopbean.PRO_KIND == '指定價格'}">selected="selected"</c:if> >指定價格</option>
@@ -374,12 +333,10 @@ color: red;
 				</table>
 				<br> <input type="submit" value="送出">
 			</form>
-							
 						</div>
-
 					</section>
 					
-				<!-- About Me -->
+				<!-- 會員資訊管理 -->
 					<section id="member" class="three">
 						<div class="container">
 
@@ -387,19 +344,13 @@ color: red;
 								<h2>會員管理</h2>
 							</header>
 
-							<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
-
-							<p>Tincidunt eu elit diam magnis pretium accumsan etiam id urna. Ridiculus
-							ultricies curae quis et rhoncus velit. Lobortis elementum aliquet nec vitae
-							laoreet eget cubilia quam non etiam odio tincidunt montes. Elementum sem
-							parturient nulla quam placerat viverra mauris non cum elit tempus ullamcorper
-							dolor. Libero rutrum ut lacinia donec curae mus vel quisque sociis nec
-							ornare iaculis.</p>
+							
 
 						</div>
+						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 					</section>
 
-				<!-- Contact -->
+				<!-- 旅遊管理 -->
 					<section id="travel" class="four">
 						<div class="container">
 
@@ -407,27 +358,12 @@ color: red;
 								<h2>旅遊管理</h2>
 							</header>
 
-							<p>Elementum sem parturient nulla quam placerat viverra
-							mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia
-							donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc
-							orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p>
-
-							<form method="post" action="#">
-								<div class="row">
-									<div class="6u 12u$(mobile)"><input type="text" name="name" placeholder="Name" /></div>
-									<div class="6u$ 12u$(mobile)"><input type="text" name="email" placeholder="Email" /></div>
-									<div class="12u$">
-										<textarea name="message" placeholder="Message"></textarea>
-									</div>
-									<div class="12u$">
-										<input type="submit" value="Send Message" />
-									</div>
-								</div>
-							</form>
 
 						</div>
+						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 					</section>
 					
+					<!-- 討論版管理 -->
 					<section id="talk" class="four">
 						<div class="container">
 
@@ -435,27 +371,9 @@ color: red;
 								<h2>討論版管理</h2>
 							</header>
 
-							<p>Elementum sem parturient nulla quam placerat viverra
-							mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia
-							donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc
-							orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p>
-
-							<form method="post" action="#">
-								<div class="row">
-									<div class="6u 12u$(mobile)"><input type="text" name="name" placeholder="Name" /></div>
-									<div class="6u$ 12u$(mobile)"><input type="text" name="email" placeholder="Email" /></div>
-									<div class="12u$">
-										<textarea name="message" placeholder="Message"></textarea>
-									</div>
-									<div class="12u$">
-										<input type="submit" value="Send Message" />
-									</div>
-								</div>
-							</form>
-
 						</div>
+						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 					</section>
-
 			</div>
 
 		<!-- Footer -->
@@ -463,7 +381,7 @@ color: red;
 
 				<!-- Copyright -->
 					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>&copy; 2016 Copyright All rights reserved Puppy x Kitten. 寵物精品網 | 台北市大安區復興南路一段390號2樓.</li><li><a href="">米沃貓窩寵物精品網</a></li>
 					</ul>
 
 			</div>
