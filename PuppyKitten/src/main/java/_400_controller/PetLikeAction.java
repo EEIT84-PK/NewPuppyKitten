@@ -126,32 +126,50 @@ public class PetLikeAction extends ActionSupport implements ServletRequestAware 
 			}
 		} else {// 如果第一筆不是自己
 			while (number < petBean.size()) {
-				List<BlockadeBean>blockBean=petService.selectBlockadeAll();
-				for(int q=0;q<blockBean.size();q++){
+List<BlockadeBean>blockBean=petService.selectBlockadeAll();				
+				
+				for(int q=0;q<blockBean.size();q++){										
 					if(blockBean.get(q).getBLOCKADE_MENID().toString().equals(petBean.get(number).getPET_OWN_ID().toString())){
 						number++;
-						if (petBean.get(number).getPET_OWN_ID().toString()
-								.equals(session.getAttribute("memberID").toString())) {
+						if(petBean.get(number).getPET_OWN_ID().toString().equals(session.getAttribute("memberID").toString())){
 							number++;
+							if(number==petBean.size()){
+								session.setAttribute("end", "已經沒有可感興趣的對象");
+								return "end";
+							}
+						}						
+					}else{
+						check = petService.selectId(session.getAttribute("memberID").toString(),
+								petBean.get(number).getPET_OWN_ID().toString(), "like");
+						check2 = petService.selectId(session.getAttribute("memberID").toString(),
+								petBean.get(number).getPET_OWN_ID().toString(), "Notlike");
+						/*
+						 * check=找喜歡人的人是自己 被喜歡的人是這次的人 狀態為喜歡 check2=找喜歡人的人是自己
+						 * 被喜歡的人是這次的人 狀態為不喜歡
+						 */
+						if ((!(check.isEmpty())) || (!(check2.isEmpty()))) {
+							number++;// 跳下一筆
+							check.clear();
+							check2.clear();
+
+							if (number == petBean.size()) {
+								session.setAttribute("end", "已經沒有可感興趣的對象");
+								return "end";
+							} else {
+								// 但是有可能下一筆是自己，所以再跳下一筆
+								if (petBean.get(number).getPET_OWN_ID().toString()
+										.equals(session.getAttribute("memberID").toString())) {
+									number++;
+								}
+							}
+
 							if (number == petBean.size()) {
 								session.setAttribute("end", "已經沒有可感興趣的對象");
 								return "end";
 							}
-						}else{
-							if ((!(petBean.get(number).getPET_KING().equals(selectKing.get(0).getPET_KING())))
-									|| (petBean.get(number).getPET_KING().equals(selectKing.get(0).getPET_KING())
-											&& petBean.get(number).getPET_SEX().equals(selectKing.get(0).getPET_SEX()))){
-								number++;
-								if (number == petBean.size()) {
-									session.setAttribute("end", "已經沒有可感興趣的對象");
-									return "end";
-								}
-							}
-						}
-					}else{
-						break;
-					}
-				}				
+						}						
+					}					
+				}			
 				if (petBean.get(number).getPET_KING().equals(selectKing.get(0).getPET_KING())
 						&& (!(petBean.get(number).getPET_SEX().equals(selectKing.get(0).getPET_SEX())))) { // 如果是同類而且非同性的話
 					check = petService.selectId(session.getAttribute("memberID").toString(),
@@ -224,8 +242,7 @@ public class PetLikeAction extends ActionSupport implements ServletRequestAware 
 		PetImgBean Imgbean = petService.selectId2(petBean.get(number).getPET_ID());
 		session.setAttribute("petImg", Imgbean.getPET_IMAGE());
 		session.setAttribute("PetNumber", ((Integer) number).toString());// 將此次number再丟進session給下一次用
-		session.removeAttribute("blockade");
-		System.out.println("like="+session.getAttribute("PetNumber"));
+		session.removeAttribute("blockade");		
 		return "success";
 
 	}
