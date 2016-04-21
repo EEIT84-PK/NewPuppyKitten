@@ -2,9 +2,12 @@ package _200_controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.interceptor.ServletRequestAware;
 
@@ -22,7 +25,7 @@ public class ShopBackAction_ordersend extends ActionSupport implements ServletRe
 	private ShopBean shopBean;
 	private MemberBean memberBean;
 	private Shop_Buy_Bean shop_Buy_Bean;
-	private Shop_Order_Bean shop_Order_Bean;
+	private Shop_Order_Bean shop_Order_Bean;	
 
 	public ShopBean getShopBean() {
 		return shopBean;
@@ -71,7 +74,7 @@ public class ShopBackAction_ordersend extends ActionSupport implements ServletRe
 		Date date = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String buydate = sdf.format(date);
-
+		HttpSession session=request.getSession();
 		shop_Order_Bean.setORDER_DATE(buydate);
 		service.insert(shop_Order_Bean);
 		// 當下訂購時間
@@ -98,7 +101,9 @@ public class ShopBackAction_ordersend extends ActionSupport implements ServletRe
 //
 //			service.update(shopBean);
 //		}
-
+		session.removeAttribute("shop_Buy_list");
+		session.removeAttribute("total");
+		
 		return "success";
 	}
 

@@ -16,15 +16,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/main.css" />
-
-<script type="text/javascript">
-		$(function(){
-			$('.sel_PRO_ID').hide();
-		})
-</script>
 <script>
 //1.找到位置     2.先取值     3.放入指定位置     4.不必要顯示區域隱藏
 	$(function(){
+		$('.sel_PRO_ID').hide();
 		$('#price_5').hide();
 		$('#price_6').hide();
 							
@@ -119,10 +114,10 @@ color: red;
 		<body>
 			<div id="header">
 				<div class="top">
-					<!-- 管理員 -->
+					<!-- 後台管理員 -->
 						<div id="logo">
 							<span class="<%=request.getContextPath()%>/image avatar48"><img src="<%=request.getContextPath()%>/images/manager.png" alt="" style="width: 100px"/></span>
-							<p style="font-size: 20px;color: white">管理員，您好！</p>
+							<p style="font-size: 20px;color: white">後台管理員，您好！</p>
 						</div>
 						<nav id="nav">
 							<ul>
@@ -137,25 +132,24 @@ color: red;
 				<div class="bottom">
 					<ul class="icons">
 						<li><a href="https://www.facebook.com/%E7%B1%B3%E6%B2%83%E8%B2%93%E7%AA%A9-150232665031651/?fref=ts" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="/index.jsp" class="icon fa-github"><span class="label">米沃貓窩寵物精品網</span></a></li>
+						<li><a href="<%=request.getContextPath()%>/index.jsp" class="icon fa-github"><span class="label">米沃貓窩寵物精品網</span></a></li>
 					</ul>
 				</div>
 			</div>
 		<!-- 首頁 -->
 			<div id="main">
 				<section id="top" class="one dark cover">
-					<div class="container">
+					<div class="container" style="min-height: 800px">
 						<header>
 							<h2 class="alt"><strong>歡迎登入&nbsp&nbsp&nbsp&nbsp米沃貓窩後台管理系統</strong></h2>
 							<h4 class="alt">Welcome to Miwo background Management System.</h4>
 						</header>
-						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 					</div>
 				</section>
 					
 		<!--商品清單-->
 				<section id="product" class="three">
-					<div class="container">
+					<div class="container" style="min-height: 800px">
 						<header>
 							<h2 style="text-align: left">商品清單</h2>
 						</header>
@@ -219,12 +213,11 @@ color: red;
 						</c:choose>
 					</div>
 						</div>
-							<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 						</section>
 						
 			<!--新增商品 -->
 					<section id="insert">
-						<div class="container">
+						<div class="container" style="min-height: 800px">
 							<header>
 								<h2 style="text-align: left">新增商品</h2>
 							</header>
@@ -257,7 +250,7 @@ color: red;
 												<option value="買幾送幾" <c:if test="${shopbean.PRO_PROJECT eq '買幾送幾'}">selected="selected"</c:if> >買幾送幾</option>
 											</select><span class="errorInsert">${errors.errorInsertProject[0]}</span><br> <br><input type="text" id="val_3" name="shopbean.PRO_PROJECT" value="${shopbean.PRO_PROJECT}">
 												<span id="price_5">
-												<div style="float: left;">指定價格：</div><input type="text" name="shopbean.PRO_PRICE" id="price_1" value="${shopbean.PRO_PRICE}" style="font-size: 16px;width: 50%"><span class="errorInsert">${errors.errorInsertPrice[0]}</span><br><br>
+												<div id="price_5" style="float: left;">指定價格：</div><input type="text" name="shopbean.PRO_PRICE" id="price_1" value="${shopbean.PRO_PRICE}" style="font-size: 16px;width: 50%"><span class="errorInsert">${errors.errorInsertPrice[0]}</span><br><br>
 												</span>		
 												<span id="price_6">
 												<div style="float: left;">買：</div><input type="number" name="shopbean.PRO_BUY1" id="price_2" value="${shopbean.PRO_BUY1}"><span class="errorInsert">${errors.errorInsert_Buy1[0]}</span>
@@ -271,11 +264,10 @@ color: red;
 										<input type="submit" value="新增上架" style="cursor: pointer;font-size: 15px;float: left;">
 									</form>
 								</div>
-									<br><br><br><br><br><br><br><br><br><br><br><br>
 								</section>
 				<!-- 編輯商品 -->
 					<section id="update">
-						<div class="container">
+						<div class="container" style="min-height: 800px">
 							<header>
 								<h2 style="text-align: left">編輯商品</h2>
 							</header>
@@ -321,9 +313,7 @@ color: red;
 							<div style="float: left;">商品照片：</div><br><input type="file" name="PRO_IMAGE" value="${shopbean.PRO_IMAGE}" style="cursor: pointer;font-size: 15px;float: left;"><br><span class="errorUpdate">${errors.errorUpdateImage[0]}</span><br><br>
 							<div style="float: left;">商品介紹：</div><br>
 							<textarea name="shopbean.PRO_BODY"  id="content" rows="10" cols="80" ></textarea>
-							<script>
-								CKEDITOR.replace('shopbean.PRO_BODY', {});
-							</script>
+							
 						<table>
 							<tr>
 								<th style="vertical-align: bottom;"></th>
@@ -340,7 +330,7 @@ color: red;
 			<!-- 非自己區塊的欄位 請勿變動，如有問題請詢問誌中/資文---分隔線------------------------------------------------------------>	
 			<!-- 很重要所以說第一次，很重要所以說第二次，很重要所以說第三次-------------------------------------------------------------->			
 			<section id="member" class="three">
-				<div class="container">
+				<div class="container" style="min-height: 800px">
 					<header>
 						<h2>會員管理</h2>
 					</header>
@@ -348,7 +338,6 @@ color: red;
 							
 
 				</div>
-				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 			</section>
 			
 			
@@ -357,7 +346,7 @@ color: red;
 			<!-- 非自己區塊的欄位 請勿變動，如有問題請詢問誌中/資文---分隔線------------------------------------------------------------>	
 			<!-- 很重要所以說第一次，很重要所以說第二次，很重要所以說第三次-------------------------------------------------------------->			
 			<section id="member" class="three">
-				<div class="container">
+				<div class="container" style="min-height: 800px">
 					<header>
 						<h2>會員管理</h2>
 					</header>
@@ -365,7 +354,6 @@ color: red;
 							
 
 				</div>
-				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 			</section>
 			
 			
@@ -377,14 +365,13 @@ color: red;
 			<!-- 非自己區塊的欄位 請勿變動，如有問題請詢問誌中/資文---分隔線------------------------------------------------------------>	
 			<!-- 很重要所以說第一次，很重要所以說第二次，很重要所以說第三次-------------------------------------------------------------->	
 			<section id="travel" class="four">
-				<div class="container">
+				<div class="container" style="min-height: 800px">
 					<header>
 						<h2>旅遊管理</h2>
 					</header>
 
 
 				</div>
-				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 			</section>
 					
 			<!-- 討論版管理--請在DIV區塊內編輯即可--section內的id就是該區塊的書籤----分隔線-------------------------------------------->
@@ -392,13 +379,12 @@ color: red;
 			<!-- 非自己區塊的欄位 請勿變動，如有問題請詢問誌中/資文---分隔線------------------------------------------------------------>	
 			<!-- 很重要所以說第一次，很重要所以說第二次，很重要所以說第三次-------------------------------------------------------------->	
 			<section id="talk" class="four">
-				<div class="container">
+				<div class="container" style="min-height: 800px">
 					<header>
 						<h2>討論版管理</h2>
 					</header>
 
 				</div>
-				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 			</section>
 			
 			
@@ -413,7 +399,7 @@ color: red;
 
 				<!-- Copyright -->
 					<ul class="copyright">
-						<li>&copy; 2016 Copyright All rights reserved Puppy x Kitten. 寵物精品網 | 台北市大安區復興南路一段390號2樓.</li><li><a href="">米沃貓窩寵物精品網</a></li>
+						<li>&copy; 2016 Copyright All rights reserved Puppy x Kitten. 寵物精品網 | 台北市大安區復興南路一段390號2樓.</li><li><a href="<%=request.getContextPath()%>/index.jsp">米沃貓窩寵物精品網</a></li>
 					</ul>
 
 			</div>
@@ -421,4 +407,7 @@ color: red;
 
 
 	</body>
+	<script>
+		CKEDITOR.replace('shopbean.PRO_BODY', {});
+	</script>
 </html>

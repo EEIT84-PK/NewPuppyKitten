@@ -7,7 +7,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Map;
+
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
+
 import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import com.opensymphony.xwork2.ActionSupport;
@@ -102,10 +105,11 @@ public class ShopBackAction_update extends ActionSupport implements ServletReque
 
 	public String execute() {
 		ShopService service = new ShopService();
-		File saved = new File(ServletActionContext.getServletContext().getRealPath("/_200_images/" + PRO_IMAGEFileName));
+		ServletContext context = ServletActionContext.getServletContext();
+		File saved = new File(context.getRealPath("/_200_images/" + PRO_IMAGEFileName));
 		InputStream inStream = null;
 		OutputStream outStream = null;
-
+		System.out.println("saved="+saved);
 		try {
 			saved.getParentFile().mkdirs();
 			inStream = new FileInputStream(PRO_IMAGE);
@@ -114,9 +118,9 @@ public class ShopBackAction_update extends ActionSupport implements ServletReque
 			byte[] b = new byte[(int) PRO_IMAGE.length()];
 			int len = 0;
 			while ((len = inStream.read(b)) != -1)
-				outStream.write(b, 0, len);
-			shopbean.setPRO_IMAGE(
-					ServletActionContext.getServletContext().getRealPath("/_200_images/" + PRO_IMAGEFileName));
+				outStream.write(b, 0, len);								  
+			shopbean.setPRO_IMAGE(context.getContextPath()+"/_200_images/" + PRO_IMAGEFileName);
+			System.out.println("ServletActionContext.getServletContext().getRealPath(\"/_200_images/\" + PRO_IMAGEFileName)="+context.getRealPath("/_200_images/" + PRO_IMAGEFileName));
 			ShopBean bean = service.update(shopbean);
 			if (bean != null) {
 				request.setAttribute("updateOK", "修改成功");
