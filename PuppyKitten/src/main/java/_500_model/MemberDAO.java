@@ -170,4 +170,20 @@ public class MemberDAO implements MemberDAO_interface {
 		return list;
 	}
 	
+	@Override
+	public List<MemberBean> selectBlockade(String MEN_STATUS) {
+		List<MemberBean> list = null;
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		try {
+			session.beginTransaction();			
+			Query query = session.createQuery("from MemberBean where MEN_STATUS=? ");			
+			query.setParameter(0, MEN_STATUS);			
+			list = query.list();
+			session.getTransaction().commit();
+		} catch (RuntimeException ex) {
+			session.getTransaction().rollback();
+			throw ex;
+		}
+		return list;
+	}	
 }

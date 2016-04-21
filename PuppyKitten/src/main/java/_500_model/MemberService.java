@@ -149,6 +149,10 @@ public class MemberService {
 	public List<MemberBean> selectMember2(Integer  MEM_ID) {		
 		return dao.selectId2(MEM_ID);
 	}
+	
+	public List<MemberBean> selectBlockade(String MEN_STATUS) {		
+		return dao.selectBlockade(MEN_STATUS);
+	}
 	// email寄信
 
 

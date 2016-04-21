@@ -6,7 +6,6 @@
 <head>
 <script src="<%=request.getContextPath()%>/jquery/jquery-2.2.2.min.js"></script>
 <script src="<%=request.getContextPath()%>/jquery/jquery-ui.min.js"></script>
-<%-- <c:import url="/import/head.jsp"></c:import> --%>
 <script type="text/javascript">
 $(function(){
 	$('.sel_PRO_ID').hide();
@@ -34,16 +33,11 @@ $(function(){
 	<section>
 		<h2>${delete_OK}</h2>
 		<article>
-<!-- 			<form -->
-<%-- 				action="<%=request.getContextPath()%>/shop/shopBackAction_select.action" --%>
-<!-- 				method="post"> -->
-<!-- 				<input class="btn_1" type="submit" value="查詢"> -->
-<!-- 			</form> -->
+
 			<input class="btn_1" type="submit" value="新增商品"
 				onclick="location.href='<%=request.getContextPath()%>/_200_shop_back_insert.jsp'"
 				style="cursor: pointer;"><br>
 			<h2>商品清單</h2>
-			
 				<c:choose>
 					<c:when test="${not empty select_list}">
 						<table border="1">
@@ -69,7 +63,6 @@ $(function(){
 										<td>${sel.PRO_NAME}</td>
 										<td>${sel.PRO_PRICE}</td>
 
-
 								<td><a href='<c:url value="/shop/shopBackAction_select">
 									<c:param name="shopbean.PRO_ID">${sel.PRO_ID}</c:param>
 									<c:param name="shopbean.PRO_ANIMAL">${sel.PRO_ANIMAL}</c:param>
@@ -87,18 +80,14 @@ $(function(){
 									</c:url>'>編輯</a></td>
 
 										<td><input class="sel_PRO_ID" type="text" name="shopbean.PRO_ID"  value="${sel.PRO_ID}" >
-										<input type="submit" value="移除" style="cursor: pointer; margin: 5px;"></td>
+										<input type="submit" value="移除" style="cursor: pointer;"></td>
 									</tr>
 									</form>
 								</c:forEach>
 							</tbody>
-
-							<tfoot>
-							</tfoot>
 						</table>
 					</c:when>
 				</c:choose>
-			
 		</article>
 	</section>
 </body>

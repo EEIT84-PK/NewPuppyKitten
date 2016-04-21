@@ -155,7 +155,8 @@ public class PetUpdate2Action extends ActionSupport implements ServletRequestAwa
 						}
 					}
 				}				
-			}			
+			}
+			session.setAttribute("petUpdate", "修改完成！");
 			return "success";
 		} else {
 			return "input";

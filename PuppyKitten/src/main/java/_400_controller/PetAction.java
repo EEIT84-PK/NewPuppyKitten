@@ -135,7 +135,7 @@ public class PetAction extends ActionSupport {
 			PetService petService = new PetService();
 			PetBean bean = petService.insert(petBean);// 將寵物資訊新增到pet_friendship
 							// Table
-			File saved = new File(context.getRealPath("/_400_images/"+PET_IMAGEFileName));// 將檔案儲存到/_400_images下	
+			File saved = new File(context.getRealPath("/_400_images/"+PET_IMAGEFileName));// 將檔案儲存到/_400_images下				
 			InputStream is = null;
 			OutputStream os = null;
 			try {
@@ -149,7 +149,8 @@ public class PetAction extends ActionSupport {
 					os.write(Img);
 				}
 				petImgBean.setPET_ID(bean.getPET_ID());				
-				petImgBean.setPET_IMAGE(context.getContextPath()+"/_400_images/"+PET_IMAGEFileName);			
+				petImgBean.setPET_IMAGE(context.getContextPath()+"/_400_images/"+PET_IMAGEFileName);
+				
 				PetImgBean Imgbean = petService.insert(petImgBean);
 			} catch (Exception e) {
 				e.printStackTrace();

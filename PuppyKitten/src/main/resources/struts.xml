@@ -24,7 +24,7 @@
 		</action>
 
 		<action name="articleBackAction" class="_100_controller.ArticleBackAction">
-			<result name="success">/_100_article_back.jsp</result>
+			<result name="success">/back_index.jsp</result>
 		</action>
 		<action name="uploadAction" class="_100_controller.UploadAction">
 			<result name="success">/_100_insert.jsp</result>
@@ -42,22 +42,22 @@
 			</interceptor-ref>
 
 			<interceptor-ref name="defaultStack"></interceptor-ref>
-			<result name="success">/_200_shop_back_insert.jsp</result>
-			<result name="input">/_200_shop_back_insert.jsp</result>
+			<result name="success">/back_index.jsp</result>
+			<result name="input">/back_index.jsp</result>
 		</action>
 
 		<action name="shopBackAction_update" class="_200_controller.ShopBackAction_update">
-			<result name="success">/_200_shop_back_update.jsp</result>
-			<result name="input">/_200_shop_back_update.jsp</result>
+			<result name="success">/back_index.jsp</result>
+			<result name="input">/back_index.jsp</result>
 		</action>
 
 		<action name="shopBackAction_select" class="_200_controller.ShopBackAction_select">
-			<result name="success">/_200_shop_back_select.jsp</result>
-			<result name="update">/_200_shop_back_update.jsp</result>
+			<result name="success">/back_index.jsp</result>
+			<result name="update">/back_index.jsp</result>
 		</action>
 
 		<action name="shopBackAction_delete" class="_200_controller.ShopBackAction_delete">
-			<result name="success">/_200_shop_back_select.jsp</result>
+			<result name="success">/back_index.jsp</result>
 			<result name="input">/_200_shop_back_select.jsp</result>
 		</action>
 
@@ -102,7 +102,7 @@
 
 		</action>
 		<action name="mapBackAction" class="_300_controller.MapBackAction">
-			<result name="success">/_300_google_back.jsp</result>
+			<result name="success">/back_index.jsp</result>
 		</action>
 	</package>
 
@@ -232,13 +232,25 @@
 			<result name="success">/_400_blockade_back.jsp</result>
 		</action>
 	</package>
+	<package name="blockadeSelectPackage" namespace="/blockadeSelect" extends="struts-default">
+		<action name="blockadeSelectAction" class="_400_controller.BlockadeSelectAction">
+			<result name="success">/_400_blockade_select_back.jsp</result>
+		</action>
+		<action name="blockadeUpdateAction" class="_400_controller.BlockadeUpdateAction">
+			<result name="success">/_400_blockade_select_back.jsp</result>
+		</action>
+		<action name="blockadeSelectOneAction" class="_400_controller.BlockadeSelectOneAction">
+			<result name="success">/_400_blockade_select_back.jsp</result>
+		</action>	
+	</package>	
 	<package name="loginPackage" namespace="/login" extends="struts-default">
 		<action name="loginAction" class="_500_controller.LoginAction">
 			<result name="success">/index.jsp</result>
 			<result name="input">/_500_login.jsp</result>
 		</action>
 		<action name="loginBackAction" class="_500_controller.LoginBackAction">
-			<result name="success">/index_back.jsp</result>
+			<result name="success">/back_index.jsp</result>
+			<result name="input">/back_login.jsp</result>
 		</action>
 		<action name="logoutAction" class="_500_controller.LogoutAction">
 			<result name="success">/index.jsp</result>

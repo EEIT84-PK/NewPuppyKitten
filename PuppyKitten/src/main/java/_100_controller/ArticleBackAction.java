@@ -45,7 +45,7 @@ public class ArticleBackAction extends ActionSupport implements ServletRequestAw
 			list = service.selectAll();
 		}
 		
-		req.setAttribute("select", list);
+		req.setAttribute("select_article", list);
 		return SUCCESS;
 	}
 	@Override

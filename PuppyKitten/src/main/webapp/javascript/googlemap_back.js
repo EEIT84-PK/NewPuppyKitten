@@ -2,8 +2,8 @@ $(document).ready(function(){
 
 	$('#inputforhide').hide();
 
-	var $update =$('input[class=update]');
-	var $delete =$('input[class=delete]');
+	var $update =$('input[class=update_map]');
+	var $delete =$('input[class=delete_map]');
 	var path = "/PuppyKitten";
  	var url = path+"/map/mapBackAction.controller";
 	$update.click(function(){
@@ -51,7 +51,7 @@ $(document).ready(function(){
 	function doReadyStateChange() {
 		if(request.readyState==4) {
 			if(request.status==200) {
-				$('#success').html(request.responseText);
+				$('#mapsuccess').html(request.responseText);
 			} else {
 				console.log("錯誤代碼:"+request.status+", "+request.statusText);
 			}

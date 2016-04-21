@@ -18,6 +18,13 @@
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script type="text/javascript">
 $(function() {	
+	$("#button").click(function(){
+		$("input[name='petBean.PET_NAME']").val("懿鼻牙牙");
+		$("input[name='petBean.PET_AGE']").val("1992-12-28");
+		$("input[name='petBean.PET_WEIGHT']").val(20);
+		$("textarea[name='petBean.PET_BODY']").val("我是牙牙，我喜歡玩耍、撒嬌，最愛吃的食物是香蕉！歡迎大家跟我交朋友");
+	});
+	
 	$("input[name='petBean.PET_SEX'][value=${petBean.PET_SEX}]").prop("checked", true);	
 	
 // 	if($("input[name='petBean.PET_KING']").val()==""){
@@ -104,11 +111,11 @@ function clearForm() {
 	<font color="red"><b><s:property value="errorMsg" /></b></font>
 	<form action="<%=request.getContextPath()%>/pet/petAction.action" method="post" enctype="multipart/form-data">
 		會員編號：<input type="text" name="petBean.PET_OWN_ID" size="20" value="${session.memberID}" readonly="readonly"><BR>		
-		寵物名字： <input type="text" name="petBean.PET_NAME" size="10" value="${petBean.PET_NAME}"> 
+		寵物名字： <input type="text" name="petBean.PET_NAME" size="10" value="${petBean.PET_NAME}" id="PET_NAME"> 
 		<span class="error">${request.PET_NAME}</span><BR>
-		出生年月日： <input type="text" name="petBean.PET_AGE" size="10" id="age" value="${date}">
+		出生年月日： <input type="text" name="petBean.PET_AGE" size="10" id="age" value="${date}" id="PET_AGE">
 		<span class="error">${request.PET_AGE}</span><BR>
-		寵物體重： <input type="number" name="petBean.PET_WEIGHT" size="10" value="${petBean.PET_WEIGHT}" >
+		寵物體重： <input type="number" name="petBean.PET_WEIGHT" size="10" value="${petBean.PET_WEIGHT}" id="PET_WEIGHT">
 		<span class="error">${request.PET_WEIGHT}</span><BR>		
 			寵物種類：<select name="PET_KING_CHOICE" id="king">
 				<option value="non">請選擇種類</option>
@@ -128,9 +135,10 @@ function clearForm() {
 			<span class="error">${request.PET_IMAGE}</span><BR>
 			<font color="red"><b><s:fielderror/></b></font>							 
 		介紹：<BR>
-			<textarea name="petBean.PET_BODY" cols="50" rows="10" ><s:property value="petBean.PET_BODY" /></textarea>
+			<textarea name="petBean.PET_BODY" cols="50" rows="10" id="PET_BODY"><s:property value="petBean.PET_BODY" /></textarea>
 			<span class="error">${request.PET_BODY}</span><BR>
-			<input type="submit" value="送出"><input type="button" value="清除" onclick="clearForm()"><BR>
+			<input type="submit" value="送出"><input type="button" value="清除" onclick="clearForm()">
+			<button type="button" id="button">一鍵輸入</button><br>
 	</form>	
 </article>
 </section>	

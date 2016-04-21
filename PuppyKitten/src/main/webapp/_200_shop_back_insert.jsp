@@ -79,7 +79,6 @@ color: red;
 <title>米沃貓窩 -後台系統</title>
 </head>
 <body>
-<%-- 	<c:import url="/import/header.jsp"></c:import> --%>
 	<section>
 		<article style="width: 1500px; background-color: white;">
 			<h2>新品上市</h2><h2 style="color: red" id="insert_1">${insertOK}</h2>
@@ -122,51 +121,6 @@ color: red;
 				<textarea id="content" rows="15" cols="80" name="shopbean.PRO_BODY"></textarea>		
 				<br> <input type="submit" value="新增上架">
 			</form>
-			
-<%-- 			<s:actionerror/> --%>
-<%-- 			<s:form action="/shop/shopBackAction_insert.action" method="post" --%>
-<%-- 				enctype="multipart/form-data" theme="simple"> --%>
-<%-- 				商品類型：<s:select id="sel_1" list="{'請選擇','汪星人','喵星人'}"></s:select> --%>
-<%-- 				<s:div class="errorInsert">${errors.errorInsertAnimal[0]}</s:div> --%>
-<%-- 				<s:textfield id="val_1" name="shopbean.PRO_ANIMAL"></s:textfield> --%>
-					
-					
-<%-- 				商品種類：<s:select id="sel_2" --%>
-<%-- 					list="{'請選擇','主食乾糧','外出專用','精選罐頭','嚴選零嘴','休閒玩具','生活用品','衣著打扮',''}"></s:select> --%>
-<%-- 				<s:div class="errorInsert">${errors.errorInsertKind[0]}</s:div> --%>
-<%-- 				<s:textfield id="val_2" name="shopbean.PRO_KIND"></s:textfield> --%>
-					
-<%-- 				商品名稱：<s:textfield name="shopbean.PRO_NAME"></s:textfield> --%>
-<%-- 				<s:div class="errorInsert">${errors.errorInsertName[0]}</s:div> --%>
-					
-<%-- 				優惠方案：<s:select id="sel_3" list="{'請選擇','指定價格','買幾送幾'}"></s:select> --%>
-<%-- 				<s:div class="errorInsert">${errors.errorInsertProject[0]}</s:div> --%>
-<%-- 				<s:textfield id="val_3" name="shopbean.PRO_PROJECT"></s:textfield> --%>
-
-<%-- 				<s:div id="price_5"> --%>
-<%-- 				指定價格：<s:textfield id="price_1" name="shopbean.PRO_PRICE"></s:textfield> --%>
-<%-- 					<s:div class="errorInsert">${errors.errorInsertPrice[0]}</s:div> --%>
-<%-- 				</s:div> --%>
-
-<%-- 				<s:div id="price_6"> --%>
-<%-- 					買：<s:textfield id="price_2" name="shopbean.PRO_BUY1"></s:textfield> --%>
-<%-- 					<s:div class="errorInsert">${errors.errorInsert_Buy1[0]}</s:div> --%>
-<%-- 					送：<s:textfield id="price_3" name="shopbean.PRO_BUY2"></s:textfield> --%>
-<%-- 					<s:div class="errorInsert">${errors.errorInsert_Buy2[0]}</s:div> --%>
-<%-- 				</s:div>	 --%>
-				
-<%-- 				商品重量：<s:textfield name="shopbean.PRO_WEIGHT"></s:textfield> --%>
-<%-- 				庫存數量：<s:textfield name="shopbean.PRO_STOCK"></s:textfield> --%>
-<%-- 				<s:div class="errorInsert">${errors.errorInsertStock[0]}</s:div> --%>
-<%-- 				商品照片：<s:file name="PRO_IMAGE"></s:file> --%>
-<%-- 				<s:div class="errorInsert">${errors.errorInsertImage[0]}</s:div> --%>
-<%-- 				商品介紹：<s:textarea id="content" rows="10" cols="80" --%>
-<%-- 					name="shopbean.PRO_BODY"></s:textarea> --%>
-
-<%-- 				<s:submit value="新增上架" method="upload"></s:submit> --%>
-
-<%-- 			</s:form> --%>
-
 		</article>
 
 	</section>
