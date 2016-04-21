@@ -18,6 +18,7 @@ public class ArticleBackServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/plain; charset=UTF-8");
+		System.out.println("DELETE SERVLET");
 		PrintWriter out;
 		ArticleService service = new ArticleService();
 		StringBuilder output = new StringBuilder();

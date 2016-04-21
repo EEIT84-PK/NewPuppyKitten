@@ -24,7 +24,7 @@
 		</action>
 
 		<action name="articleBackAction" class="_100_controller.ArticleBackAction">
-			<result name="success">/_100_article_back.jsp</result>
+			<result name="success">/back_index.jsp</result>
 		</action>
 		<action name="uploadAction" class="_100_controller.UploadAction">
 			<result name="success">/_100_insert.jsp</result>
@@ -102,7 +102,7 @@
 
 		</action>
 		<action name="mapBackAction" class="_300_controller.MapBackAction">
-			<result name="success">/_300_google_back.jsp</result>
+			<result name="success">/back_index.jsp</result>
 		</action>
 	</package>
 

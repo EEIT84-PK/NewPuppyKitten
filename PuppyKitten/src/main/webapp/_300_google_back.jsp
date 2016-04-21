@@ -8,12 +8,8 @@
 <title>後台系統 - Google Map</title>
 <script src="<%=request.getContextPath()%>/javascript/googlemap_back.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/google_back.css">
-
-<script>
 
 
-</script>
 </head>
 <body>
 <form action="<%=request.getContextPath()%>/map/mapBackAction.action" method="get">
