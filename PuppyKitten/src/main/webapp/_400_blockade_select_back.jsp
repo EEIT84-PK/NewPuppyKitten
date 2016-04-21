@@ -15,7 +15,12 @@
 	<section>
 		<article>
 			<h1>後台封鎖查詢</h1>
+			<font color="black"><b>${noSelectOne}<br></b></font>
 			<font color="red"><b>${noSelect}<br></b></font>
+			<form action="<%=request.getContextPath()%>/blockadeSelect/blockadeSelectOneAction.action" method="post">
+				<input type="text" name="MEM_ID" />
+				<input type="submit" value="輸入會員編號搜尋被封鎖會員" />
+			</form>
 			<table border="1" style="border-collapse: collapse; width: 400px;"
 				id="listTable">
 				<tr>

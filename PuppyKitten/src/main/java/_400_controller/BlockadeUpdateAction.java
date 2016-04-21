@@ -68,6 +68,7 @@ public class BlockadeUpdateAction extends ActionSupport implements ServletReques
 		}else{
 			session.setAttribute("Selectlist", list);
 			session.removeAttribute("noSelect");
+			session.removeAttribute("noSelectOne");
 		}	
 		return "success";		
 	}
