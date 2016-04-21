@@ -38,10 +38,10 @@ $(function() {
 	<section>
 		<article>
 			<h1 style="font-size: 50px;">會員資料(個人資料)</h1>
-			<table border="0" width="410px"style="border:5px #fbe3c0 solid;padding:5px;border-collapse: collapse;background:rgba(250, 235, 215, 0.8);">
+			<table border="0" width="420px"style="border:5px #fbe3c0 solid;padding:5px;border-collapse: collapse;background:rgba(250, 235, 215, 0.8);">
              
 				<tr style="font-size:20px;border-collapse:collapse;background:rgba(250, 235, 215, 0.4);" >
-					<td style="width:50px;">姓名:</td>
+					<td >姓名:</td>
 					<td>${bean.MEM_NAME}</td>
 				</tr>
 				<tr style="font-size:20px;">

@@ -221,9 +221,9 @@ public class InsertAction extends ActionSupport implements ServletRequestAware {
 			System.out.println("CHECK:" + this.checkcode);
 			System.out.println("SESSION:" + session.getAttribute("code"));
 			if (checkcode.equals(session.getAttribute("code"))) {
-				bean.setMEN_STATUS("1");
+				
 				service.insert(bean);
-
+				bean.setMEM_ACCOUNT("1");
 				return SUCCESS;
 			} else {
 				this.addFieldError("checkcode", "驗證碼錯誤,請重新輸入!");

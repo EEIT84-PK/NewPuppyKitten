@@ -12,7 +12,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript">
 
-
+$(function() {
+    $( "input[type=submit]" )
+      .button()
+      .click(function( event ) {
+      
+      });
+  });
 </script>
 <title>米沃貓窩 - 登入系統</title>
 </head>
@@ -37,7 +43,7 @@
 					<td ></td>
 					</tr>
 				<tr>
-				<td><input type="submit" value="登入"></td>
+				<td><input style="font-size:10px" type="submit" value="登入"></td>
                 <td><a href="<%=request.getContextPath()%>/_500_forgetpassword.jsp">忘記密碼</a></td>
                 </tr>
                 </table> 

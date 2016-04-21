@@ -20,6 +20,7 @@
 			dateFormat : "yy-mm-dd",
 			minDate : new Date("1950-12-01"),
 			maxDate : new Date("2016-04-05"),
+			
 		})
 
 		$("#button").click(function() {
@@ -32,8 +33,16 @@
 			$("#MEM_ADD").val("新北市淡水區49巷2之1號");
 			$("#MEM_PHONE").val("0977078143");
 			$("#MEM_EMAIL").val("kuan8041@gmail.com")
+			
 		});
 	});
+	$(function() {
+	    $( "input[type=submit]" )
+	      .button()
+	      .click(function( event ) {
+	      
+	      });
+	  });
 	
 </script>
 <title>米沃貓窩 - 會員註冊</title>
@@ -115,8 +124,8 @@
 
 					<tr>
 						<td></td>
-						<td style="float: right"><input type="submit" name="use"
-							value="寄送驗證碼"><input name="use" type="submit"
+						<td style="float: right"><input style="font-size:10px" type="submit" name="use"
+							value="寄送驗證碼"><input style="font-size:10px" name="use" type="submit"
 							value="加入會員"></td>
 					</tr>
 
