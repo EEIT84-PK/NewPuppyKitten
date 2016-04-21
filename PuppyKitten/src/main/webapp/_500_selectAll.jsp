@@ -22,7 +22,7 @@
 	<c:choose>
 		<c:when test="${not empty select}">
 		<div style="border-bottem: 1px solid #DDDDDD;">
-			<b style="font-size:25px;">會員資料</b><b id="success" style="font-size:20px;color:red"></b>
+			<b style="font-size:25px;">會員資料</b>
 			<br>
 			<br>
 		</div>

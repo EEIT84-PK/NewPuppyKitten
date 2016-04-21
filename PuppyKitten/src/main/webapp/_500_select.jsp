@@ -6,12 +6,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/tablesorter-master/js/jquery.tablesorter.js">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <style type="text/css">
 td {
-	width: 200px;
+	width: 235px;
 	word-break: break-all;
+	height:35px;
 }
+
 </style>
+<script type="text/javascript">
+
+$(function() {
+    $( "input[type=submit]" )
+      .button()
+      .click(function( event ) {
+      
+      });
+  });
+</script>
 <c:import url="/import/head.jsp"></c:import>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -22,42 +38,44 @@ td {
 	<section>
 		<article>
 			<h1 style="font-size: 50px;">會員資料(個人資料)</h1>
-			<table border="1" style="border-collapse: collapse;">
+			<table border="0" width="410px"style="border:5px #fbe3c0 solid;padding:5px;border-collapse: collapse;background:rgba(250, 235, 215, 0.8);">
              
-				<tr>
-					<td>姓名:</td>
+				<tr style="font-size:20px;border-collapse:collapse;background:rgba(250, 235, 215, 0.4);" >
+					<td style="width:50px;">姓名:</td>
 					<td>${bean.MEM_NAME}</td>
 				</tr>
-				<tr>
+				<tr style="font-size:20px;">
 					<td>身分證字號:</td>
 					<td>${bean.MEM_IDCARD}</td>
 				</tr>
-				<tr>
+				<tr style="font-size:20px;border-collapse:collapse;background:rgba(250, 235, 215, 0.4);">
 					<td>生日:</td>
 					<td><fmt:formatDate pattern="yyyy-MM-dd" value="${bean.MEM_BIRTHDAY}"/></td>
 				</tr>
-				<tr>
-					<td>地址:</td>
+				<tr style="font-size:20px;">
+					<td >地址:</td>
 					<td>${bean.MEM_ADD}</td>
 				</tr>
-				<tr>
+				<tr style="font-size:20px;border-collapse:collapse;background:rgba(250, 235, 215, 0.4);">
 					<td>手機:</td>
 					<td>${bean.MEM_PHONE}</td>
 				</tr>
-				<tr>
-					<td>信箱:</td>
+				<tr style="font-size:20px;">
+					<td >信箱:</td>
 					<td>${bean.MEM_EMAIL}</td>
 				</tr>
-			</table>
 			
+			</table>
+			<table >
 			<form
 				action="<%=request.getContextPath()%>/_500_update.jsp">
-				<input type="submit" value="修改資料">
+				<input style="font-size:12px" type="submit" value="修改資料">
 			</form>
 			<form
 				action="<%=request.getContextPath()%>/_500_updatepassword.jsp">
-				<input type="submit" value="變更密碼">
+				<input style="font-size:10px" type="submit" value="變更密碼">
 			</form>
+			</table>
 		</article>
 	</section>
 

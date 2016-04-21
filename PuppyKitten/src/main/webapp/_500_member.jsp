@@ -12,12 +12,14 @@
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
 <article>
+
 	<h1 style="font-size:50px">會員專區</h1>
-	
+	<ul>
      
-	<h1>
-		<a href="<%=request.getContextPath()%>/login/selectmember.action">查詢個人資料</a>
-	</h1>
+	<li style="font-size:20px;">
+		<a href="<%=request.getContextPath()%>/login/selectmember.action">查詢個人資料</a></li>
+		
+	</ul>
 </article>
 	 </section>
 	<c:import url="/import/footer.jsp"></c:import>

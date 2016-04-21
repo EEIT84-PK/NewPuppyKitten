@@ -46,7 +46,6 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	public String execute() throws Exception {
 		MemberBean bean = service.login(account, password);
 		List<MemberBean>bean2=service.selectMember(account);
-		System.out.println("bean2="+bean2.get(0).getMEN_STATUS());
 		if (bean == null) {
 			this.addFieldError("loginerror", "沒有此帳號或密碼錯誤");
 			return INPUT; 
