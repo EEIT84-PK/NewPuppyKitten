@@ -120,7 +120,7 @@ $(function(){
 								</div>
 
 								<div class="choose_pro3">
-								<span>商品介紹</span><span>${shopbean.PRO_BODY}</span><br> <br>
+								<span>商品介紹</span><br><br><span>${shopbean.PRO_BODY}</span><br> <br>
 								</div>
 								<div class="choose_pro6">
 									<div class="choose_pro5">

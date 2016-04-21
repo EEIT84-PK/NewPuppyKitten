@@ -61,13 +61,14 @@ public class UploadAction extends ActionSupport implements ServletRequestAware{
 	public String execute()throws Exception{
 		ArticleService service = new ArticleService();
 		HttpSession session = req.getSession();
-		bean.setART_MEM_ID(session.getAttribute("loginOK").toString());
-
+		if(session.getAttribute("loginOK")!=null){
+			bean.setART_MEM_ID(session.getAttribute("loginOK").toString());
+		}
 		String path=null;
 		if(img!=null){
 			ServletContext context = ServletActionContext.getServletContext();
-			String dir=context.getRealPath("/upload/"+imgFileName);
-			path =context.getContextPath()+"/upload/"+imgFileName;
+			String dir=context.getRealPath("/_100_images/"+imgFileName);
+			path =context.getContextPath()+"/_100_images/"+imgFileName;
 			FileOutputStream out= new FileOutputStream(dir);
 			FileInputStream input = new FileInputStream(img);
 			byte[] buffer = new byte[(int)img.length()];
@@ -99,4 +100,11 @@ public class UploadAction extends ActionSupport implements ServletRequestAware{
 		this.req=req;
 		
 	}
+	
+
+		
+		
+		
+		
+	
 }

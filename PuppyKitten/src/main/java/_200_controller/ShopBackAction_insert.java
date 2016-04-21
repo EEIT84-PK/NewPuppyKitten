@@ -120,7 +120,7 @@ public class ShopBackAction_insert extends ActionSupport implements ServletReque
 			shopbean.setPRO_IMAGE(ServletActionContext.getServletContext().getContextPath()+"/_200_images/"+PRO_IMAGEFileName);
 			ShopBean bean = service.insert(shopbean);
 			if (bean != null) {
-				request.setAttribute("insertOK", "Insert OK");
+				request.setAttribute("insertOK", "新增成功");
 				return "success";
 			}
 		} catch (Exception ex) {
