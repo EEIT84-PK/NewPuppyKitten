@@ -163,9 +163,9 @@ color: red;
 						<h2 style="color: red; font-size: 30px;text-align: left">${delete_OK}</h2>
 					
 						<form action="<%=request.getContextPath()%>/shop/shopBackAction_select.action#product" method="post">
-							<input class="btn_1" type="submit" value="查詢" style="cursor: pointer;font-size: 15px;float: left;margin: 5px">
+							<input type="submit" value="查詢" style="cursor: pointer;font-size: 15px;float: left;margin: 5px">
 						</form>
-						<input class="btn_1" type="submit" value="新增商品" onclick="location.href='<%=request.getContextPath()%>/back_index.jsp#insert'" style="cursor: pointer;text-align: left;font-size: 15px;float: left;margin: 5px;"><br><br>
+						<input type="submit" value="新增商品" onclick="location.href='<%=request.getContextPath()%>/back_index.jsp#insert'" style="cursor: pointer;text-align: left;font-size: 15px;float: left;margin: 5px;"><br><br>
 						<c:choose>
 							<c:when test="${not empty select_list}">
 								<div style="width:1300px;">
