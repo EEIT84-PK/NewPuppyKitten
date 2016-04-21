@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC>
 <html>
 <script src="<%=request.getContextPath()%>/assets/js/jquery.min.js"></script>
@@ -470,7 +471,48 @@
 				<header>
 					<h2 style="text-align: left">會員管理</h2>
 				</header>
-
+				<form
+					action="<%=request.getContextPath()%>/login/selectAllAction.action#member"
+					method="get">
+					<input  type="submit"  value="查詢" style="font-size:15px;float: left; height: 25px">
+				</form>
+				<c:choose>
+					<c:when test="${not empty select}">
+						<div style="border-bottem: 1px solid #DDDDDD;">
+							<b style="font-size: 25px;">會員資料</b> <br> <br>
+						</div>
+						<table id="datable" border="1"
+							style="border-collpace: collapse; width: 1600px">
+							<thead>
+								<tr style="background: rgba(255, 255, 215, 0.4);">
+									<th>編號</th>
+									<th>帳號</th>
+									<th>姓名</th>
+									<th>身分證</th>
+									<th>email</th>
+									<th>生日</th>
+									<th>電話</th>
+									<th >地址</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach var="member" items="${select}">
+									<tr>
+										<td style="width: 70px;font-size:20px;">${member.MEM_ID}</td>
+										<td style="width: 150px;font-size:20px;">${member.MEM_ACCOUNT }</td>
+										<td style="width: 90px;font-size:20px;">${member.MEM_NAME }</td>
+										<td style="width: 160px;font-size:20px;">${member.MEM_IDCARD }</td>
+										<td style="width: 230px;font-size:20px;">${member.MEM_EMAIL }</td>
+										<td style="width: 170px;font-size:20px;"><fmt:formatDate
+												pattern="yyyy-MM-dd" value="${member.MEM_BIRTHDAY}" /></td>
+										<td style="width:150px;font-size:20px;">${member.MEM_PHONE }</td>
+										<td style="width: 800px;font-size:20px;">${member.MEM_ADD }</td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
+					</c:when>
+				</c:choose>
 
 
 			</div>
@@ -536,7 +578,7 @@
 										<td style="width: 100px; font-size: 20px;">${map.MAP_KIND}</td>
 										<td style="width: 200px;"><input type="text"
 											value="${map.MAP_NAME}"
-											style="border-style: none; font-size: 20px;width: 200px; background-color: #e8edec;"></td>
+											style="border-style: none; font-size: 20px; width: 200px; background-color: #e8edec;"></td>
 										<td style="width: 300px;"><input type="text"
 											value="${map.MAP_ADD}"
 											style="border-style: none; width: 300px; font-size: 20px; background-color: #e8edec;"></td>
@@ -569,12 +611,15 @@
 				<form
 					action="<%=request.getContextPath()%>/article/articleBackAction.action#talk"
 					method="get">
-					<input type="submit" value="查詢" style="cursor: pointer; font-size: 15px; float: left;"><b id="artilcesuccess" style="font-size: 20px; color: red"></b>
+					<input type="submit" value="查詢"
+						style="cursor: pointer; font-size: 15px; float: left;"><b
+						id="artilcesuccess" style="font-size: 20px; color: red"></b>
 				</form>
 				<!-- ArticleBean -->
 				<c:choose>
 					<c:when test="${not empty select_article}">
-					<br><hr>
+						<br>
+						<hr>
 						<table id="datatable" border="1"
 							style="border-collapse: collapse; width: 1300px;">
 							<thead>
@@ -596,7 +641,7 @@
 							</thead>
 							<tbody>
 								<c:forEach var="article" items="${select_article}">
-									<tr class="formtr"  style="text-align: center;">
+									<tr class="formtr" style="text-align: center;">
 										<td class="bodyhide" style="width: 50px;"><img
 											src="<%=request.getContextPath()%>/images/body.png"
 											width="15px;"></td>
@@ -611,8 +656,8 @@
 									</tr>
 									<tr class="formtrhide" style="text-align: center;">
 										<td colspan="8" style="text-align: left; padding: 20px;"><img
-											src="${article.ART_IMG}" style="width:300px;">
-										<p>${article.ART_BODY}</p></td>
+											src="${article.ART_IMG}" style="width: 300px;">
+											<p>${article.ART_BODY}</p></td>
 									</tr>
 								</c:forEach>
 							</tbody>

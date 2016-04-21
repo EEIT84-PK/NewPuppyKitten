@@ -275,7 +275,7 @@
 			<result name="input">/_500_forgetpassword.jsp</result>
 		</action>
 		<action name="selectAllAction" class="_500_controller.SelectAllAction">
-			<result name="success">/_500_selectAll.jsp</result>
+			<result name="success">/back_index.jsp</result>
 		</action>
 	</package>
 
