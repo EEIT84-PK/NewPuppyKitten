@@ -73,6 +73,7 @@ public class PetUpdateAction extends ActionSupport implements ServletRequestAwar
 		}
 		session.setAttribute("petBean", selectKing.get(0));
 		session.setAttribute("date", date);
+		session.removeAttribute("petUpdate");
 		return "success";
 	}
 }

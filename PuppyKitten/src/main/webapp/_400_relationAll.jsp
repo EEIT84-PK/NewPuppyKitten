@@ -19,6 +19,7 @@ td {
 	<section>
 		<article style="width: 1500px;">
 			<h1>寵物聯誼(交友中心)</h1>
+			<a href="<%=request.getContextPath()%>/_400_index.jsp">回寵物大廳</a><br>
 			<font color="red"><b>互相感興趣的對象</b><br>
 			</font><font color="red"><b>${noOne}</b></font>
 			<table border="1" style="border-collapse: collapse; width: 700px;"

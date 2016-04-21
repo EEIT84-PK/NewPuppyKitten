@@ -62,11 +62,11 @@ public class PetBlockadeAction extends ActionSupport implements ServletRequestAw
 		List<PetRelationBean> petRBean = petService.selectRelationAll();		
 		List<PetBean> selectKing = petService.selecPettId((Integer) session.getAttribute("memberID"));
 		int number = 0;// 設定初始值為抓第一筆資料
-		int number2 = number + 1;// 用來跟lise的size做比對
+		int number3 = number + 1;// 用來跟lise的size做比對
 		List<PetRelationBean> check = new ArrayList<PetRelationBean>();
 		List<PetRelationBean> check2 = new ArrayList<PetRelationBean>();
 		if (petBean.get(number).getPET_OWN_ID().toString().equals(session.getAttribute("memberID").toString())) {// 如果第一筆為自己
-			if (number2 == petBean.size()) { // 如果只有自己一個寵物資訊，代表沒有可感興趣的對象
+			if (number3 == petBean.size()) { // 如果只有自己一個寵物資訊，代表沒有可感興趣的對象
 				session.setAttribute("end", "已經沒有可感興趣的對象");
 				return "end";
 			} else {
@@ -74,8 +74,8 @@ public class PetBlockadeAction extends ActionSupport implements ServletRequestAw
 			}
 
 			while (number < petBean.size()) {
-				List<BlockadeBean>blockBean=petService.selectBlockadeAll();
-				for(int q=0;q<blockBean.size();q++){
+				List<BlockadeBean>blockBean=petService.selectBlockadeAll();				
+				for(int q=0;q<blockBean.size();q++){					
 					if(blockBean.get(q).getBLOCKADE_MENID().toString().equals(petBean.get(number).getPET_OWN_ID().toString())){
 						number++;
 						if (number == petBean.size()) {
@@ -91,9 +91,8 @@ public class PetBlockadeAction extends ActionSupport implements ServletRequestAw
 									return "end";
 								}
 							}
-						}
-						
-					}else{
+						}						
+					}else{						
 						break;
 					}
 				}				
@@ -128,34 +127,58 @@ public class PetBlockadeAction extends ActionSupport implements ServletRequestAw
 					}
 				}
 			}
-		} else {// 如果第一筆不是自己
-			while (number < petBean.size()) {
-				List<BlockadeBean>blockBean=petService.selectBlockadeAll();
-				for(int q=0;q<blockBean.size();q++){
+		} else {// 如果第一筆不是自己			
+			while (number < petBean.size()) {				
+				List<BlockadeBean>blockBean=petService.selectBlockadeAll();				
+				
+				for(int q=0;q<blockBean.size();q++){										
 					if(blockBean.get(q).getBLOCKADE_MENID().toString().equals(petBean.get(number).getPET_OWN_ID().toString())){
 						number++;
-						if (petBean.get(number).getPET_OWN_ID().toString()
-								.equals(session.getAttribute("memberID").toString())) {
+						if(petBean.get(number).getPET_OWN_ID().toString().equals(session.getAttribute("memberID").toString())){
 							number++;
+							if(number==petBean.size()){
+								session.setAttribute("end", "已經沒有可感興趣的對象");
+								return "end";
+							}
+						}						
+					}else{
+						check = petService.selectId(session.getAttribute("memberID").toString(),
+								petBean.get(number).getPET_OWN_ID().toString(), "like");
+						check2 = petService.selectId(session.getAttribute("memberID").toString(),
+								petBean.get(number).getPET_OWN_ID().toString(), "Notlike");
+						/*
+						 * check=找喜歡人的人是自己 被喜歡的人是這次的人 狀態為喜歡 check2=找喜歡人的人是自己
+						 * 被喜歡的人是這次的人 狀態為不喜歡
+						 */
+						if ((!(check.isEmpty())) || (!(check2.isEmpty()))) {
+							number++;// 跳下一筆
+							check.clear();
+							check2.clear();
+
+							if (number == petBean.size()) {
+								session.setAttribute("end", "已經沒有可感興趣的對象");
+								return "end";
+							} else {
+								// 但是有可能下一筆是自己，所以再跳下一筆
+								if (petBean.get(number).getPET_OWN_ID().toString()
+										.equals(session.getAttribute("memberID").toString())) {
+									number++;
+								}
+							}
+
 							if (number == petBean.size()) {
 								session.setAttribute("end", "已經沒有可感興趣的對象");
 								return "end";
 							}
-						}else{
-							if ((!(petBean.get(number).getPET_KING().equals(selectKing.get(0).getPET_KING())))
-									|| (petBean.get(number).getPET_KING().equals(selectKing.get(0).getPET_KING())
-											&& petBean.get(number).getPET_SEX().equals(selectKing.get(0).getPET_SEX()))){
-								number++;
-								if (number == petBean.size()) {
-									session.setAttribute("end", "已經沒有可感興趣的對象");
-									return "end";
-								}
-							}							
 						}						
-					}else{
-						break;
-					}
-				}				
+					}					
+				}
+				
+				
+				
+				
+				
+				
 				if (petBean.get(number).getPET_KING().equals(selectKing.get(0).getPET_KING())
 						&& (!(petBean.get(number).getPET_SEX().equals(selectKing.get(0).getPET_SEX())))) { // 如果是同類而且非同性的話
 					check = petService.selectId(session.getAttribute("memberID").toString(),
@@ -231,7 +254,7 @@ public class PetBlockadeAction extends ActionSupport implements ServletRequestAw
 		session.setAttribute("petImg", Imgbean.getPET_IMAGE());
 		session.setAttribute("PetNumber", ((Integer) number).toString());
 		session.removeAttribute("match");		
-		
+		System.out.println("block="+session.getAttribute("PetNumber"));
 		return "success";
 	}
 }

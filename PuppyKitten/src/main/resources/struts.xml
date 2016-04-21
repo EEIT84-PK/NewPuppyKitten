@@ -238,6 +238,9 @@
 		</action>
 		<action name="blockadeUpdateAction" class="_400_controller.BlockadeUpdateAction">
 			<result name="success">/_400_blockade_select_back.jsp</result>
+		</action>
+		<action name="blockadeSelectOneAction" class="_400_controller.BlockadeSelectOneAction">
+			<result name="success">/_400_blockade_select_back.jsp</result>
 		</action>	
 	</package>	
 	<package name="loginPackage" namespace="/login" extends="struts-default">

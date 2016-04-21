@@ -32,8 +32,9 @@ function clearForm() {
 <section>
 <article>
 <h1>寵物聯誼(修改寵物資訊)</h1>
+	<a href="<%=request.getContextPath()%>/_400_index.jsp">回寵物大廳</a><br>
 	<font color="red"><b>只能修改寵物照片或者寵物介紹！！</b></font><br>
-	<font color="blue"><b>${success }</b></font>
+	<font color="blue"><b>${petUpdate }</b></font>
 	<form action="<%=request.getContextPath()%>/petUpdate/petUpdate2Action.action" method="post" enctype="multipart/form-data">		
 		會員編號：<input type="text" name="petBean.PET_OWN_ID" size="20" value="${petBean.PET_OWN_ID}" readonly="readonly"><BR>		
 		寵物編號：<input type="text" name="petBean.PET_ID" size="20" value="${petBean.PET_ID}" readonly="readonly"><BR>	
