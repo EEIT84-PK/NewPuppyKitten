@@ -3,7 +3,7 @@ use PuppyKitten
 drop table member
 CREATE TABLE member
 (MEM_ID int PRIMARY KEY IDENTITY ( 5001 , 1 ),
-MEM_NAME varchar(10),
+MEM_NAME varchar(20),
 MEM_ACCOUNT varchar(20),
 MEM_PASSWORD varbinary(20),
 MEM_EMAIL varchar(30),

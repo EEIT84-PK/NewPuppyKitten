@@ -11,14 +11,11 @@
 <c:import url="/import/head.jsp"></c:import>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript">
+	$(function() {
+		$("input[type=submit]").button().click(function(event) {
 
-$(function() {
-    $( "input[type=submit]" )
-      .button()
-      .click(function( event ) {
-      
-      });
-  });
+		});
+	});
 </script>
 <title>米沃貓窩 - 登入系統</title>
 </head>
@@ -27,26 +24,28 @@ $(function() {
 
 	<section>
 		<article>
-			<form action="<%=request.getContextPath()%>/login/loginAction.action" method="post">
+			<form action="<%=request.getContextPath()%>/login/loginAction.action"
+				method="post">
 				<table>
-				<h1 style="font-size: 50px;">登入會員</h1>
-				<tr>
-				<td>帳號:<b></td>
-				<td><input  id="tags" type="text" name="account" value=""></td>
-				<td style="color:red">${errors.account[0]}</td>
-				</tr>
-				<tr>
-				<td>密碼:<b></td>
-				<td><input id="tags"
-					type="password" name="password" value=""></td>
-					<td style="color: red">${errors.password[0]}<span >${errors.loginerror[0]}</span><span>${errorMsg}</span></td>
-					<td ></td>
+					<h1 style="font-size: 50px;">登入會員</h1>
+					<tr>
+						<td style="font-size:20px">帳號:<b></td>
+						<td><input id="tags" type="text" name="account" value=""></td>
+						<td style="color: red">${errors.account[0]}</td>
 					</tr>
-				<tr>
-				<td><input style="font-size:10px" type="submit" value="登入"></td>
-                <td><a href="<%=request.getContextPath()%>/_500_forgetpassword.jsp">忘記密碼</a></td>
-                </tr>
-                </table> 
+					<tr>
+						<td style="font-size:20px">密碼:<b></td>
+						<td><input id="tags" type="password" name="password" value=""></td>
+						<td style="color: red">${errors.password[0]}<span>${errors.loginerror[0]}</span><span>${errorMsg}</span></td>
+						<td></td>
+					</tr>
+					<tr>
+					<td></td>
+						<td><input style="font-size: 10px;" type="submit" value="登入"><a
+							href="<%=request.getContextPath()%>/_500_forgetpassword.jsp">忘記密碼</a></td>
+						
+					</tr>
+				</table>
 			</form>
 
 		</article>
