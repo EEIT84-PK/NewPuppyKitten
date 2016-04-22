@@ -10,6 +10,7 @@
 	href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
 <script type="text/javascript">
 	$(function() {
 		$("#age").attr("readonly", "readonly").datepicker({
@@ -27,7 +28,7 @@
 			$("#MEM_ACCOUNT").val("kuan8041");
 			$("#MEM_PASSWORD").val("123456");
 			$("#password").val("123456")
-			$("#MEM_NAME").val("李奧納多皮卡丘");
+			$("#MEM_NAME").val("李奧納多");
 			$("#MEM_IDCARD").val("F128579032");
 			$("#age").val("1990-04-02");
 			$("#MEM_ADD").val("新北市淡水區49巷2之1號");
@@ -62,62 +63,62 @@
 				<table>
 
 					<tr>
-						<td>帳號:<br></td>
+						<td style="font-size:20px">帳號:<br></td>
 						<td><input type="text" name="bean.MEM_ACCOUNT"
 							id="MEM_ACCOUNT" value="${bean.MEM_ACCOUNT}"></td>
 						<td style="color: red">${errors.MEM_ACCOUNT[0]}</td>
 					</tr>
 					<tr>
-						<td>密碼:</td>
+						<td style="font-size:20px">密碼:</td>
 						<td><input type="password" name="password" id="MEM_PASSWORD"
 							value="${password}"></td>
 						<td style="color: red">${errors.password[0]}</td>
 					</tr>
 					<tr>
-						<td>確認密碼:</td>
+						<td style="font-size:20px">確認密碼:</td>
 						<td><input type="password" name="checkpassword" id="password"
 							value="${checkpassword}"></td>
 						<td style="color: red">${errors.checkpassword[0]}</td>
 					</tr>
 					<tr>
-						<td>姓名:</td>
+						<td style="font-size:20px">姓名:</td>
 						<td><input type="text" name="bean.MEM_NAME" id="MEM_NAME"
 							value="${bean.MEM_NAME}"></td>
 						<td style="color: red">${errors.MEM_NAME[0]}</td>
 					</tr>
 					<tr>
-						<td>身分證字號:</td>
+						<td style="font-size:20px">身分證字號:</td>
 						<td><input type="text" name="bean.MEM_IDCARD" id="MEM_IDCARD"
 							value="${bean.MEM_IDCARD}"></td>
 						<td style="color: red">${errors.MEM_IDCARD[0]}</td>
 					</tr>
 					<tr>
-						<td>生日:</td>
+						<td style="font-size:20px">生日:</td>
 						<td><input type="text" name="bean.MEM_BIRTHDAY" id="age"
 							value="${date}"></td>
 						<td style="color: red">${errors.MEM_BIRTHDAY[0]}</td>
 					</tr>
 					<tr>
-						<td>地址:</td>
+						<td style="font-size:20px">地址:</td>
 						<td><input type="text" name="bean.MEM_ADD" id="MEM_ADD"
 							value="${bean.MEM_ADD}"></td>
 						<td style="color: red">${errors.MEM_ADD[0]}</td>
 					</tr>
 					<tr>
-						<td>手機:</td>
+						<td style="font-size:20px">手機:</td>
 						<td><input type="text" name="bean.MEM_PHONE" id="MEM_PHONE"
 							value="${bean.MEM_PHONE}"></td>
 						<td style="color: red">${errors.MEM_PHONE[0]}</td>
 					</tr>
 					<tr>
-						<td>信箱:</td>
+						<td style="font-size:20px">信箱:</td>
 						<td><input type="email" name="bean.MEM_EMAIL" id="MEM_EMAIL"
 							value="${bean.MEM_EMAIL}"></td>
 						<td style="color: red">${errors.MEM_EMAIL[0]}</td>
 
 					</tr>
 					<tr>
-						<td>驗證碼:</td>
+						<td style="font-size:20px">驗證碼:</td>
 						<td><input type="text" name="checkcode" value="">
 						<td style="color: red">${errors.checkcode[0]}</td>
 					</tr>
