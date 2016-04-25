@@ -31,7 +31,6 @@
 				<div class="main">寵物旅遊</div>
 				<div class="sub">
 					<ul>
-						<li><a href="<c:url value="/_300_introduce.jsp"/>">旅遊介紹</a></li>
 						<li><a href="<c:url value="/_300_google.jsp"/>">店家位置</a></li>
 					</ul>
 				</div>
