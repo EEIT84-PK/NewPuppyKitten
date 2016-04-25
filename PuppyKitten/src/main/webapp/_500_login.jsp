@@ -23,13 +23,13 @@
 	<c:import url="/import/header.jsp"></c:import>
 
 	<section>
-		<article style="width:400px;background-color:white;">
+		<article style="width:410px;">
 			<form action="<%=request.getContextPath()%>/login/loginAction.action"
 				method="post">
+				<h1 style="font-size: 50px;">登入會員</h1>
 				<table>
-					<h1 style="font-size: 50px;">登入會員</h1>
 					<tr>
-						<td style="font-size: 20px">帳號:<b></td>
+						<td style="font-size: 20px">帳號:</td>
 						<td><input id="tags" type="text" name="account" value=""></td>
 						<td style="color: red">${errors.account[0]}</td>
 					</tr>

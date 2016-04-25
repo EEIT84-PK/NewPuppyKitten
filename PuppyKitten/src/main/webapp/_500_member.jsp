@@ -21,7 +21,7 @@
 <body>
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
-<article style="width: 250px; background-color: white;">
+<article style="width:410px;">
 
 	<h1 style="font-size:50px">會員專區</h1>
 	<ul>

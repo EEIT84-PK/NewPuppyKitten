@@ -19,7 +19,7 @@
 <script type="text/javascript">
 $(function() {	
 	$("#button").click(function(){
-		$("input[name='petBean.PET_NAME']").val("懿鼻牙牙");
+		$("input[name='petBean.PET_NAME']").val("牙牙");
 		$("input[name='petBean.PET_AGE']").val("1992-12-28");
 		$("input[name='petBean.PET_WEIGHT']").val(20);
 		$("textarea[name='petBean.PET_BODY']").val("我是牙牙，我喜歡玩耍、撒嬌，最愛吃的食物是香蕉！歡迎大家跟我交朋友");

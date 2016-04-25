@@ -288,8 +288,8 @@
 			<interceptor name="authentication"
 				class="_500_interceptor.AuthenticationInterceptor" />
 			<interceptor-stack name="myAuthenticationDefault">
-				<interceptor-ref name="defaultStack" />
 				<interceptor-ref name="authentication" />
+				<interceptor-ref name="defaultStack" />
 			</interceptor-stack>
 		</interceptors>
 		<default-interceptor-ref name="myAuthenticationDefault" />
@@ -300,7 +300,7 @@
 			<result>/_500_member.jsp</result>
 		</action>
 		<action name="shopInterceptor" class="_500_interceptor.Member">
-		<result>/_200_shop_car.jsp</result>
+			<result>/_200_shop_car.jsp</result>
 		</action> 
 		
 		<action name="*">

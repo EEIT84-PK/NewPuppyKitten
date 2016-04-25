@@ -15,8 +15,6 @@
 				<div class="sub">
 					<ul>
 						<li><a href='<c:url value="/shop/shopBackAction_goshop.action"/>'>購物中心</a></li>
-						<li><a href='<c:url value="/member/shopInterceptor.action" ></c:url>'>購物車</a></li>
-						<li><a href='<c:url value="/shop/shopBackAction_select.action"/>'>後台系統</a></li>
 					</ul>
 				</div>
 			</div>
@@ -42,9 +40,6 @@
 					<ul>
 						<li><a
 							href='<c:url value="/article/articleAction.action" ></c:url>'>討論大廳</a></li>
-						<li><a href="">留言板</a></li>
-						<li><a
-							href='<c:url value="/article/articleBackAction.action" ></c:url>'>後台系統</a></li>
 					</ul>
 				</div>
 			</div>
