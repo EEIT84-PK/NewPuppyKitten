@@ -495,7 +495,7 @@
 						<table id="datable" border="1"
 							style="border-collpace: collapse; width: 1600px">
 							<thead>
-								<tr style="background: rgba(255, 255, 215, 0.4);">
+								<tr style="text-align: left">
 									<th>編號</th>
 									<th>帳號</th>
 									<th>姓名</th>
@@ -542,18 +542,16 @@
 				<form
 					action="<%=request.getContextPath()%>/petSelect/PetSelectAllAction.action#pet"
 					method="get">
-					<input  type="submit"  value="查詢" style="font-size:15px;float: left; height: 25px">
+					<input  type="submit"  value="查詢" style="font-size:15px;float: left; height: 25px"><br>
 				</form>
 				
 				<c:choose>
 					<c:when test="${not empty PetList}">
-						<div style="border-bottem: 1px solid #DDDDDD;">
-							<b style="font-size: 25px;">寵物資料</b> <br><br>
-						</div>
 						<table id="datable" border="1"
 							style="border-collpace: collapse; width: 1350px">
 							<thead>
-								<tr style="background: rgba(255, 255, 215, 0.4);">
+								<tr>
+									<th>照片</th>
 									<th>會員編號</th>
 									<th>寵物編號</th>
 									<th>姓名</th>
@@ -562,23 +560,22 @@
 									<th>種類</th>
 									<th>品種</th>
 									<th>性別</th>
-									<th>照片</th>
 									<th>介紹</th>
 								</tr>
 							</thead>
 							<tbody>
 								<c:forEach var="pet" items="${PetList}">
-									<tr>
-										<td style="width: 100px;font-size:20px;" align='center' valign="middle"><img src="${pet.PET_IMAGE}" width="100" height="100"></td>
-										<td style="width: 100px;font-size:20px;" align='center' valign="middle">${pet.PET_ID}</td>
-										<td style="width: 100px;font-size:20px;" align='center' valign="middle">${pet.PET_OWN_ID}</td>
-										<td style="width: 100px;font-size:20px;" align='center' valign="middle">${pet.PET_NAME}</td>
-										<td style="width: 50px;font-size:20px;" align='center' valign="middle">${pet.PET_AGE}</td>
-										<td style="width: 50px;font-size:20px;" align='center' valign="middle">${pet.PET_WEIGHT}</td>										
-										<td style="width: 50px;font-size:20px;" align='center' valign="middle">${pet.PET_KING}</td>
-										<td style="width: 100px;font-size:20px;" align='center' valign="middle">${pet.PET_SORT_NAME}</td>
-										<td style="width: 50px;font-size:20px;" align='center' valign="middle">${pet.PET_SEX}</td>										
-										<td style="width: 650px;font-size:20px;" align='center' valign="middle">${pet.PET_BODY}</td>
+									<tr height="100" style="width: 100px;font-size:20px;text-align: center;line-height: 100px;">
+										<td height="100"><img src="${pet.PET_IMAGE}" width="100" style="padding-bottom: 0px;"></td>
+										<td style="height:100%">${pet.PET_ID}</td>
+										<td>${pet.PET_OWN_ID}</td>
+										<td>${pet.PET_NAME}</td>
+										<td style="width: 50px;">${pet.PET_AGE}</td>
+										<td style="width: 50px;">${pet.PET_WEIGHT}</td>										
+										<td style="width: 50px;">${pet.PET_KING}</td>
+										<td>${pet.PET_SORT_NAME}</td>
+										<td style="width: 50px;">${pet.PET_SEX}</td>										
+										<td style="width: 650px;">${pet.PET_BODY}</td>
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -810,9 +807,9 @@
 											class="delete_article" value="移除" style="font-size: 16px;" /></td>
 									</tr>
 									<tr class="formtrhide" style="text-align: center;">
-										<td colspan="8" style="text-align: left; padding: 20px;"><img
-											src="${article.ART_IMG}" style="width: 300px;">
-											<p>${article.ART_BODY}</p></td>
+										<td colspan="8" style="text-align: left; padding: 20px;">
+										<c:choose><c:when test="${not empty article.ART_IMG}"><img src="${article.ART_IMG}" style="height: 200px;"></c:when></c:choose>
+										<p>${article.ART_BODY}</p></td>
 									</tr>
 								</c:forEach>
 							</tbody>
