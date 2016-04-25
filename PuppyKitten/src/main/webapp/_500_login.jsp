@@ -23,27 +23,27 @@
 	<c:import url="/import/header.jsp"></c:import>
 
 	<section>
-		<article>
+		<article style="width:400px;background-color:white;">
 			<form action="<%=request.getContextPath()%>/login/loginAction.action"
 				method="post">
 				<table>
 					<h1 style="font-size: 50px;">登入會員</h1>
 					<tr>
-						<td style="font-size:20px">帳號:<b></td>
+						<td style="font-size: 20px">帳號:<b></td>
 						<td><input id="tags" type="text" name="account" value=""></td>
 						<td style="color: red">${errors.account[0]}</td>
 					</tr>
 					<tr>
-						<td style="font-size:20px">密碼:<b></td>
+						<td style="font-size: 20px">密碼:<b></td>
 						<td><input id="tags" type="password" name="password" value=""></td>
 						<td style="color: red">${errors.password[0]}<span>${errors.loginerror[0]}</span><span>${errorMsg}</span></td>
 						<td></td>
 					</tr>
 					<tr>
-					<td></td>
-						<td><input style="font-size: 10px;" type="submit" value="登入"><a
+						<td></td>
+						<td><input style="font-size: 10px; float:center;" type="submit" value="登入"><a
 							href="<%=request.getContextPath()%>/_500_forgetpassword.jsp">忘記密碼</a></td>
-						
+
 					</tr>
 				</table>
 			</form>

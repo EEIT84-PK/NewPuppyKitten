@@ -8,7 +8,7 @@ import _300_model.MapBean;
 public class ShopService {
 	private ShopDAO_interface dao;
 	private Shop_Buy_DAO_interface buy_dao;
-	private Shop_Order_DAO order_dao;
+	private Shop_Order_DAO_interface order_dao;
 
 	public ShopService() {
 		dao = new ShopDAO();

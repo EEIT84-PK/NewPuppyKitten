@@ -299,6 +299,10 @@
 		<action name="Interceptor" class="_500_interceptor.Member">
 			<result>/_500_member.jsp</result>
 		</action>
+		<action name="shopInterceptor" class="_500_interceptor.Member">
+		<result>/_200_shop_car.jsp</result>
+		</action> 
+		
 		<action name="*">
 			<result>{1}.jsp</result>
 		</action>
