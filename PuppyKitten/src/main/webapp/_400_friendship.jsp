@@ -9,16 +9,31 @@
 <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 <script type="text/javascript">
 $(function() {
+	$( "#toggle" ).hide();
+	$( "#toggle2" ).hide();
 	$( "#dialog" ).hide();
 	$("button").click(function(){
 			$( "#dialog" ).show();
 			$( "#dialog" ).dialog({ 
 				closeOnEscpe:true//鍵盤按下ESC會關閉式窗
 		    });		  
-		});
+		});	
 	
-    
+if('${match}'==""){
+	$( "#toggle" ).hide();
+}else{	
+	$( "#toggle" ).show("slide", { direction: "left" }, 1000);
+	}
+
+if('${blockade}'==""){
+	$( "#toggle2" ).hide();
+}else{	
+	$( "#toggle2" ).show("slide", { direction: "left" }, 1000);
+	}
+
 });
+
+
 </script>
 <style type="text/css">	
 	article.article{
@@ -34,15 +49,10 @@ $(function() {
 	<section>
 		<article class="article">
 		
-			<h2>寵物聯誼(配對系統)</h2>
-			<c:if test="${match !=null}">
-				<a class="link" href='<c:url value="/petRelationAll/petRelationaAllLikeAction.action" ></c:url>'>和${match}配對成功，看看誰和我互相感興趣</a><br>
-			</c:if>			
-			<c:if test="${blockade !=null}">
-				<font color="red"><b>檢舉${petBean.PET_OWN_ID}${blockade}<br></b></font>
-			</c:if>		
+			<h2>寵物聯誼(配對系統)</h2>					
+					
 			<a class="link" href='<c:url value="/petLike/PetLikeAction.action" ></c:url>'><img src="<%=request.getContextPath()%>/images/_400/YES.png" width="150" height="60"></a>
-			<a class="link" href='<c:url value="/petNotLike/PetNotLikeAction.action" ></c:url>'><img src="<%=request.getContextPath()%>/images/_400/NO.png" width="150" height="60"></a>
+			<a class="link2" href='<c:url value="/petNotLike/PetNotLikeAction.action" ></c:url>'><img src="<%=request.getContextPath()%>/images/_400/NO.png" width="150" height="60"></a>
 			<div style="padding-left: 330px;">
 				<table >				
 					<tr>
@@ -67,7 +77,11 @@ $(function() {
 								<input name="blockadeBean.BLOCKADE_THING" type="radio" value="色情成分" >色情成分<br>
 								<DIV style="text-align:right;"><input type="submit" value="送出"/></DIV>								
 					   		</form>
-						</div>	
+						</div>
+						
+							<div id="toggle"><a class="link" href='<c:url value="/petRelationAll/petRelationaAllLikeAction.action" ></c:url>'>和${match}配對成功，看看誰和我互相感興趣</a><br></div>
+							<div id="toggle2"><font color="red"><b>檢舉${petBean.PET_OWN_ID}${blockade}<br></b></font></div>
+							
 		</article>		
 	</section>
 
