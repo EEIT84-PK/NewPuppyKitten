@@ -36,7 +36,7 @@ $(function() {
 <body style="font-family: 微軟正黑體; font-size: large">
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
-		<article>
+		<article >
 			<h1 style="font-size: 50px;">會員資料(個人資料)</h1>
 			<table border="0" width="420px"style="border:5px #fbe3c0 solid;padding:5px;border-collapse: collapse;background:rgba(250, 235, 215, 0.8);">
              

@@ -26,7 +26,7 @@
 					<ul>
 					
 						<li><a href='<c:url value="/shop/shopBackAction_goshop.action"/>'>購物中心</a></li>
-						<li><a href='<c:url value="/_200_shop_car.jsp"/>'>購物車</a></li>
+						<li><a href='<c:url value="/member/shopInterceptor.action" ></c:url>'>購物車</a></li>
 						<li><a href='<c:url value="/shop/shopBackAction_select.action"/>'>後台系統</a></li>
 					</ul>
 				</div>
@@ -77,7 +77,7 @@
 				<li><a href="">聯絡我們<img
 						src="<%=request.getContextPath()%>/images/phone.png" width="15px"></a></li>
 						
-				<li><a href="<%=request.getContextPath()%>/_200_shop_car.jsp">購物車<img
+				<li><a href='<c:url value="/member/shopInterceptor.action" ></c:url>'>購物車<img
 						src="<%=request.getContextPath()%>/images/cart.png" width="15px"></a></li>
 				<li><a href='<c:url value="/member/Interceptor.action" ></c:url>'>會員中心</a></li>
 		<c:choose>

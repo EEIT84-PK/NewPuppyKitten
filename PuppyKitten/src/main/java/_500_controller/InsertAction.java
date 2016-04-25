@@ -122,6 +122,7 @@ public class InsertAction extends ActionSupport implements ServletRequestAware {
 		if (bean.getMEM_NAME() == null || bean.getMEM_NAME().trim().length() == 0) {
 			this.addFieldError("MEM_NAME", "請輸入姓名");
 		}
+		
 		for (int i = 0; i < bean.getMEM_NAME().length(); i++) {
 			char name = bean.getMEM_NAME().charAt(i);
 			if (name >= 65 && name <= 90 || name >= 97 && name <= 122 || (int) name >= 19968 && (int) name <= 40623) {

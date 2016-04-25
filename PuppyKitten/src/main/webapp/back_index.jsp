@@ -146,7 +146,7 @@
 						class="skel-layers-ignoreHref"><span class="icon fa-th"
 							style="font-size: 22px;">商品資訊管理</span></a></li>
 					<li><a href="#member" id="portfolio-link"
-						class="skel-layers-ignoreHref"><span class="icon fa-th"
+						class="skel-layers-ignoreHref"><span class="icon fa-user"
 							style="font-size: 22px;">會員資訊管理</span></a></li>
 					<li><a href="#pet" id="about-link"
 						class="skel-layers-ignoreHref"><span class="icon fa-th"
@@ -158,10 +158,14 @@
 						class="skel-layers-ignoreHref"><span class="icon fa-th"
 							style="font-size: 22px;">旅遊資訊管理</span></a></li>
 					<li><a href="#talk" id="contact-link"
-						class="skel-layers-ignoreHref"><span class="icon fa-th"
+						class="skel-layers-ignoreHref"><span class="icon fa-envelope"
 							style="font-size: 22px;">討論版管理</span></a></li>
+					<li><a href="#websocket" id="contact-link"
+						class="skel-layers-ignoreHref"><span class="icon fa-envelope"
+							style="font-size: 22px;">客服中心訊息</span></a></li>
 				</ul>
 			</nav>
+			
 		</div>
 		<div class="bottom">
 			<ul class="icons">
@@ -267,7 +271,7 @@
 		</section>
 
 		<!--新增商品 -->
-		<section id="insert">
+		<section id="insert" class="two">
 			<div class="container" style="min-height: 800px">
 				<header>
 					<h2 style="text-align: left">新增商品</h2>
@@ -362,7 +366,7 @@
 			</div>
 		</section>
 		<!-- 編輯商品 -->
-		<section id="update">
+		<section id="update" class="two">
 			<div class="container" style="min-height: 800px">
 				<header>
 					<h2 style="text-align: left">編輯商品</h2>
@@ -817,14 +821,22 @@
 				</c:choose>
 			</div>
 		</section>
+<section id="websocket" class="four">
+			<div class="container" style="min-height: 800px">
+				<header>
+					<h2 style="text-align: left">客服中心訊息</h2>
+				</header>
+<div id="websocketdiv" style="float: left"><c:import url="/_600_websocket_back.jsp"></c:import></div>
 
+			</div>
+		</section>
 
 
 
 
 		<!-- 此</div> 請勿刪除-->
 	</div>
-
+	
 	<!-- Footer -->
 	<div id="footer">
 
