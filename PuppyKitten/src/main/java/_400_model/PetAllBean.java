@@ -12,7 +12,14 @@ public class PetAllBean {
 	private String PET_IMAGE;
 	private String PET_BODY;
 	private int PET_CHECK;
+	private String MEM_PHONE;	
 	
+	public String getMEM_PHONE() {
+		return MEM_PHONE;
+	}
+	public void setMEM_PHONE(String mEM_PHONE) {
+		MEM_PHONE = mEM_PHONE;
+	}
 	public String getPET_ID() {
 		return PET_ID;
 	}

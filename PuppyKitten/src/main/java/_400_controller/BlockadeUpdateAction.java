@@ -50,7 +50,7 @@ public class BlockadeUpdateAction extends ActionSupport implements ServletReques
 		bean.setMEM_NAME(mBean.get(0).getMEM_NAME());
 		bean.setMEM_PASSWORD(mBean.get(0).getMEM_PASSWORD());
 		bean.setMEM_PHONE(mBean.get(0).getMEM_PHONE());
-		bean.setMEN_STATUS("1");
+		bean.setMEN_STATUS(true);
 		MemberBean update=mService.update2(bean);
 		
 		System.out.println("bean="+bean.getMEN_STATUS());
