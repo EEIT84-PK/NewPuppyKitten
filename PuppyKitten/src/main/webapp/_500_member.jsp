@@ -30,7 +30,7 @@
 			<li style="font-size: 20px;"><a
 			href="<%=request.getContextPath()%>/login/selectmember.action">個人資料</a></li>
 		<li style="font-size: 20px"><a
-			href="<%=request.getContextPath()%>/petSelect/PetSelectAction.action">個人寵物資料</a></li>
+			href="<%=request.getContextPath()%>/petInterceptor/petIndex.action">個人寵物資料</a></li>
 	    <li style="font-size:20px">
 	    <a href="<%=request.getContextPath()%>/_200_shop_car.jsp">個人購物車</a>
 	    </li>
