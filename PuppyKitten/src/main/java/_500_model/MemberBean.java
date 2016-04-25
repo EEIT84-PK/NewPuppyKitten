@@ -11,7 +11,7 @@ public class MemberBean {
 	private String MEM_IDCARD;
 	private String MEM_ADD;
 	private String MEM_PHONE;
-	private String MEN_STATUS;
+	private Boolean MEN_STATUS;
 	//GETTER,SETTER
 	public Integer getMEM_ID() {
 		return MEM_ID;
@@ -67,11 +67,11 @@ public class MemberBean {
 	public void setMEM_PHONE(String mEM_PHONE) {
 		MEM_PHONE = mEM_PHONE;
 	}
-	public String getMEN_STATUS() {
+	public Boolean getMEN_STATUS() {
 		return MEN_STATUS;
 	}
-	public void setMEN_STATUS(String mEN_STATUS) {
+	public void setMEN_STATUS(Boolean mEN_STATUS) {
 		MEN_STATUS = mEN_STATUS;
-	}
+	}	
 	
 }

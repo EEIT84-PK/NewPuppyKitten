@@ -25,7 +25,7 @@ td {
 			<table border="1" style="border-collapse: collapse; width: 700px;"
 				id="listTable">
 				<tr>
-					<td style="width: 100px" align='center' valign="middle">寵物編號</td>
+					<td style="width: 100px " align='center' valign="middle">寵物編號</td>
 					<td style="width: 100px" align='center' valign="middle">會員編號</td>
 					<td style="width: 60px" align='center' valign="middle">名字</td>
 					<td style="width: 60px" align='center' valign="middle">年齡</td>
@@ -55,10 +55,9 @@ td {
 					<tr>
 						<td id="img" align='center' valign="middle" colspan="2">
 						<img src="${sort.PET_IMAGE}" width="200" height="200"></td>
-						<td id="body" align='center' valign="middle" colspan="5">${sort.PET_BODY}</td>
+						<td id="body" align='center' valign="middle" colspan="5">${sort.PET_BODY}<br><br>聯絡電話：${sort.MEM_PHONE }</td>
 						<td align='center' valign="middle">
-							<a href='<c:url value="/petRelationDelete/petRelationaDeleteAction.action?PET_OWN_ID=${sort.PET_OWN_ID}" ></c:url>'>刪除</a><BR><br>
-							<a href='<c:url value="/petRelationNotLike/petRelationNotLikeAction.action?PET_OWN_ID=${sort.PET_OWN_ID}" ></c:url>'>即時聊天</a>						
+							<a href='<c:url value="/petRelationDelete/petRelationaDeleteAction.action?PET_OWN_ID=${sort.PET_OWN_ID}" ></c:url>'>刪除</a><BR><br>													
 						</td>
 					</tr>
 					

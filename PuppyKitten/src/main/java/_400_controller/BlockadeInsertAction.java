@@ -54,7 +54,7 @@ public class BlockadeInsertAction extends ActionSupport implements ServletReques
 		bean.setMEM_NAME(mBean.get(0).getMEM_NAME());
 		bean.setMEM_PASSWORD(mBean.get(0).getMEM_PASSWORD());
 		bean.setMEM_PHONE(mBean.get(0).getMEM_PHONE());
-		bean.setMEN_STATUS("0");
+		bean.setMEN_STATUS(false);
 		MemberBean update=mService.update2(bean);		
 		
 		List<BlockadeBean>bean=petService.selectBlockadeAll();

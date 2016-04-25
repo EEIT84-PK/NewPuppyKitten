@@ -18,6 +18,8 @@ import _400_model.PetRelationBean;
 import _400_model.PetService;
 import _400_model.PetSortCatBean;
 import _400_model.PetSortDogBean;
+import _500_model.MemberBean;
+import _500_model.MemberService;
 
 public class PetRelationAllLikeAction extends ActionSupport implements ServletRequestAware {
 	private HttpServletRequest req;
@@ -37,7 +39,7 @@ public class PetRelationAllLikeAction extends ActionSupport implements ServletRe
 	public String execute() {
 		PetService petService = new PetService();
 		HttpSession session = req.getSession();
-
+		MemberService mService=new MemberService();
 		List<PetRelationBean> RBean = petService.selectRelationAll();
 		List<PetBean> petBean = petService.selectAll();
 		List<PetAllBean> list = new ArrayList<PetAllBean>();
@@ -73,6 +75,8 @@ public class PetRelationAllLikeAction extends ActionSupport implements ServletRe
 							petAllBean.setPET_AGE(PET_AGE);
 							PetImgBean Imgbean = petService.selectId2(petBean.get(j).getPET_ID());
 							petAllBean.setPET_IMAGE(Imgbean.getPET_IMAGE());
+							List<MemberBean>list2=mService.selectMember2(petBean.get(j).getPET_OWN_ID());
+							petAllBean.setMEM_PHONE(list2.get(0).getMEM_PHONE());
 							list.add(petAllBean);
 
 						}
