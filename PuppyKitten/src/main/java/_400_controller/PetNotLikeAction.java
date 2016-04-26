@@ -122,8 +122,7 @@ public class PetNotLikeAction extends ActionSupport implements ServletRequestAwa
 			}
 		} else {// 如果第一筆不是自己
 			while (number < petBean.size()) {
-List<BlockadeBean>blockBean=petService.selectBlockadeAll();				
-				
+				List<BlockadeBean>blockBean=petService.selectBlockadeAll();				
 				for(int q=0;q<blockBean.size();q++){										
 					if(blockBean.get(q).getBLOCKADE_MENID().toString().equals(petBean.get(number).getPET_OWN_ID().toString())){
 						number++;
