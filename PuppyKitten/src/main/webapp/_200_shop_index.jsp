@@ -173,7 +173,7 @@ border-radius: 5px;
 									<c:param name="shopbean.PRO_IMAGE">${shop.PRO_IMAGE}</c:param>
 									<c:param name="shopbean.PRO_BODY">${shop.PRO_BODY}</c:param>
 									<c:param name="choose">choose</c:param>
-									</c:url>'><img class="shop_img" src="${shop.PRO_IMAGE}"  width="130" height="150">
+									</c:url>'><img class="shop_img" src="${shop.PRO_IMAGE}"  width="130">
 									</a>
 								</div>
 							<form action="<%=request.getContextPath()%>/shop/shopBackAction_shopindex" method="post">

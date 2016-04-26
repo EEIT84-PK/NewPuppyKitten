@@ -9,6 +9,7 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import com.opensymphony.xwork2.ActionSupport;
 
 import _200_model.ShopBean;
+import _200_model.ShopDAO;
 import _200_model.ShopService;
 import _200_model.Shop_Buy_Bean;
 import _500_model.MemberBean;
@@ -60,7 +61,10 @@ public class ShopBackAction_shopchoose extends ActionSupport implements ServletR
 
 	public String execute() {
 		ShopService service =new ShopService();
-		
+		shopbean.setPRO_ID(shop_Buy_Bean.getBUY_PRO_ID());
+		List<ShopBean> list=service.select(shopbean);
+		int buy1=list.get(0).getPRO_BUY1();
+		int buy2=list.get(0).getPRO_BUY2();
 		if(service.select_name(shop_Buy_Bean.getBUY_NAME()).isEmpty()){
 			shop_Buy_Bean.setBUY_LITTLE_TOTAL(shop_Buy_Bean.getBUY_NEW_PRICE()*shop_Buy_Bean.getBUY_NUMBER());
 			service.insert(shop_Buy_Bean);
@@ -68,7 +72,6 @@ public class ShopBackAction_shopchoose extends ActionSupport implements ServletR
 			shop_Buy_Bean.setBUY_ID(service.select_name(shop_Buy_Bean.getBUY_NAME()).get(0).getBUY_ID());
 			shop_Buy_Bean.setBUY_NUMBER(service.select_name(shop_Buy_Bean.getBUY_NAME()).get(0).getBUY_NUMBER()+shop_Buy_Bean.getBUY_NUMBER());
 			shop_Buy_Bean.setBUY_LITTLE_TOTAL(shop_Buy_Bean.getBUY_NEW_PRICE()*shop_Buy_Bean.getBUY_NUMBER());
-			
 			service.update(shop_Buy_Bean);
 		}
 		

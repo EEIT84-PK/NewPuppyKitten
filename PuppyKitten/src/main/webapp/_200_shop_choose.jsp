@@ -116,7 +116,7 @@ $(function(){
 									<span>${shopbean.PRO_ANIMAL}</span>>><span>${shopbean.PRO_KIND}</span>>><span>${shopbean.PRO_NAME}</span>
 								</div>
 								<div class="choose_pro2">
-									<img alt="" src="${shopbean.PRO_IMAGE }" height="360" width="400">
+									<img alt="" src="${shopbean.PRO_IMAGE }" height="360">
 								</div>
 
 								<div class="choose_pro3">
@@ -134,7 +134,7 @@ $(function(){
 											</form>
 									</div>
 									<div class="choose_pro4">
-											<span>建議售價：<span>${shopbean.PRO_PRICE}</span>元</span><br>
+											<span>建議售價：<span>${shopbean.PRO_PRICE}</span>元</span><c:choose><c:when test="${shopbean.PRO_PROJECT==指定價格}"><br><span>優惠方案：無</span></c:when><c:otherwise><br><span>優惠方案：${shopbean.PRO_PROJECT}</span></c:otherwise></c:choose><br>
 											<span>剩餘數量：<span>${shopbean.PRO_STOCK}</span>個</span> 
 									</div>
 								</div>
