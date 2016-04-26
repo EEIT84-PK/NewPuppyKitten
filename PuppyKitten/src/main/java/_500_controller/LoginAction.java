@@ -49,7 +49,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		if (bean == null) {
 			this.addFieldError("loginerror", "沒有此帳號或密碼錯誤");
 			return INPUT; 
-		} else if((bean!=null)&&bean2.get(0).getMEN_STATUS().equals("1")){			
+		} else if((bean!=null)&&bean2.get(0).getMEN_STATUS().equals(true)){			
              session.put("loginOK", bean.getMEM_NAME());
              session.put("memberID", bean.getMEM_ID());
              session.put("memberADD", bean.getMEM_ADD());

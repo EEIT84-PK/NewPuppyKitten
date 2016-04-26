@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <c:import url="/import/head.jsp"></c:import>
@@ -21,7 +21,7 @@
 <body>
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
-<article>
+<article style="width:410px;">
 
 	<h1 style="font-size:50px">會員專區</h1>
 	<ul>
@@ -30,7 +30,7 @@
 			<li style="font-size: 20px;"><a
 			href="<%=request.getContextPath()%>/login/selectmember.action">個人資料</a></li>
 		<li style="font-size: 20px"><a
-			href="<%=request.getContextPath()%>/petSelect/PetSelectAction.action">個人寵物資料</a></li>
+			href="<%=request.getContextPath()%>/petInterceptor/petIndex.action">個人寵物資料</a></li>
 	    <li style="font-size:20px">
 	    <a href="<%=request.getContextPath()%>/_200_shop_car.jsp">個人購物車</a>
 	    </li>

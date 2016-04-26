@@ -11,23 +11,10 @@
 	<div id="nav_main">
 		<div id="menu">
 			<div class="item">
-				<div class="main">寵物新知</div>
-				<div class="sub">
-					<ul>
-						<li><a href="">購買須知</a></li>
-						<li><a href="">商品分析</a></li>
-						<li><a href="">運費方式</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="item">
 				<div class="main">精品購物</div>
 				<div class="sub">
 					<ul>
-					
 						<li><a href='<c:url value="/shop/shopBackAction_goshop.action"/>'>購物中心</a></li>
-						<li><a href='<c:url value="/_200_shop_car.jsp"/>'>購物車</a></li>
-						<li><a href='<c:url value="/shop/shopBackAction_select.action"/>'>後台系統</a></li>
 					</ul>
 				</div>
 			</div>
@@ -36,7 +23,6 @@
 				<div class="sub">
 					<ul>
 						<li><a href='<c:url value="/petInterceptor/petIndex.action" ></c:url>'>寵物大廳</a></li>
-<%-- 						<li><a href='<c:url value="/petBlockade/petBlockadeBackAction.action" ></c:url>'>封鎖區</a></li>						 --%>
 					</ul>
 				</div>
 			</div>
@@ -44,9 +30,7 @@
 				<div class="main">寵物旅遊</div>
 				<div class="sub">
 					<ul>
-						<li><a href="<c:url value="/_300_introduce.jsp"/>">旅遊介紹</a></li>
 						<li><a href="<c:url value="/_300_google.jsp"/>">店家位置</a></li>
-						<li><a href='<c:url value="/map/mapBackAction.action" ></c:url>'>後台系統</a></li>
 					</ul>
 				</div>
 			</div>
@@ -56,9 +40,6 @@
 					<ul>
 						<li><a
 							href='<c:url value="/article/articleAction.action" ></c:url>'>討論大廳</a></li>
-						<li><a href="">留言板</a></li>
-						<li><a
-							href='<c:url value="/article/articleBackAction.action" ></c:url>'>後台系統</a></li>
 					</ul>
 				</div>
 			</div>
@@ -77,7 +58,7 @@
 				<li><a href="">聯絡我們<img
 						src="<%=request.getContextPath()%>/images/phone.png" width="15px"></a></li>
 						
-				<li><a href="<%=request.getContextPath()%>/_200_shop_car.jsp">購物車<img
+				<li><a href='<c:url value="/member/shopInterceptor.action" ></c:url>'>購物車<img
 						src="<%=request.getContextPath()%>/images/cart.png" width="15px"></a></li>
 				<li><a href='<c:url value="/member/Interceptor.action" ></c:url>'>會員中心</a></li>
 		<c:choose>
