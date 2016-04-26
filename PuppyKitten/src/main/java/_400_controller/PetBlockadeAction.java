@@ -2,9 +2,7 @@ package _400_controller;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -25,16 +23,7 @@ public class PetBlockadeAction extends ActionSupport implements ServletRequestAw
 	private BlockadeBean blockadeBean;	
 	private String BLOCKADE_MENID;
 	private HttpServletRequest req;	
-	private Map<String, Object>session2=new HashMap<String, Object>();	
-	
-	public Map<String, Object> getSession2() {
-		return session2;
-	}
-
-	public void setSession2(Map<String, Object> session2) {
-		this.session2 = session2;
-	}
-
+			
 	public String getBLOCKADE_MENID() {
 		return BLOCKADE_MENID;
 	}
@@ -66,8 +55,9 @@ public class PetBlockadeAction extends ActionSupport implements ServletRequestAw
 		PetService petService=new PetService();
 		HttpSession session=req.getSession();
 		blockadeBean.setBLOCKADE_MENID(Integer.parseInt(BLOCKADE_MENID));		
-		BlockadeBean bean=petService.insert(blockadeBean);		
-		session2.put("blockade", "成功!!");		
+		BlockadeBean bean=petService.insert(blockadeBean);
+		session.setAttribute("blockade", "成功!!");
+		
 		List<PetBean> petBean = petService.selectAll();// 先將所有寵物資訊抓出來放到petBean內
 		List<PetRelationBean> petRBean = petService.selectRelationAll();		
 		List<PetBean> selectKing = petService.selecPettId((Integer) session.getAttribute("memberID"));
@@ -77,7 +67,7 @@ public class PetBlockadeAction extends ActionSupport implements ServletRequestAw
 		List<PetRelationBean> check2 = new ArrayList<PetRelationBean>();
 		if (petBean.get(number).getPET_OWN_ID().toString().equals(session.getAttribute("memberID").toString())) {// 如果第一筆為自己
 			if (number3 == petBean.size()) { // 如果只有自己一個寵物資訊，代表沒有可感興趣的對象
-				session2.put("end", "已經沒有可感興趣的對象");				
+				session.setAttribute("end", "已經沒有可感興趣的對象");
 				return "end";
 			} else {
 				number++;// 跳下一筆
@@ -89,7 +79,7 @@ public class PetBlockadeAction extends ActionSupport implements ServletRequestAw
 					if(blockBean.get(q).getBLOCKADE_MENID().toString().equals(petBean.get(number).getPET_OWN_ID().toString())){
 						number++;
 						if (number == petBean.size()) {
-							session2.put("end", "已經沒有可感興趣的對象");							
+							session.setAttribute("end", "已經沒有可感興趣的對象");
 							return "end";
 						}else{
 							if ((!(petBean.get(number).getPET_KING().equals(selectKing.get(0).getPET_KING())))
@@ -97,7 +87,7 @@ public class PetBlockadeAction extends ActionSupport implements ServletRequestAw
 											&& petBean.get(number).getPET_SEX().equals(selectKing.get(0).getPET_SEX()))){
 								number++;
 								if (number == petBean.size()) {
-									session2.put("end", "已經沒有可感興趣的對象");
+									session.setAttribute("end", "已經沒有可感興趣的對象");
 									return "end";
 								}
 							}
@@ -121,7 +111,7 @@ public class PetBlockadeAction extends ActionSupport implements ServletRequestAw
 						check.clear();
 						check2.clear();
 						if (number == petBean.size()) {
-							session2.put("end", "已經沒有可感興趣的對象");
+							session.setAttribute("end", "已經沒有可感興趣的對象");
 							return "end";
 						}
 					} else {
@@ -132,7 +122,7 @@ public class PetBlockadeAction extends ActionSupport implements ServletRequestAw
 								&& petBean.get(number).getPET_SEX().equals(selectKing.get(0).getPET_SEX()))) {// 如果是非同類或者同類同性的話
 					number++;// 跳下一筆
 					if (number == petBean.size()) {
-						session2.put("end", "已經沒有可感興趣的對象");
+						session.setAttribute("end", "已經沒有可感興趣的對象");
 						return "end";
 					}
 				}
@@ -147,7 +137,7 @@ public class PetBlockadeAction extends ActionSupport implements ServletRequestAw
 						if(petBean.get(number).getPET_OWN_ID().toString().equals(session.getAttribute("memberID").toString())){
 							number++;
 							if(number==petBean.size()){
-								session2.put("end", "已經沒有可感興趣的對象");
+								session.setAttribute("end", "已經沒有可感興趣的對象");
 								return "end";
 							}
 						}						
@@ -166,7 +156,7 @@ public class PetBlockadeAction extends ActionSupport implements ServletRequestAw
 							check2.clear();
 
 							if (number == petBean.size()) {
-								session2.put("end", "已經沒有可感興趣的對象");
+								session.setAttribute("end", "已經沒有可感興趣的對象");
 								return "end";
 							} else {
 								// 但是有可能下一筆是自己，所以再跳下一筆
@@ -177,7 +167,7 @@ public class PetBlockadeAction extends ActionSupport implements ServletRequestAw
 							}
 
 							if (number == petBean.size()) {
-								session2.put("end", "已經沒有可感興趣的對象");
+								session.setAttribute("end", "已經沒有可感興趣的對象");
 								return "end";
 							}
 						}						
@@ -205,7 +195,7 @@ public class PetBlockadeAction extends ActionSupport implements ServletRequestAw
 						check2.clear();
 
 						if (number == petBean.size()) {
-							session2.put("end", "已經沒有可感興趣的對象");
+							session.setAttribute("end", "已經沒有可感興趣的對象");
 							return "end";
 						} else {
 							// 但是有可能下一筆是自己，所以再跳下一筆
@@ -216,7 +206,7 @@ public class PetBlockadeAction extends ActionSupport implements ServletRequestAw
 						}
 
 						if (number == petBean.size()) {
-							session2.put("end", "已經沒有可感興趣的對象");
+							session.setAttribute("end", "已經沒有可感興趣的對象");
 							return "end";
 						}
 					} else {
@@ -228,7 +218,7 @@ public class PetBlockadeAction extends ActionSupport implements ServletRequestAw
 					number++;// 跳下一筆
 
 					if (number == petBean.size()) {
-						session2.put("end", "已經沒有可感興趣的對象");
+						session.setAttribute("end", "已經沒有可感興趣的對象");
 						return "end";
 					} else {
 						// 但是有可能下一筆是自己，所以再跳下一筆
@@ -239,7 +229,7 @@ public class PetBlockadeAction extends ActionSupport implements ServletRequestAw
 					}
 
 					if (number == petBean.size()) {
-						session2.put("end", "已經沒有可感興趣的對象");
+						session.setAttribute("end", "已經沒有可感興趣的對象");
 						return "end";
 					}
 				}
@@ -249,21 +239,22 @@ public class PetBlockadeAction extends ActionSupport implements ServletRequestAw
 		if (petBean.get(number).getPET_SORT_ID().startsWith("41")) {// 如果抓出來的PET_SORT_ID是41開頭的話
 			// 用此PET_SORT_ID去找對應的PET_SORT_NAME
 			PetSortCatBean Catbean = petService.selectSortCat(petBean.get(number).getPET_SORT_ID());
-			session2.put("Sortbean", Catbean);			
+			session.setAttribute("Sortbean", Catbean);
 		} else {
 			PetSortDogBean Dogbean = petService.selectSortDog(petBean.get(number).getPET_SORT_ID());
-			session2.put("Sortbean", Dogbean);			
+			session.setAttribute("Sortbean", Dogbean);
 		}
 
 		Date now = new Date();// 取得現在時間的所有秒數
 		// 以下為算出現在時間-資料庫抓出來的出生日的時間再轉換毫秒(/1000)-->轉換天(/60*60*24)-->轉換年(/365)-->就是年齡了
 		long s = (now.getTime() - petBean.get(number).getPET_AGE().getTime()) / 1000 / (60 * 60 * 24) / 365;
-		session2.put("PET_AGE", s);
-		session2.put("petBean", petBean.get(number));		
+		session.setAttribute("PET_AGE", s);
+		session.setAttribute("petBean", petBean.get(number));
 		PetImgBean Imgbean = petService.selectId2(petBean.get(number).getPET_ID());
-		session2.put("petImg", Imgbean.getPET_IMAGE());
-		session2.put("PetNumber", ((Integer) number).toString());		
+		session.setAttribute("petImg", Imgbean.getPET_IMAGE());
+		session.setAttribute("PetNumber", ((Integer) number).toString());
 		session.removeAttribute("match");		
+		System.out.println("block="+session.getAttribute("PetNumber"));
 		return "success";
 	}
 }

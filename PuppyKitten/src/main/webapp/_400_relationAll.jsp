@@ -17,22 +17,22 @@ td {
 <body style="font-family: 微軟正黑體; font-size: large">
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
-		<article style="width: 1500px;">
+		<article style="width: 1500px;background:rgba(254, 219, 255, 0.6);border-radius:25px;">
 			<h1>寵物聯誼(交友中心)</h1>
 			<a href="<%=request.getContextPath()%>/_400_index.jsp">回寵物大廳</a><br>
 			<font color="red"><b>互相感興趣的對象</b><br>
 			</font><font color="red"><b>${noOne}</b></font>
-			<table border="1" style="border-collapse: collapse; width: 700px;"
+			<table border="1" style="border-collapse: collapse; width: 950px;"
 				id="listTable">
 				<tr>
 					<td style="width: 100px " align='center' valign="middle">寵物編號</td>
 					<td style="width: 100px" align='center' valign="middle">會員編號</td>
-					<td style="width: 60px" align='center' valign="middle">名字</td>
-					<td style="width: 60px" align='center' valign="middle">年齡</td>
-					<td style="width: 60px" align='center' valign="middle">體重</td>
-					<td style="width: 60px" align='center' valign="middle">種類</td>
-					<td style="width: 110px" align='center' valign="middle">品種</td>
-					<td style="width: 60px" align='center' valign="middle">性別</td>
+					<td style="width: 100px" align='center' valign="middle">名字</td>
+					<td style="width: 100px" align='center' valign="middle">年齡</td>
+					<td style="width: 100px" align='center' valign="middle">體重</td>
+					<td style="width: 100px" align='center' valign="middle">種類</td>
+					<td style="width: 160px" align='center' valign="middle">品種</td>
+					<td style="width: 100px" align='center' valign="middle">性別</td>
 				</tr>
 
 				<c:forEach var="sort" items="${list}">
