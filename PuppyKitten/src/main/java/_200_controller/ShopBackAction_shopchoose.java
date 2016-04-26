@@ -17,7 +17,7 @@ import _500_model.MemberBean;
 public class ShopBackAction_shopchoose extends ActionSupport implements ServletRequestAware {
 
 	private HttpServletRequest request;
-	private ShopBean shopbean;
+	private ShopBean shopbean=new ShopBean();
 	private Shop_Buy_Bean shop_Buy_Bean;
 	private MemberBean memberbean;
 
@@ -61,10 +61,29 @@ public class ShopBackAction_shopchoose extends ActionSupport implements ServletR
 
 	public String execute() {
 		ShopService service =new ShopService();
-		shopbean.setPRO_ID(shop_Buy_Bean.getBUY_PRO_ID());
+		Integer id=shop_Buy_Bean.getBUY_PRO_ID();
+		shopbean.setPRO_ID(id);
 		List<ShopBean> list=service.select(shopbean);
-		int buy1=list.get(0).getPRO_BUY1();
-		int buy2=list.get(0).getPRO_BUY2();
+		
+		//更新庫存數量
+		setShopbean(list.get(0));
+		if(shopbean.getPRO_STOCK()-shop_Buy_Bean.getBUY_NUMBER()<0){
+			addFieldError("number", "不好意思,目前庫存數量不夠");
+			return INPUT;
+		}
+		shopbean.setPRO_STOCK(shopbean.getPRO_STOCK()-shop_Buy_Bean.getBUY_NUMBER());
+		service.update(shopbean);
+		
+		//優惠方案
+		if(list.get(0).getPRO_PROJECT().equals("指定價格")){
+			//do nothing
+		}else{
+			int buy1=list.get(0).getPRO_BUY1();
+			int buy2=list.get(0).getPRO_BUY2();
+			System.out.println(buy1);
+		}
+		
+		//金額小計
 		if(service.select_name(shop_Buy_Bean.getBUY_NAME()).isEmpty()){
 			shop_Buy_Bean.setBUY_LITTLE_TOTAL(shop_Buy_Bean.getBUY_NEW_PRICE()*shop_Buy_Bean.getBUY_NUMBER());
 			service.insert(shop_Buy_Bean);
@@ -75,6 +94,7 @@ public class ShopBackAction_shopchoose extends ActionSupport implements ServletR
 			service.update(shop_Buy_Bean);
 		}
 		
+		//金額總和
 		List<Shop_Buy_Bean> shop_Buy_list = service.select_buy(shop_Buy_Bean);
 		request.getSession().setAttribute("shop_Buy_list", shop_Buy_list);
 		Integer total=0;
