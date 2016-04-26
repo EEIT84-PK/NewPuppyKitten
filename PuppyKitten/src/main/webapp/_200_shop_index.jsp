@@ -86,7 +86,7 @@ border-radius: 5px;
 /* 	border: 1px solid red; */
 	margin: 10px;
 	height: 35px;
-	text-shadow: 2px 2px 5px blue;
+	text-shadow: 2px 2px 5px red;
 	font-size: 20px;
 }
 
@@ -113,7 +113,9 @@ border-radius: 5px;
 	margin: 10px;
 	width: 450px;
 	height: 250px;
- 	background:whitesmoke; 
+ 	background:rgba(254, 219, 255, 0.6); 
+ 	border-radius:25px;
+ 	
 }
 
 .shop_img:hover {opacity: 0.7;}
@@ -126,7 +128,7 @@ border-radius: 5px;
 <body>
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
-		<article style="width: 1500px; background-color: white;">
+		<article style="width: 1500px;">
 				<form action="<%=request.getContextPath()%>/shop/shopBackAction_searchproduct" method="post">
 				<select id="sel_animal">
 					<option>請選擇</option>
@@ -173,7 +175,7 @@ border-radius: 5px;
 									<c:param name="shopbean.PRO_IMAGE">${shop.PRO_IMAGE}</c:param>
 									<c:param name="shopbean.PRO_BODY">${shop.PRO_BODY}</c:param>
 									<c:param name="choose">choose</c:param>
-									</c:url>'><img class="shop_img" src="${shop.PRO_IMAGE}"  width="130">
+									</c:url>'><img class="shop_img" src="${shop.PRO_IMAGE}"  width="130" height="150"  style="border-radius:25px">
 									</a>
 								</div>
 							<form action="<%=request.getContextPath()%>/shop/shopBackAction_shopindex" method="post">

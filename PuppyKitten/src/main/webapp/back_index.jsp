@@ -28,7 +28,7 @@
 <head>
 <script src="<%=request.getContextPath()%>/jquery/jquery-2.2.2.min.js"></script>
 <script src="<%=request.getContextPath()%>/jquery/jquery-ui.min.js"></script>
-<title>Prologue by HTML5 UP</title>
+<title>米沃貓窩-後台系統</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet"
