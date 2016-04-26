@@ -41,6 +41,9 @@ $(function(){
  	border-bottom: 1px solid #DDDDDD; 
 	margin: 20px;
 	height: 50px;
+	text-shadow: 2px 2px 5px red;
+	font-size: 25px;
+	
 }
 
 .choose_pro2 {
@@ -108,7 +111,7 @@ $(function(){
 <body>
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
-		<article style="width: 1500px; background-color: white;">
+		<article style="width: 1500px;background:rgba(254, 219, 255, 0.6);border-radius:25px;">
 							
 							<div class="choose_1">
 								<div class="choose_pro1">
@@ -116,13 +119,13 @@ $(function(){
 									<span>${shopbean.PRO_ANIMAL}</span>>><span>${shopbean.PRO_KIND}</span>>><span>${shopbean.PRO_NAME}</span>
 								</div>
 								<div class="choose_pro2">
-									<img alt="" src="${shopbean.PRO_IMAGE }" height="360" width="400">
+									<img alt="" src="${shopbean.PRO_IMAGE }" height="360" width="400" style="border-radius:25px;">
 								</div>
 
 								<div class="choose_pro3">
 								<span>商品介紹</span><br><br><span>${shopbean.PRO_BODY}</span><br> <br>
 								</div>
-								<div class="choose_pro6">
+								<div class="choose_pro6">	
 									<div class="choose_pro5">
 											<form action="<%=request.getContextPath()%>/shop/shopBackAction_shopchoose" method="post">
 												購買數量：<input type="number" name="shop_Buy_Bean.BUY_NUMBER" value="1">
