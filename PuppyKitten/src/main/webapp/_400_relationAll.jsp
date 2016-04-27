@@ -26,11 +26,10 @@ margin-right: 10px;
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
 		<article style="width: 1500px;border-radius:25px;">
-			<h1 style="color:#400000">寵物聯誼(交友中心)</h1>
+			<h1 style="color:#400000">寵物聯誼(互相感興趣)</h1>
 			<button class="myButton">
 				<a href="<%=request.getContextPath()%>/_400_index.jsp">回寵物大廳</a>
-			</button><br>
-			<font color="red"><b>互相感興趣的對象</b><br>
+			</button><br>			
 			</font><font color="red"><b>${noOne}</b></font>
 			<table border="1" style="border-collapse: collapse; width: 950px;background:rgba(250, 235, 215, 0.4);"
 				id="listTable">

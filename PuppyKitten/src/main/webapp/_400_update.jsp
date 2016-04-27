@@ -11,14 +11,6 @@
 
 <style type="text/css">
 	.error {color: #FF0000}
-	.myButton{
-background:rgba(250, 235, 215, 0.4);
-width: 150px;
-height:35px;
-font-size:16px;
-font-family: "微軟正黑體";
-margin-right: 10px;
-}
 </style>
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -40,9 +32,7 @@ function clearForm() {
 <section>
 <article>
 <h1 style="color:#400000">寵物聯誼(修改寵物資訊)</h1>
-	<button class="myButton">
-		<a href="<%=request.getContextPath()%>/_400_index.jsp">回寵物大廳</a>
-	</button><br>
+	<a href="<%=request.getContextPath()%>/_400_index.jsp">回寵物大廳</a><br>
 	<font color="red"><b>只能修改寵物照片或者寵物介紹！！</b></font><br>
 	<font color="blue"><b>${petUpdate }</b></font>
 	<form action="<%=request.getContextPath()%>/petUpdate/petUpdate2Action.action" method="post" enctype="multipart/form-data">		
