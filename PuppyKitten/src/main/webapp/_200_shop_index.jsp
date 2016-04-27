@@ -86,9 +86,7 @@ border-radius: 5px;
 /* 	border: 1px solid red; */
 	margin: 10px;
 	height: 35px;
-	color:#886600;
-	font-weight: 600;
-/* 	text-shadow: 2px 2px 5px red; */
+	text-shadow: 2px 2px 5px red;
 	font-size: 20px;
 }
 
