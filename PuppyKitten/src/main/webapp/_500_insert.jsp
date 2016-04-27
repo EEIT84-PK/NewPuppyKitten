@@ -52,7 +52,7 @@
 	<c:import url="/import/header.jsp"></c:import>
 
 	<section>
-		<article style="width: 410px;">
+		<article >
 
 
 			<form action="<%=request.getContextPath()%>/login/insertAction.action" method="post"
