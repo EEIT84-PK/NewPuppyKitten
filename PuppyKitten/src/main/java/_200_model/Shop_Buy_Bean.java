@@ -10,7 +10,7 @@ public class Shop_Buy_Bean {
 	private Integer BUY_OLD_PRICE;
 	private Integer BUY_NEW_PRICE;
 	private Integer BUY_LITTLE_TOTAL;
-	private Integer BUY_LARGE_TOTAL;
+	private String BUY_PROJECT;
 	
 	public Integer getBUY_PRO_ID() {
 		return BUY_PRO_ID;
@@ -60,12 +60,13 @@ public class Shop_Buy_Bean {
 	public void setBUY_LITTLE_TOTAL(Integer bUY_LITTLE_TOTAL) {
 		BUY_LITTLE_TOTAL = bUY_LITTLE_TOTAL;
 	}
-	public Integer getBUY_LARGE_TOTAL() {
-		return BUY_LARGE_TOTAL;
+	public String getBUY_PROJECT() {
+		return BUY_PROJECT;
 	}
-	public void setBUY_LARGE_TOTAL(Integer bUY_LARGE_TOTAL) {
-		BUY_LARGE_TOTAL = bUY_LARGE_TOTAL;
+	public void setBUY_PROJECT(String bUY_PROJECT) {
+		BUY_PROJECT = bUY_PROJECT;
 	}
+
 	
 	
 }

@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
@@ -93,6 +94,14 @@ public class UploadAction extends ActionSupport implements ServletRequestAware{
 		
 		service.insert(bean);
 		req.setAttribute("insert","新增成功!");
+		
+		List<ArticleBean> list=null;
+		list = service.selectAll();
+		req.setAttribute("select", list);
+
+		List<ArticleBean> sort=null;
+			sort = service.selectSort();
+			req.setAttribute("sort",sort);
 		return SUCCESS;
 	}
 	@Override

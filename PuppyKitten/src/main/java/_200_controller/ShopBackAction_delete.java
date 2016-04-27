@@ -32,18 +32,18 @@ public class ShopBackAction_delete extends ActionSupport implements ServletReque
 
 	public String execute() {
 		ShopService service = new ShopService();
-		int id = service.delete(shopbean.getPRO_ID());
-		if (id != 0) {
-			request.setAttribute("delete_OK", "刪除成功");
-//			System.out.println("papa");
-//			List<ShopBean> select_list = service.selectShop(shopbean);
-//			request.setAttribute("select_list", select_list);
-			List<ShopBean> select_list = service.selectShop(shopbean);
-			request.setAttribute("select_list", select_list);
-			return "success";
-		} else {
-			return "input";
-		}
+		
+		//刪除項目
+		service.delete(shopbean.getPRO_ID());
+		request.setAttribute("delete_OK", "刪除成功");
+		
+		//查詢剩餘項目
+		List<ShopBean> select_list = service.selectShop(shopbean);
+		request.setAttribute("select_list", select_list);
+			
+			
+		return SUCCESS;
+		
 	}
 
 }

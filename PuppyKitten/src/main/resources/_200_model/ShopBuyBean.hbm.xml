@@ -14,7 +14,7 @@
 		<property name="BUY_OLD_PRICE" column="BUY_OLD_PRICE"></property>
 		<property name="BUY_NEW_PRICE" column="BUY_NEW_PRICE"></property>
 		<property name="BUY_LITTLE_TOTAL" column="BUY_LITTLE_TOTAL"></property>
-		<property name="BUY_LARGE_TOTAL" column="BUY_LARGE_TOTAL"></property>
+		<property name="BUY_PROJECT" column="BUY_PROJECT"></property>
 
 	</class>
 

@@ -86,7 +86,9 @@ border-radius: 5px;
 /* 	border: 1px solid red; */
 	margin: 10px;
 	height: 35px;
-	text-shadow: 2px 2px 5px red;
+	color:#886600;
+	font-weight: 600;
+/* 	text-shadow: 2px 2px 5px red; */
 	font-size: 20px;
 }
 
@@ -113,7 +115,7 @@ border-radius: 5px;
 	margin: 10px;
 	width: 450px;
 	height: 250px;
- 	background:rgba(254, 219, 255, 0.6); 
+ 	background:rgba(255, 255, 215, 0.4); 
  	border-radius:25px;
  	
 }
