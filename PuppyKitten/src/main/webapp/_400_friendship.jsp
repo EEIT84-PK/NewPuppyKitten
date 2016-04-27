@@ -38,7 +38,12 @@ if('${blockade}'==""){
 	article.article{
 		text-align:center;
 		width:1500px;		
-	}			
+	}
+	 #button{
+	 	background-color:#FFF0D4;
+	 	width:80px;
+	 	height:40px;
+	 }			
 </style>
 <c:import url="/import/head.jsp"></c:import>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -50,7 +55,7 @@ if('${blockade}'==""){
 		<article class="article">
 		
 			<h2 style="color:#400000">寵物聯誼(配對系統)</h2>					
-			<font color="#FF0088" style="font-size:25px"><b>對此對象感興趣嗎？<br></b></font>		
+			<font color="#FF0088" style="font-size:25px">對此對象感興趣嗎？</font><br><br>	
 			<a class="link" href='<c:url value="/petLike/PetLikeAction.action" ></c:url>'><img src="<%=request.getContextPath()%>/images/_400/YES.png" width="150" height="60"></a>
 			<a class="link2" href='<c:url value="/petNotLike/PetNotLikeAction.action" ></c:url>'><img src="<%=request.getContextPath()%>/images/_400/NO.png" width="150" height="60"></a>
 			<div style="padding-left: 450px;">
