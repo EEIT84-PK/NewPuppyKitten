@@ -26,7 +26,7 @@
 		<article style="width:410px;">
 			<form action="<%=request.getContextPath()%>/login/loginAction.action"
 				method="post">
-				<h1 style="font-size: 50px;">登入會員</h1>
+				<h1  style="color:#400000;font-size:35px;">登入會員</h1>
 				<table>
 					<tr>
 						<td style="font-size: 20px">帳號:</td>
@@ -41,9 +41,10 @@
 					</tr>
 					<tr>
 						<td></td>
+						
 						<td><input style="font-size: 10px; float:center;" type="submit" value="登入"><a
 							href="<%=request.getContextPath()%>/_500_forgetpassword.jsp">忘記密碼</a></td>
-
+						
 					</tr>
 				</table>
 			</form>
