@@ -113,7 +113,7 @@ border-radius: 5px;
 	margin: 10px;
 	width: 450px;
 	height: 250px;
- 	background:rgba(254, 219, 255, 0.6); 
+ 	background:rgba(220, 155, 3, 1); 
  	border-radius:25px;
  	
 }

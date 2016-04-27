@@ -1,7 +1,9 @@
 package _400_controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -17,6 +19,7 @@ import _400_model.PetService;
 
 public class PetBlockadeBackAction extends ActionSupport implements ServletRequestAware{
 	private HttpServletRequest req;
+
 	public HttpServletRequest getReq() {
 		return req;
 	}
@@ -38,13 +41,12 @@ public class PetBlockadeBackAction extends ActionSupport implements ServletReque
 		}
 		
 		if(list.isEmpty()){
-			session.removeAttribute("Blocklist");
-			session.setAttribute("noBlock", "目前沒任何人被檢舉");
+			req.removeAttribute("Blocklist");
+			req.setAttribute("noBlock", "目前沒任何人被檢舉");						
 		}else{
-			session.removeAttribute("noBlock");
-			session.setAttribute("Blocklist", list);	
-		}
-		System.out.println("123="+session.getAttribute("Blocklist"));
+			req.removeAttribute("noBlock");
+			req.setAttribute("Blocklist", list);							
+		}		
 		return "success";
 	}
 }

@@ -31,7 +31,7 @@ function clearForm() {
 <c:import url="/import/header.jsp"></c:import>
 <section>
 <article>
-<h1>寵物聯誼(修改寵物資訊)</h1>
+<h1 style="color:#400000">寵物聯誼(修改寵物資訊)</h1>
 	<a href="<%=request.getContextPath()%>/_400_index.jsp">回寵物大廳</a><br>
 	<font color="red"><b>只能修改寵物照片或者寵物介紹！！</b></font><br>
 	<font color="blue"><b>${petUpdate }</b></font>

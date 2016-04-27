@@ -13,6 +13,6 @@ public interface MemberDAO_interface {
 	public List<MemberBean> selectId(String MEM_ACCOUNT);
 	public List<MemberBean> selectId2(Integer MEM_ID);
 	public MemberBean selectMemberBypwdaccount(String account);
-	public List<MemberBean> selectBlockade(String MEN_STATUS);
+	public List<MemberBean> selectBlockade(boolean MEN_STATUS);
 
 }

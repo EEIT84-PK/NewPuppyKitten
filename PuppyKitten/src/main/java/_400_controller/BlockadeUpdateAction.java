@@ -55,7 +55,7 @@ public class BlockadeUpdateAction extends ActionSupport implements ServletReques
 		
 		System.out.println("bean="+bean.getMEN_STATUS());
 		
-		List<MemberBean>select=mService.selectBlockade("0");
+		List<MemberBean>select=mService.selectBlockade(false);
 		System.out.println("select="+select);
 		List<MemberBean> list = new ArrayList<MemberBean>();
 		for(int i=0;i<select.size();i++){
