@@ -19,15 +19,6 @@ import _400_model.PetService;
 
 public class PetBlockadeBackAction extends ActionSupport implements ServletRequestAware{
 	private HttpServletRequest req;
-	private Map<String, Object>session2=new HashMap<String, Object>();	
-	
-	public Map<String, Object> getSession2() {
-		return session2;
-	}
-
-	public void setSession2(Map<String, Object> session2) {
-		this.session2 = session2;
-	}
 
 	public HttpServletRequest getReq() {
 		return req;
@@ -50,13 +41,12 @@ public class PetBlockadeBackAction extends ActionSupport implements ServletReque
 		}
 		
 		if(list.isEmpty()){
-			session2.remove("Blocklist");
-			session2.put("noBlock", "目前沒任何人被檢舉");			
+			req.removeAttribute("Blocklist");
+			req.setAttribute("noBlock", "目前沒任何人被檢舉");						
 		}else{
-			session2.remove("noBlock");
-			session2.put("Blocklist", list);				
-		}
-		
+			req.removeAttribute("noBlock");
+			req.setAttribute("Blocklist", list);							
+		}		
 		return "success";
 	}
 }

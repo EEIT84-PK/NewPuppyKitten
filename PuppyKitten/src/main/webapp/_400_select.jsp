@@ -9,7 +9,15 @@
 	td{
 		width: 100px;
 		word-break:break-all;
-	}	
+	}
+	.myButton{
+background:rgba(250, 235, 215, 0.4);
+width: 150px;
+height:35px;
+font-size:16px;
+font-family: "微軟正黑體";
+margin-right: 10px;
+}	
 </style>
 <c:import url="/import/head.jsp"></c:import>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -20,52 +28,36 @@
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
 		<article>
-			<h1>寵物聯誼(個人寵物資訊)</h1>
-			<a href="<%=request.getContextPath()%>/_400_index.jsp">回寵物大廳</a>
-			<a href='<c:url value="/petUpdate/petUpdateAction.action" ></c:url>'>修改寵物資訊</a>
-			<table border="1" style="border-collapse: collapse;" >
+			<h1 style="color:#400000">寵物聯誼(個人寵物資訊)</h1>
+			<button class="myButton">
+				<a href="<%=request.getContextPath()%>/_400_index.jsp">回寵物大廳</a>
+			</button>
+			<button class="myButton">	
+				<a href='<c:url value="/petUpdate/petUpdateAction.action" ></c:url>'>修改寵物資訊</a>
+			</button><br><br>
+			<table border="0" style="border-collapse: collapse;width:700px;background:rgba(250, 235, 215, 0.4); border-radius:10px;" >
 				<tr>
-					<td>寵物編號：</td>
-					<td>${bean.PET_ID }</td>
-				</tr>
-				<tr>
-					<td>會員編號：</td>
-					<td>${bean.PET_OWN_ID}</td>
-				</tr>
-				<tr>
-					<td>寵物名字：</td>
-					<td>${bean.PET_NAME }</td>
-				</tr>
-				<tr>
-					<td>寵物年齡：</td>
-					<td>${PET_AGE}</td>
-				</tr>
-				<tr>
-					<td>寵物體重：</td>
-					<td>${bean.PET_WEIGHT}kg</td>
-				</tr>
-				<tr>
-					<td>寵物種類：</td>
-					<td>${bean.PET_KING}</td>
-				</tr>
-				<tr>
-					<td>寵物品種：</td>
-					<td>${Sortbean.PET_SORT_NAME}</td>
-				</tr>
-				<tr>
-					<td>寵物性別：</td>
-					<td>${bean.PET_SEX}<BR></td>
-				</tr>
-				<tr>
-					<td>寵物照片：</td>
-					<td><img src="${petImg}" width="300" height="300"></td>
+					<td style="width:300" rowspan="2" align="center" valign="middle"><img src="${petImg}" width="250" height="250" style="border-radius:10px;padding-left:25px"></td>
+					<td style="width:450px;line-height:30px;padding-left:30px;font-size:20px;font-weight: bloder;">
+						寵物編號：${bean.PET_ID }<br>
+						會員編號：${bean.PET_OWN_ID}<br>
+						名字：${bean.PET_NAME }<br>
+						年齡：${PET_AGE}<br>
+						體重：${bean.PET_WEIGHT}kg<br>
+						種類：${bean.PET_KING}<br>
+						品種：${Sortbean.PET_SORT_NAME}<br>
+						性別：${bean.PET_SEX}						
+					</td>					
 				</tr>				
+			</table><br>
+			<table border="0" style="border-collapse: collapse;width:700px;background:rgba(250, 235, 215, 0.4); border-radius:10px;" >											
 				<tr>
-					<td>寵物介紹：</td>
-					<td>${bean.PET_BODY}</td>
+					<td align='center' valign="middle">寵物介紹</td>
 				</tr>
-			</table>
-					
+				<tr>															
+					<td align='center' valign="middle" style="word-break: break-all;font-size:20px;">${bean.PET_BODY}</td>
+				</tr>
+			</table>		
 		</article>	
 	</section>
 

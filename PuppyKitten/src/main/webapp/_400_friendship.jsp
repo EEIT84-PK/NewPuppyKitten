@@ -33,7 +33,6 @@ if('${blockade}'==""){
 
 });
 
-
 </script>
 <style type="text/css">	
 	article.article{
@@ -50,15 +49,15 @@ if('${blockade}'==""){
 	<section>
 		<article class="article">
 		
-			<h2>寵物聯誼(配對系統)</h2>					
-					
+			<h2 style="color:#400000">寵物聯誼(配對系統)</h2>					
+			<font color="#FF0088" style="font-size:25px"><b>對此對象感興趣嗎？<br></b></font>		
 			<a class="link" href='<c:url value="/petLike/PetLikeAction.action" ></c:url>'><img src="<%=request.getContextPath()%>/images/_400/YES.png" width="150" height="60"></a>
 			<a class="link2" href='<c:url value="/petNotLike/PetNotLikeAction.action" ></c:url>'><img src="<%=request.getContextPath()%>/images/_400/NO.png" width="150" height="60"></a>
-			<div style="padding-left: 540px;">
+			<div style="padding-left: 450px;">
 				<table >				
 					<tr>
 					<td class="td"><img src="${petImg}" width="300" height="300"></td>
-					<td class="td" style="width: 150px;word-break:break-all;text-align:left;">
+					<td class="td" style="width: 250px;word-break:break-all;text-align:left;">
 					<b style="font-size:25px">${PET_AGE}</b>
 					<b style="font-size:25px;font-weight: bloder;">歲</b>，${petBean.PET_SEX}<BR>
 					<b style="font-size:25px;font-weight: bloder;">名字：</b>${petBean.PET_NAME } <br>
@@ -81,8 +80,8 @@ if('${blockade}'==""){
 					   		</form>
 						</div>
 						
-							<div id="toggle"><a class="link" href='<c:url value="/petRelationAll/petRelationaAllLikeAction.action" ></c:url>'>和${match}配對成功，看看誰和我互相感興趣</a><br></div>
-							<div id="toggle2"><font color="red"><b>檢舉${petBean.PET_OWN_ID}${blockade}<br></b></font></div>
+							<div id="toggle"><a class="link" style="font-size:25px;color:#FF0088" href='<c:url value="/petRelationAll/petRelationaAllLikeAction.action" ></c:url>'>和${match}配對成功，看看誰和我互相感興趣</a><br></div>
+							<div id="toggle2"><font color="red" style="font-size:25px"><b>檢舉${petBean.PET_OWN_ID}${blockade}<br></b></font></div>
 							
 		</article>		
 	</section>
