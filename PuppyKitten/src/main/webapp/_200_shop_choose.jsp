@@ -120,6 +120,7 @@ $(function(){
 								</div>
 								<div class="choose_pro2">
 									<img alt="" src="${shopbean.PRO_IMAGE }" height="360" width="400" style="border-radius:25px;">
+
 								</div>
 
 								<div class="choose_pro3">
@@ -129,7 +130,7 @@ $(function(){
 									<div class="choose_pro5">
 											<form action="<%=request.getContextPath()%>/shop/shopBackAction_shopchoose" method="post">
 												購買數量：<input type="number" name="shop_Buy_Bean.BUY_NUMBER" value="1">
-													<input class="button1" type="submit" value="加入購物車" style="font-size: 14px;">
+													<input class="button1" type="submit" value="加入購物車" style="font-size: 14px;"><br>${errors.number[0]}
 													<input class="wo" type="text" name="shop_Buy_Bean.BUY_PRO_ID" value="${shopbean.PRO_ID}">
 													<input class="wo" type="text" name="shop_Buy_Bean.BUY_USER_ID" value="${session.memberID}">
 													<input class="wo" type="text" name="shop_Buy_Bean.BUY_NAME" value="${shopbean.PRO_NAME}">
@@ -137,7 +138,7 @@ $(function(){
 											</form>
 									</div>
 									<div class="choose_pro4">
-											<span>建議售價：<span>${shopbean.PRO_PRICE}</span>元</span><br>
+											<span>建議售價：<span>${shopbean.PRO_PRICE}</span>元</span><c:choose><c:when test="${shopbean.PRO_PROJECT==指定價格}"><br><span>優惠方案：無</span></c:when><c:otherwise><br><span>優惠方案：${shopbean.PRO_PROJECT}</span></c:otherwise></c:choose><br>
 											<span>剩餘數量：<span>${shopbean.PRO_STOCK}</span>個</span> 
 									</div>
 								</div>

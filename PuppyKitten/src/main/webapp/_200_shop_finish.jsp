@@ -52,7 +52,7 @@ line-height: 40px;
 							<th style="width: 100px;">總金額</th>
 							
 						</tr>	
-						<tr>
+						<tr style="text-align: center;">
 							<td>${shop_Order_Bean.ORDER_ID}</td>
 							<td>${shop_Order_Bean.ORDER_DATE}</td>
 							<td>${shop_Order_Bean.ORDER_USER_NAME}</td>

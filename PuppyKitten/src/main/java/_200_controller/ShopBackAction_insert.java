@@ -88,12 +88,12 @@ public class ShopBackAction_insert extends ActionSupport implements ServletReque
 		if (shopbean.getPRO_PRICE() == null) {
 			this.addFieldError("errorInsertPrice", "請輸入指定價格");
 		}
-//		if (shopbean.getPRO_BUY1() == null) {
-//			this.addFieldError("errorInsert_Buy1", "請輸入指定數量");
-//		}
-//		if (shopbean.getPRO_BUY2() == null) {
-//			this.addFieldError("errorInsert_Buy2", "請輸入贈送數量");
-//		}
+		if (shopbean.getPRO_BUY1() == null) {
+			this.addFieldError("errorInsert_Buy1", "請輸入指定數量");
+		}
+		if (shopbean.getPRO_BUY2() == null) {
+			this.addFieldError("errorInsert_Buy2", "請輸入贈送數量");
+		}
 		if (shopbean.getPRO_STOCK() == null) {
 			this.addFieldError("errorInsertStock", "請輸入庫存數量");
 		}
@@ -118,8 +118,13 @@ public class ShopBackAction_insert extends ActionSupport implements ServletReque
 			while ((len = inStream.read(b)) != -1)
 				outStream.write(b,0,len);				
 			shopbean.setPRO_IMAGE(ServletActionContext.getServletContext().getContextPath()+"/_200_images/"+PRO_IMAGEFileName);
-			ShopBean bean = service.insert(shopbean);
-			if (bean != null) {
+			
+			System.out.println(shopbean.getPRO_PROJECT());
+			if(shopbean.getPRO_PROJECT().equals("買幾送幾")){
+				shopbean.setPRO_PROJECT("買"+shopbean.getPRO_BUY1()+"送"+shopbean.getPRO_BUY2());
+			}
+			service.insert(shopbean);
+			if (shopbean != null) {
 				request.setAttribute("insertOK", "新增成功");
 				return "success";
 			}
