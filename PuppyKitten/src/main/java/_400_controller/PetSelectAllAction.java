@@ -69,11 +69,11 @@ public class PetSelectAllAction extends ActionSupport implements ServletRequestA
 				list.add(petAllBean);
 		}
 			if(list.isEmpty()){
-				session.setAttribute("noPet", "目前沒有任何寵物資訊");
-				session.removeAttribute("PetList");
+				req.setAttribute("noPet", "目前沒有任何寵物資訊");
+				req.removeAttribute("PetList");
 			}else{
-				session.setAttribute("PetList", list);
-				session.removeAttribute("noPet");
+				req.setAttribute("PetList", list);
+				req.removeAttribute("noPet");
 			}		
 		
 		

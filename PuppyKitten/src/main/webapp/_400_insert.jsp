@@ -107,7 +107,7 @@ function clearForm() {
 <c:import url="/import/header.jsp"></c:import>
 <section>
 <article>
-<h1>寵物聯誼(新增寵物資訊)</h1>
+<h1 style="color:#400000">寵物聯誼(新增寵物資訊)</h1>
 	<font color="red"><b><s:property value="errorMsg" /></b></font>
 	<form action="<%=request.getContextPath()%>/pet/petAction.action" method="post" enctype="multipart/form-data">
 		會員編號：<input type="text" name="petBean.PET_OWN_ID" size="20" value="${session.memberID}" readonly="readonly"><BR>		

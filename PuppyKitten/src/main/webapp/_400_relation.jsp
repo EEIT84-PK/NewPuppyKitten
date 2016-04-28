@@ -13,16 +13,25 @@
 td {
 	word-break: break-all;
 }
+.myButton{
+background:rgba(250, 235, 215, 0.4);
+width: 150px;
+height:35px;
+font-size:16px;
+font-family: "微軟正黑體";
+margin-right: 10px;
+}
 </style>
 <body style="font-family: 微軟正黑體; font-size: large">
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
 		<article style="width: 1500px;">
-			<h1>寵物聯誼(交友中心)</h1>
-			<a href="<%=request.getContextPath()%>/_400_index.jsp">回寵物大廳</a><br>
-			<font color="red"><b>喜歡我的人是</b><br>
+			<h1 style="color:#400000">寵物聯誼(對我感興趣)</h1>
+			<button class="myButton">
+				<a href="<%=request.getContextPath()%>/_400_index.jsp">回寵物大廳</a>
+			</button><br>			
 			</font><font color="red"><b>${noOne}</b></font>
-			<table border="1" style="border-collapse: collapse; width: 700px;"
+			<table border="1" style="border-collapse: collapse; width: 700px;background:rgba(250, 235, 215, 0.4);"
 				id="listTable">
 				<tr>
 					<td style="width: 100px" align='center' valign="middle">寵物編號</td>

@@ -488,10 +488,7 @@
 				</form>
 				
 				<c:choose>
-					<c:when test="${not empty select}">
-						<div style="border-bottem: 1px solid #DDDDDD;">
-							<b style="font-size: 25px;">會員資料</b> <br><br>
-						</div>
+					<c:when test="${not empty select}">						
 						<table id="datable" border="1"
 							style="border-collpace: collapse; width: 1600px">
 							<thead>
@@ -535,10 +532,10 @@
 		<!-- 非自己區塊的欄位 請勿變動，如有問題請詢問誌中/資文---分隔線------------------------------------------------------------>
 		<!-- 很重要所以說第一次，很重要所以說第二次，很重要所以說第三次-------------------------------------------------------------->
 		<section id="pet" class="three">
-			<div class="container" style="min-height: 800px">
-				<header>
-					<h2 style="text-align: left">寵物管理</h2>
-				</header>
+			<div class="container" style="min-height: 800px">	
+			<header>
+					<h2 style="text-align: left">封鎖管理</h2>
+				</header>			
 				<form
 					action="<%=request.getContextPath()%>/petSelect/PetSelectAllAction.action#pet"
 					method="get">
@@ -567,7 +564,7 @@
 								<c:forEach var="pet" items="${PetList}">
 									<tr height="100" style="width: 100px;font-size:20px;text-align: center;line-height: 100px;">
 										<td height="100"><img src="${pet.PET_IMAGE}" width="100" style="padding-bottom: 0px;"></td>
-										<td style="height:100%">${pet.PET_ID}</td>
+										<td style="height:100%;">${pet.PET_ID}</td>
 										<td>${pet.PET_OWN_ID}</td>
 										<td>${pet.PET_NAME}</td>
 										<td style="width: 50px;">${pet.PET_AGE}</td>
@@ -597,17 +594,9 @@
 				<div style="float: left;padding-left:30px;">
 					<a href='<c:url value="/blockadeSelect/blockadeSelectAction.action#blockSelect" ></c:url>'>查看已被封鎖名單</a>
 				</div>
-				<BR>
-				<div style="float: left;padding-left:30px;">
-					<font ><b>${noBlock}<br></b></font>
-				</div>
-			
-				
+				<BR>				
 					<c:choose>
-					<c:when test="${not empty Blocklist}">
-						<div style="border-bottem: 1px solid #DDDDDD;">
-							<b style="font-size: 25px;">檢舉名單</b> <br><br>
-						</div>						
+					<c:when test="${not empty Blocklist}">											
 						<table id="datable" border="1"
 							style="border-collpace: collapse; width: 500px;">
 							<thead>
@@ -640,16 +629,7 @@
 			<div class="container" style="min-height: 800px">
 				<header>
 					<h2 style="text-align: left">封鎖管理</h2>
-				</header>
-				<div style="float: left;padding-left:30px;">
-					<font color="black"><b>${noSelectOne}<br></b></font>
-					<font color="red"><b>${noSelect}<br></b></font>
-				</div>
-					
-					<form action="<%=request.getContextPath()%>/blockadeSelect/blockadeSelectOneAction.action#blockSelect"	method="GET">
-						<input type="text" name="MEM_ID" style="font-size: 16px; width: 20%"/>						
-						<input  type="submit"  value="查詢" style="font-size:15px;float: right; height: 25px;margin-right:1000px;">
-					</form>			
+				</header>		
 				
 					<c:choose>
 					<c:when test="${not empty Selectlist}">

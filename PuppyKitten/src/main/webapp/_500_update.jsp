@@ -41,43 +41,43 @@
 
 	<section>
 		<article>
-			<h1 style="font-size: 50px;">修改資料</h1>
+			<h1 style="color:#400000">修改資料</h1>
 			<form action="login/updateAction.action" method="post"
 				enctype="multipart/form-data">
 				<input type="hidden" name="memberBean.MEM_ID" value="${bean.MEM_ID}">
-				<table  border="0" width="410px"style="border:5px #fbe3c0 solid;padding:5px;border-collapse: collapse;background:rgba(250, 235, 215, 0.8);">
-					<tr style="font-size:20px;border-collapse:collapse;background:rgba(250, 235, 215, 0.4);">
+				<table border="0" style="border-collapse: collapse;width:600px;background:rgba(250, 235, 215, 0.4); border-radius:10px;">
+					<tr style="font-size:17px;">
 						<td>姓名:</td>
-						<td><input type="text" name="memberBean.MEM_NAME"
+						<td ><input type="text" name="memberBean.MEM_NAME"
 							value="${bean.MEM_NAME}"></td>
 						<td style="color: red">${errors.MEM_NAME[0]}</td>
 					</tr>
-					<tr style="font-size:20px;">
+					<tr style="font-size:17px;">
 						<td>身分證字號:</td>
 						<td><input type="text" name="memberBean.MEM_IDCARD"
 							 value="${bean.MEM_IDCARD}"></td>
 						<td style="color: red">${errors.MEM_IDCARD[0]}</td>
 					</tr>
-					<tr style="font-size:20px;border-collapse:collapse;background:rgba(250, 235, 215, 0.4);">
+					<tr style="font-size:17px;">
 						<td>生日:</td>
-						<td><input type="text" name="memberBean.MEM_BIRTHDAY" id="age"
+						<td ><input type="text" name="memberBean.MEM_BIRTHDAY" id="age"
 							value="<fmt:formatDate pattern="yyyy-MM-dd" value="${bean.MEM_BIRTHDAY}"/>"/>
 							
 						<td style="color: red">${errors.MEM_BIRTHDAY[0]}</td>
 					</tr>
-					<tr style="font-size:20px;">
+					<tr style="font-size:17px;">
 						<td>地址:</td>
-						<td><input type="text" name="memberBean.MEM_ADD"
+						<td ><input type="text" name="memberBean.MEM_ADD"
 							value="${bean.MEM_ADD}"></td>
 						<td style="color: red">${errors.MEM_ADD[0]}</td>
 					</tr>
-					<tr style="font-size:20px;border-collapse:collapse;background:rgba(250, 235, 215, 0.4);">
+					<tr style="font-size:17px;">
 						<td>手機:</td>
-						<td><input type="text" name="memberBean.MEM_PHONE"
+						<td ><input type="text" name="memberBean.MEM_PHONE"
 							value="${bean.MEM_PHONE}"></td>
 						<td style="color: red">${errors.MEM_PHONE[0]}</td>
 					</tr>
-					<tr style="font-size:20px;">
+					<tr style="font-size:17px;">
 						<td>信箱:</td>
 						<td><input type="email" name="memberBean.MEM_EMAIL"
 							value="${bean.MEM_EMAIL}"></td>

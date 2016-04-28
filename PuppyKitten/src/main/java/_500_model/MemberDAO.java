@@ -161,7 +161,7 @@ public class MemberDAO implements MemberDAO_interface {
 	}
 
 	@Override
-	public List<MemberBean> selectBlockade(String MEN_STATUS) {
+	public List<MemberBean> selectBlockade(boolean MEN_STATUS) {
 		List<MemberBean> list = null;
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		try {
