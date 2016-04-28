@@ -25,7 +25,7 @@
 		})
 
 		$("#button").click(function() {
-			$("#MEM_ACCOUNT").val("GN123456");
+			$("#MEM_ACCOUNT").val("eeit10");
 			$("#MEM_PASSWORD").val("123456");
 			$("#password").val("123456")
 			$("#MEM_NAME").val("小陳");
