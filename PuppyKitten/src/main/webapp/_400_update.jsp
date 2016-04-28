@@ -11,6 +11,14 @@
 
 <style type="text/css">
 	.error {color: #FF0000}
+		.myButton{
+background:rgba(250, 235, 215, 0.4);
+width: 150px;
+height:35px;
+font-size:16px;
+font-family: "微軟正黑體";
+margin-right: 10px;
+}
 </style>
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -30,30 +38,32 @@ function clearForm() {
 <body style="font-family: 微軟正黑體; font-size: large">
 <c:import url="/import/header.jsp"></c:import>
 <section>
-<article>
-<h1 style="color:#400000">寵物聯誼(修改寵物資訊)</h1>
-	<a href="<%=request.getContextPath()%>/_400_index.jsp">回寵物大廳</a><br>
+<article style="overflow: hidden;">
+<h1 style="color:#400000;font-size:40px">修改寵物資訊</h1>
+	<button class="myButton">
+		<a href="<%=request.getContextPath()%>/_400_index.jsp">回寵物大廳</a>
+	</button><br>
 	<font color="red"><b>只能修改寵物照片或者寵物介紹！！</b></font><br>
 	<font color="blue"><b>${petUpdate }</b></font>
 	<form action="<%=request.getContextPath()%>/petUpdate/petUpdate2Action.action" method="post" enctype="multipart/form-data">		
 		會員編號：<input type="text" name="petBean.PET_OWN_ID" size="20" value="${petBean.PET_OWN_ID}" readonly="readonly"><BR>		
 		寵物編號：<input type="text" name="petBean.PET_ID" size="20" value="${petBean.PET_ID}" readonly="readonly"><BR>	
-		寵物名字： <input type="text" name="petBean.PET_NAME" size="10" value="${petBean.PET_NAME}" readonly="readonly"> 
+		名字： <input type="text" name="petBean.PET_NAME" size="10" value="${petBean.PET_NAME}" readonly="readonly"> 
 		<BR>
 		出生年月日： <input type="text" name="petBean.PET_AGE" size="10" id="age" value="${date}" readonly="readonly"> 
 		<BR>
-		寵物體重： <input type="number" name="petBean.PET_WEIGHT" size="10" value="${petBean.PET_WEIGHT}" readonly="readonly">
+		體重： <input type="number" name="petBean.PET_WEIGHT" size="10" value="${petBean.PET_WEIGHT}" readonly="readonly">
 		<BR>
-		寵物種類：			
+		種類：			
 		<input type="text" name="petBean.PET_KING" size="3" readonly="readonly" value="${petBean.PET_KING}" id="PET_KING">
 		<BR>
-		寵物品種：			 
+		品種：			 
 		<input type="text" name="petBean.PET_SORT_ID" size="12" readonly="readonly" value="${Sortbean.PET_SORT_NAME}" id="PET_SORT_ID" > 
 		<BR>
 		性別：
 		<input name="petBean.PET_SEX" type="radio" value="公" id="sex" >公
 		<input name="petBean.PET_SEX" type="radio" value="母" id="sex" >母 <br>
-		寵物照片：<input type="file" name="PET_IMAGE" size="30" />
+		照片：<input type="file" name="PET_IMAGE" size="30" />
 		<span class="error">${request.PET_IMAGE}</span><BR>
 		<font color="red"><b><s:fielderror/></b></font>							 
 		介紹：<BR>

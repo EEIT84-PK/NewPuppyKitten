@@ -21,6 +21,14 @@
 <script>
 	$(function() {
 		$('.formtrhide').hide();
+	
+	
+	$("#button_insert").click(function(){		
+		$("#insert_name").val("8in1愛犬(抗菌除臭)乾洗慕斯");
+		$("input[name='shopbean.PRO_WEIGHT']").val("350");
+		$("input[name='shopbean.PRO_STOCK']").val("100");
+		$("textarea[name='shopbean.PRO_BODY']").val("使用獨特配方，免用水清洗，即可乾淨除臭皮膚毛髮，無酒精配方可以取代愛犬傳統洗澡方式	方便使用於8週以上幼犬及老犬，受傷之愛犬及不容易清洗的愛犬身上。");
+	});
 	});
 </script>
 
@@ -274,7 +282,7 @@
 		<section id="insert" class="two">
 			<div class="container" style="min-height: 800px">
 				<header>
-					<h2 style="text-align: left">新增商品</h2>
+					<h2 style="text-align: left">新增商品<img src="<%=request.getContextPath()%>/images/ad/circle.png" id="button_insert"></h2>
 				</header>
 				<h2 style="color: red; font-size: 30px; text-align: left"
 					id="insert_1">${insertOK}</h2>
@@ -282,7 +290,7 @@
 					action="<%=request.getContextPath()%>/shop/shopBackAction_insert#insert"
 					method="post" enctype="multipart/form-data">
 					<div style="float: left;">商品名稱：</div>
-					<input type="text" name="shopbean.PRO_NAME"
+					<input type="text" id="insert_name" name="shopbean.PRO_NAME"
 						value="${shopbean.PRO_NAME}" style="font-size: 16px; width: 50%"><span
 						class="errorInsert">${errors.errorInsertName[0]}</span><br> <br>
 					<div style="float: left; text-align: center;">商品類型：</div>
@@ -348,11 +356,11 @@
 					<br><br>
 					</div>
 					<div style="float: left;">商品重量：</div>
-					<input type="text" name="shopbean.PRO_WEIGHT"
+					<input type="text" id="insert_WEIGHT" name="shopbean.PRO_WEIGHT"
 						value="${shopbean.PRO_WEIGHT}" style="font-size: 16px; width: 50%"><br>
 					<br>
 					<div style="float: left;">庫存數量：</div>
-					<input type="text" name="shopbean.PRO_STOCK"
+					<input type="text" id="insert_STOCK" name="shopbean.PRO_STOCK"
 						value="${shopbean.PRO_STOCK}" style="font-size: 16px; width: 50%"><span
 						class="errorInsert">${errors.errorInsertStock[0]}</span><br>
 					<br>
@@ -363,7 +371,9 @@
 					<br>
 					<div style="float: left;">商品介紹：</div>
 					<br>
-					<textarea id="content" cols="50" rows="6" name="shopbean.PRO_BODY"></textarea>
+					<pre>
+						<textarea id="content" cols="50" rows="6" name="shopbean.PRO_BODY"></textarea>
+					</pre>
 					<br> <input type="submit" value="新增上架"
 						style="cursor: pointer; font-size: 15px; float: left;">
 				</form>

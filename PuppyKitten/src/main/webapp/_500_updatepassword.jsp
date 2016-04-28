@@ -21,7 +21,7 @@
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
 		<article>
-			<h1 style="font-size: 50px;">修改密碼</h1>
+			<h1 style="font-size: 40px;">修改密碼</h1>
 				<form action="login/passwordAction.action" method="post">
 				<input type="hidden" name="bean.MEM_ID" value="${bean.MEM_ID}">
 				<table>

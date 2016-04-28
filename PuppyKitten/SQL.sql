@@ -203,6 +203,7 @@ INSERT INTO pet_SortName_Dog(PET_SORT_ID,PET_SORT_NAME)values('4205','哈士奇'
 INSERT INTO pet_SortName_Dog(PET_SORT_ID,PET_SORT_NAME)values('4206','拉布拉多')
 INSERT INTO pet_SortName_Dog(PET_SORT_ID,PET_SORT_NAME)values('4207','黃金獵犬')
 
+INSERT INTO pet_Friendship values(5004,'牙牙','1992-12-28 00:00:00',9,'狗','4201','母','我是牙牙，我超級愛講話，誰要跟我聊天。')
 
 INSERT INTO pet_Friendship values(5005,'球球','1992-12-28 00:00:00',10,'貓','4101','母','我是球球，我長得像顆球，但是很靈巧唷!!希望可以認識新朋友。')
 INSERT INTO pet_Friendship values(5006,'圓圓','1993-12-28 00:00:00',11,'貓','4101','公','我是圓圓，雖然我胖胖的，可是我很聽話。')
@@ -231,7 +232,7 @@ INSERT INTO pet_Friendship values(5027,'豆豆','1992-12-28 00:00:00',32,'狗','
 INSERT INTO pet_Friendship values(5028,'阿寶','1993-12-28 00:00:00',33,'狗','4201','公','我是阿寶，因為我很像三寶。')
 INSERT INTO pet_Friendship values(5029,'阿皮','1994-12-28 00:00:00',34,'狗','4202','母','我是阿皮，但是我很乖、很聽話。')
 INSERT INTO pet_Friendship values(5030,'饅頭','1995-12-28 00:00:00',35,'狗','4202','公','我是饅頭，因為我的肉軟軟的。')
-INSERT INTO pet_Friendship values(5004,'牙牙','1992-12-28 00:00:00',9,'狗','4201','母','我是牙牙，我超級愛講話，誰要跟我聊天。')
+
 INSERT INTO pet_Friendship values(5032,'諾諾','1997-12-28 00:00:00',37,'狗','4203','公','我是諾諾，聽說阿諾史瓦辛格是我的偶像。')
 INSERT INTO pet_Friendship values(5033,'多多','1998-12-28 00:00:00',38,'狗','4203','母','我是多多，誰要當我的少少呢。')
 INSERT INTO pet_Friendship values(5034,'牛牛','1999-12-28 00:00:00',39,'狗','4203','公','我是牛牛，因為我的耳朵像角一樣。')
@@ -249,34 +250,34 @@ INSERT INTO pet_Friendship values(5045,'跩跩','2010-12-28 00:00:00',50,'狗','
 INSERT INTO pet_Friendship values(5046,'布丁','2011-12-28 00:00:00',51,'狗','4207','公','我是布丁，我雖然很大支，但是心靈像布丁一樣甜。')
 INSERT INTO pet_Friendship values(5031,'餅乾','1996-12-28 00:00:00',36,'狗','4202','母','我是餅乾，因為主人很喜歡吃餅乾。')
 
-insert into pet_Friendship_img values(4001,'/PuppyKitten/_400_images/4001.jpg')
-insert into pet_Friendship_img values(4002,'/PuppyKitten/_400_images/4002.jpg')
-insert into pet_Friendship_img values(4003,'/PuppyKitten/_400_images/4003.jpg')
-insert into pet_Friendship_img values(4004,'/PuppyKitten/_400_images/4004.jpg')
-insert into pet_Friendship_img values(4005,'/PuppyKitten/_400_images/4005.jpg')
-insert into pet_Friendship_img values(4006,'/PuppyKitten/_400_images/4006.jpg')
-insert into pet_Friendship_img values(4007,'/PuppyKitten/_400_images/4007.jpg')
-insert into pet_Friendship_img values(4008,'/PuppyKitten/_400_images/4008.jpg')
-insert into pet_Friendship_img values(4009,'/PuppyKitten/_400_images/4009.jpg')
-insert into pet_Friendship_img values(4010,'/PuppyKitten/_400_images/4010.jpg')
-insert into pet_Friendship_img values(4011,'/PuppyKitten/_400_images/4011.jpg')
-insert into pet_Friendship_img values(4012,'/PuppyKitten/_400_images/4012.jpg')
-insert into pet_Friendship_img values(4013,'/PuppyKitten/_400_images/4013.jpg')
-insert into pet_Friendship_img values(4014,'/PuppyKitten/_400_images/4014.jpg')
-insert into pet_Friendship_img values(4015,'/PuppyKitten/_400_images/4015.jpg')
-insert into pet_Friendship_img values(4016,'/PuppyKitten/_400_images/4016.jpg')
-insert into pet_Friendship_img values(4017,'/PuppyKitten/_400_images/4017.jpg')
-insert into pet_Friendship_img values(4018,'/PuppyKitten/_400_images/4018.jpg')
-insert into pet_Friendship_img values(4019,'/PuppyKitten/_400_images/4019.jpg')
-insert into pet_Friendship_img values(4020,'/PuppyKitten/_400_images/4020.jpg')
-insert into pet_Friendship_img values(4021,'/PuppyKitten/_400_images/4021.jpg')
+insert into pet_Friendship_img values(4002,'/PuppyKitten/_400_images/4001.jpg')
+insert into pet_Friendship_img values(4003,'/PuppyKitten/_400_images/4002.jpg')
+insert into pet_Friendship_img values(4004,'/PuppyKitten/_400_images/4003.jpg')
+insert into pet_Friendship_img values(4005,'/PuppyKitten/_400_images/4004.jpg')
+insert into pet_Friendship_img values(4006,'/PuppyKitten/_400_images/4005.jpg')
+insert into pet_Friendship_img values(4007,'/PuppyKitten/_400_images/4006.jpg')
+insert into pet_Friendship_img values(4008,'/PuppyKitten/_400_images/4007.jpg')
+insert into pet_Friendship_img values(4009,'/PuppyKitten/_400_images/4008.jpg')
+insert into pet_Friendship_img values(4010,'/PuppyKitten/_400_images/4009.jpg')
+insert into pet_Friendship_img values(4011,'/PuppyKitten/_400_images/4010.jpg')
+insert into pet_Friendship_img values(4012,'/PuppyKitten/_400_images/4011.jpg')
+insert into pet_Friendship_img values(4013,'/PuppyKitten/_400_images/4012.jpg')
+insert into pet_Friendship_img values(4014,'/PuppyKitten/_400_images/4013.jpg')
+insert into pet_Friendship_img values(4015,'/PuppyKitten/_400_images/4014.jpg')
+insert into pet_Friendship_img values(4016,'/PuppyKitten/_400_images/4015.jpg')
+insert into pet_Friendship_img values(4017,'/PuppyKitten/_400_images/4016.jpg')
+insert into pet_Friendship_img values(4018,'/PuppyKitten/_400_images/4017.jpg')
+insert into pet_Friendship_img values(4019,'/PuppyKitten/_400_images/4018.jpg')
+insert into pet_Friendship_img values(4020,'/PuppyKitten/_400_images/4019.jpg')
+insert into pet_Friendship_img values(4021,'/PuppyKitten/_400_images/4020.jpg')
+insert into pet_Friendship_img values(4022,'/PuppyKitten/_400_images/4021.jpg')
 
-insert into pet_Friendship_img values(4022,'/PuppyKitten/_400_images/4022.jpg')
-insert into pet_Friendship_img values(4023,'/PuppyKitten/_400_images/4023.png')
-insert into pet_Friendship_img values(4024,'/PuppyKitten/_400_images/4024.jpg')
-insert into pet_Friendship_img values(4025,'/PuppyKitten/_400_images/4025.jpg')
-insert into pet_Friendship_img values(4026,'/PuppyKitten/_400_images/4026.jpg')
-insert into pet_Friendship_img values(4027,'/PuppyKitten/_400_images/kuso.png')
+insert into pet_Friendship_img values(4023,'/PuppyKitten/_400_images/4022.jpg')
+insert into pet_Friendship_img values(4024,'/PuppyKitten/_400_images/4023.png')
+insert into pet_Friendship_img values(4025,'/PuppyKitten/_400_images/4024.jpg')
+insert into pet_Friendship_img values(4026,'/PuppyKitten/_400_images/4025.jpg')
+insert into pet_Friendship_img values(4027,'/PuppyKitten/_400_images/4026.jpg')
+insert into pet_Friendship_img values(4001,'/PuppyKitten/_400_images/小林.jpg')
 insert into pet_Friendship_img values(4028,'/PuppyKitten/_400_images/4028.jpg')
 insert into pet_Friendship_img values(4029,'/PuppyKitten/_400_images/4029.jpg')
 insert into pet_Friendship_img values(4030,'/PuppyKitten/_400_images/4030.jpg')
@@ -616,6 +617,7 @@ INSERT INTO Article values ('管理員','公告','228連假暫停出貨','親愛
 INSERT INTO Article values ('陳冠廷','心得','分享不錯的寵物用品網站','我一直都是習慣在動物王國網站買的<br>覺得上網買很方便 就不用特地跑出門<br>畢竟有時候太多 自己扛回來也是很重的<br>有專人送回來方便多了 <br>加上動物王國它們家的東西都很齊全<br>可以一次買到想要的東西 不需要分好多地方找<br>另外動物王國最近有開始一個24小時到貨的服務<br>有訂過飼料和零食那些 都還蠻快就送來了<br>只要下午三點前訂的話 隔天就會送到家<br> 連週末也都會幫忙送 就不用等那麼多天<br> 這是動物王國的網址www.17ipet.tw<br>你可以自己去看看喔~<br>','2016-03-03 18:55:03.333','288',NULL);
 INSERT INTO Article values ('管理員','活動','即期品出清','買NB無穀地瓜鮭魚全犬(小顆粒)5.44公斤1包<br>獨特蛋白來源 低敏配方<br>經過醫學實驗<br>可幫助愛犬重建免疫系統<br>抗淚痕作用效果傑出<br>有效期限:2016/05<br>購買原包裝送<br>i SHOW 洗毛精兩罐<br>聖誕造型毯乙個<br>熊本暖手枕乙個<br>再享有免運費!!<br>※買分裝包3包也有送洗毛精一罐!<br>( 贈品隨機出貨 )<br>所以有需要的朋友可以搶購唷!!!<br>※ ※ ※ 贈品數量有限，送完為止 ※ ※ ※<br>歡迎用LINE 訂購(@meow) 或電話訂購或店取<br>請電：<br>0932-181272 (02)27840692<br>地址：<br>台北市大安區信義路四段30巷54號(大安捷運站後方)<br>營業時間:週一~週六 12:00~22:00 週日 14:00~22:00<br>','2016-02-11 15:35:17.421','698',NULL);
 INSERT INTO Article values ('管理員','活動','新品優質貓砂上架囉','優質凝結松木貓砂-凱優紅標上架囉<br>凝結力好、除臭力佳<br>且貓砂中不含酚類 可以安心地給家中毛孩們使用<br>現貨有40LB (17公斤)<br>快私訊小編 米沃粉粉超值價$<br>※ 此款貓砂限店取唷<br>歡迎用LINE 訂購(@meow) 或電話訂購或店取<br>請電：<br>0932-181272 (02)27840692<br>地址：<br>台北市大安區信義路四段30巷54號(大安捷運站後方)<br>營業時間:週一~週六 12:00~22:00 週日 14:00~22:00<br>','2016-02-04 11:22:13.075','485',NULL);
+INSERT INTO Article values ('小廷','心得','如何選擇寵物餐廳','寵物餐廳如雨後春筍般進入美食市場，每一位把毛小孩當成寶貝的爸爸、媽媽們，更希望可以讓<br>自己的毛小孩和自己一起用餐，不論是同樣的料理設計，還是毛小孩客製化餐點，都能打動每一 <br>位爸媽的心<br>','2016-05-02 13:25:16.123','1001','/PuppyKitten/_100_images/寵物餐廳.jpg');
 INSERT INTO Article values ('管理員','公告 ','到貨通知','Natural Balance 主食罐<br>1.法式豪華 ( 鮪魚.白鮭魚.沙丁魚.干貝 )<br>2.米蘭輕食 ( 山雞鮮湯.菠菜.胡蘿蔔 )<br>3.西班牙熱情 ( 鮪魚.鮭魚.雞肉.鮮蝦 )<br>以上3款到貨囉 smile 表情符號<br>有需要的拔拔麻麻們，快來下訂唷~<br>這次到貨數量有限~賣完又要等很久囉>"<<br>歡迎用LINE 訂購(@meow) 或電話訂購或店取<br>請電：<br>0932-181272 (02)27840692<br>地址：<br>台北市大安區信義路四段30巷54號(大安捷運站後方)<br>營業時間:週一~週六 12:00~22:00 週日 14:00~22:00<br>','2016-01-22 15:26:05.681','1432',NULL);
 INSERT INTO Article values ('管理員','公告','LINE的緊急公告','各位拔拔麻麻<br>2/1日起 我們接收下單<br>只會接收 生活LINE的單唷>"<<br>避免2/1日後下單沒有接收到您的單<br>要麻煩各位拔拔麻麻幫我動動手指 幫我加一下 <br>生活LINE ID → @meow<br>或是直接用好友掃QR code smile 表情符號<br>感謝各位拔拔麻麻囉>"<<br>ps: 相簿裡有圖示唷<br>不會的朋友可以照圖示操作唷 smile 表情符號<br>','2016-01-22 10:10:10.555','1123','/PuppyKitten/_100_images/LINE.png');
 INSERT INTO Article values ('林昭懿','問題','登記如何處理','我想帶我的狗狗去登記<br>請問需要什麼資料<br>要到哪裡辦理呢?<br>','2016-03-02 13:25:16.123','810',NULL);
@@ -623,7 +625,6 @@ INSERT INTO Article values ('林昭懿','問題','登記如何處理','我想帶
 
 
 SET IDENTITY_INSERT [dbo].[Product_buy_body] ON 
-INSERT [dbo].[Product_buy_body] ([PRO_ID], [PRO_ANIMAL], [PRO_KIND], [PRO_NAME], [PRO_PROJECT], [PRO_WEIGHT], [PRO_PRICE], [PRO_BUY1], [PRO_BUY2], [PRO_STOCK], [PRO_IMAGE], [PRO_BODY]) VALUES (2005, N'汪星人', N'生活用品', N'8in1愛犬(抗菌除臭)乾洗慕斯', N'買2送1', N'250', 350, 2, 1, 100, N'/PuppyKitten/_200_images/img000444402.jpg', N'<p>使用獨特配方，免用水清洗，即可乾淨除臭皮膚毛髮，無酒精配方可以取代愛犬傳統洗澡方式，</p><p>方便使用於8週以上幼犬及老犬，受傷之愛犬及不容易清洗的愛犬身上。</p><p>使用蘆薈及無油脂配方能安全有效的保養皮膚及毛髮，長效芬芳配方，使愛犬常保清新氣味 。</p><p>將乾洗慕斯避開眼睛，取適量塗抹於寵物身上，輕梳皮毛按摩，讓慕斯滲入至皮毛內，使用乾紙巾擦乾即可。</p>')
 INSERT [dbo].[Product_buy_body] ([PRO_ID], [PRO_ANIMAL], [PRO_KIND], [PRO_NAME], [PRO_PROJECT], [PRO_WEIGHT], [PRO_PRICE], [PRO_BUY1], [PRO_BUY2], [PRO_STOCK], [PRO_IMAGE], [PRO_BODY]) VALUES (2007, N'汪星人', N'衣著打扮', N'WOW 休閒帥氣(紅四足)服', N'買3送2', N'', 559, 3, 2, 100, N'/PuppyKitten/_200_images/img000430068.jpg', N'<p>全日本生產，時尚兼具保暖連帽短外套，含後腳四足，腰部為帥氣皮帶設計，超舒適純棉毛質感</p><p>高質感布料與手工鏽花，精緻感獨特的設計 ，穿上後讓你的狗狗成為外出時注目的焦點。</p><p>品牌: 日本WOW&nbsp; LOCO DOG</p>')
 INSERT [dbo].[Product_buy_body] ([PRO_ID], [PRO_ANIMAL], [PRO_KIND], [PRO_NAME], [PRO_PROJECT], [PRO_WEIGHT], [PRO_PRICE], [PRO_BUY1], [PRO_BUY2], [PRO_STOCK], [PRO_IMAGE], [PRO_BODY]) VALUES (2008, N'汪星人', N'休閒玩具', N'afem 寵物雙環結繩玩具', N'指定價格', N'', 170, NULL, NULL, 65, N'/PuppyKitten/_200_images/img000807091.jpg', N'<p>藉由啃咬能幫助寵物強健牠們的牙齒與牙齦，麻繩及熱塑性橡膠製成</p><p>牙齒不受傷。耐咬耐磨，環保無毒， 磨牙健齒玩具。<br /><br />此型號適合小型犬使用。</p>')
 INSERT [dbo].[Product_buy_body] ([PRO_ID], [PRO_ANIMAL], [PRO_KIND], [PRO_NAME], [PRO_PROJECT], [PRO_WEIGHT], [PRO_PRICE], [PRO_BUY1], [PRO_BUY2], [PRO_STOCK], [PRO_IMAGE], [PRO_BODY]) VALUES (2009, N'喵星人', N'主食乾糧', N'ANF 特級幼母貓主食', N'指定價格', N'3000', 750, NULL, NULL, 92, N'/PuppyKitten/_200_images/img000941117.jpg', N'<p>&nbsp;嗜口性極佳的配方，高蛋白質及易消化的脂肪，富含平衡維生素及礦物質。<br />&nbsp;符合成長中幼貓及懷孕、哺乳母貓的嚴格營養需求。&nbsp;<br />&nbsp;添加多種維生素，能幫助愛貓順利成長。&nbsp;</p>')

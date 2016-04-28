@@ -44,7 +44,7 @@ $(function() {
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
 		<article >
-			<h1 style="color:#400000">會員資料(個人資料)</h1>
+			<h1 style="color:#400000";font-size:40px>個人資料</h1>
 			<table border="0" style="border-collapse: collapse;width:650px;background:rgba(250, 235, 215, 0.4); border-radius:10px;">
              
 				<tr >
