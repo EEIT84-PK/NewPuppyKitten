@@ -60,7 +60,7 @@ public class ShopBackAction_shopchoose extends ActionSupport implements ServletR
 		Integer id=shop_Buy_Bean.getBUY_PRO_ID();
 		shopbean.setPRO_ID(id);
 		List<ShopBean> list=service.select(shopbean);
-		
+		setShopbean(list.get(0));
 		//優惠方案
 		int buy1;
 		int buy2;
@@ -74,15 +74,36 @@ public class ShopBackAction_shopchoose extends ActionSupport implements ServletR
 				shop_Buy_Bean.setBUY_LITTLE_TOTAL(shop_Buy_Bean.getBUY_OLD_PRICE()*shop_Buy_Bean.getBUY_NUMBER());
 				shop_Buy_Bean.setBUY_NEW_PRICE(shop_Buy_Bean.getBUY_OLD_PRICE()*shop_Buy_Bean.getBUY_NUMBER());
 				shop_Buy_Bean.setBUY_PROJECT(shopbean.getPRO_PROJECT());
+				if(shopbean.getPRO_STOCK()-shop_Buy_Bean.getBUY_NUMBER()<0){
+					addFieldError("number", "不好意思,目前庫存數量不夠");
+					return INPUT;
+				}
+				//更新庫存數量
+				shopbean.setPRO_STOCK(shopbean.getPRO_STOCK()+oldbuy-shop_Buy_Bean.getBUY_NUMBER());
+				service.update(shopbean);
 				service.insert(shop_Buy_Bean);
 			}else{
-				shop_Buy_Bean.setBUY_ID(service.select_name(shop_Buy_Bean.getBUY_NAME()).get(0).getBUY_ID());
-				shop_Buy_Bean.setBUY_NUMBER(service.select_name(shop_Buy_Bean.getBUY_NAME()).get(0).getBUY_NUMBER()+shop_Buy_Bean.getBUY_NUMBER());
-				shop_Buy_Bean.setBUY_LITTLE_TOTAL(shop_Buy_Bean.getBUY_OLD_PRICE()*shop_Buy_Bean.getBUY_NUMBER());
+				Shop_Buy_Bean bean = service.select_name(shop_Buy_Bean.getBUY_NAME()).get(0); //以前在購物車裡面的這筆商品
+				shop_Buy_Bean.setBUY_ID(bean.getBUY_ID());
+				System.out.println("之前購物車的數量:"+bean.getBUY_NUMBER());
+				System.out.println("剛加入購物車的數量:"+shop_Buy_Bean.getBUY_NUMBER());
+				System.out.println("所以現在數量應該是:"+(bean.getBUY_NUMBER()+shop_Buy_Bean.getBUY_NUMBER()));
+				System.out.println("庫存數量:"+shopbean.getPRO_STOCK());
+				System.out.println("那現在的庫存數量就應該是:"+(shopbean.getPRO_STOCK()-shop_Buy_Bean.getBUY_NUMBER()));
+				if(shopbean.getPRO_STOCK()-shop_Buy_Bean.getBUY_NUMBER()<0){
+					addFieldError("number", "不好意思,目前庫存數量不夠");
+					return INPUT;
+				}
+				//更新庫存數量
+				shopbean.setPRO_STOCK(shopbean.getPRO_STOCK()+oldbuy-shop_Buy_Bean.getBUY_NUMBER());
+				service.update(shopbean);
+				shop_Buy_Bean.setBUY_NUMBER(bean.getBUY_NUMBER()+shop_Buy_Bean.getBUY_NUMBER());
+				shop_Buy_Bean.setBUY_NEW_PRICE(shop_Buy_Bean.getBUY_NUMBER()*shop_Buy_Bean.getBUY_OLD_PRICE());
+				shop_Buy_Bean.setBUY_LITTLE_TOTAL(shop_Buy_Bean.getBUY_NEW_PRICE());
 				shop_Buy_Bean.setBUY_PROJECT(shopbean.getPRO_PROJECT());
 				service.update(shop_Buy_Bean);
 			}
-		}else{
+	}else{
 			buy1=list.get(0).getPRO_BUY1();   //優惠買幾
 			buy2=list.get(0).getPRO_BUY2();	  //優惠送幾
 			buys1=shop_Buy_Bean.getBUY_NUMBER()/buy1; //買幾組
@@ -93,6 +114,13 @@ public class ShopBackAction_shopchoose extends ActionSupport implements ServletR
 				shop_Buy_Bean.setBUY_NUMBER(shop_Buy_Bean.getBUY_NUMBER()+free);  //買跟送的總數量
 				shop_Buy_Bean.setBUY_LITTLE_TOTAL(shop_Buy_Bean.getBUY_NEW_PRICE());
 				shop_Buy_Bean.setBUY_PROJECT(shopbean.getPRO_PROJECT());
+				if(shopbean.getPRO_STOCK()-shop_Buy_Bean.getBUY_NUMBER()<0){
+					addFieldError("number", "不好意思,目前庫存數量不夠");
+					return INPUT;
+				}
+				//更新庫存數量
+				shopbean.setPRO_STOCK(shopbean.getPRO_STOCK()+oldbuy-shop_Buy_Bean.getBUY_NUMBER());
+				service.update(shopbean);
 				service.insert(shop_Buy_Bean);
 			}else{	
 				Shop_Buy_Bean bean = service.select_name(shop_Buy_Bean.getBUY_NAME()).get(0); 
@@ -101,8 +129,8 @@ public class ShopBackAction_shopchoose extends ActionSupport implements ServletR
 				System.out.println("當初買與送的商品總數"+oldbuy);
 				int buys=bean.getBUY_NUMBER()-(bean.getBUY_NUMBER()/(buy1+buy2))*buy2; //當初買的商品數量
 				System.out.println("當初買的商品數量:"+buys);
-				buys1=(shop_Buy_Bean.getBUY_NUMBER()+buys)/buy1; //現在總共買幾組
-				System.out.println("現在總共買幾組:"+buys1);
+				buys1=(shop_Buy_Bean.getBUY_NUMBER()+buys)/buy1; //現在總共買幾個
+				System.out.println("現在總共買幾個:"+buys1);
 				free = buys1*buy2;  //現在總共送幾個
 				System.out.println("現在總共送幾個:"+free);
 				shop_Buy_Bean.setBUY_NUMBER(shop_Buy_Bean.getBUY_NUMBER()+buys+free); //現在買跟送的總數量
@@ -110,18 +138,20 @@ public class ShopBackAction_shopchoose extends ActionSupport implements ServletR
 				shop_Buy_Bean.setBUY_NEW_PRICE((shop_Buy_Bean.getBUY_NUMBER()-free)*shop_Buy_Bean.getBUY_OLD_PRICE()); //優惠價格
 				shop_Buy_Bean.setBUY_LITTLE_TOTAL(shop_Buy_Bean.getBUY_NEW_PRICE());
 				shop_Buy_Bean.setBUY_PROJECT(shopbean.getPRO_PROJECT());
+				if(shopbean.getPRO_STOCK()+oldbuy-shop_Buy_Bean.getBUY_NUMBER()<0){
+					addFieldError("number", "不好意思,目前庫存數量不夠");
+					return INPUT;
+				}
+				//更新庫存數量
+				shopbean.setPRO_STOCK(shopbean.getPRO_STOCK()+oldbuy-shop_Buy_Bean.getBUY_NUMBER());
+				service.update(shopbean);
 				service.update(shop_Buy_Bean);
 			}
 		}
 		
-		//更新庫存數量
-		setShopbean(list.get(0));
-		if(shopbean.getPRO_STOCK()-shop_Buy_Bean.getBUY_NUMBER()<0){
-			addFieldError("number", "不好意思,目前庫存數量不夠");
-			return INPUT;
-		}
-		shopbean.setPRO_STOCK(shopbean.getPRO_STOCK()+oldbuy-shop_Buy_Bean.getBUY_NUMBER());
-		service.update(shopbean);
+
+
+		
 		
 		//金額總和
 		List<Shop_Buy_Bean> shop_Buy_list = service.select_buy(shop_Buy_Bean);
