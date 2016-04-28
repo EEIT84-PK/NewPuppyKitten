@@ -41,10 +41,10 @@ line-height: 40px;
 <body>
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
-		<article class="art">
+		<article class="art" style="background:rgba(250, 235, 215, 0.4)">
 			<fieldset>
-			<h3>購買資訊</h3>
-					<table style="border:3px #cccccc solid; cellpadding: 10; border=1 ; ">
+			<h2>購買資訊</h2>
+					<table style="cellpadding: 10;">
 						<tr>
 							<th style="width: 100px;">商品編號</th>
 							<th style="width: 350px;">商品名稱</th>
@@ -66,11 +66,11 @@ line-height: 40px;
 				</c:when>
 			</c:choose>
 						<tr>
-							<td colspan="5">訂單金額為：${sessionScope.total}元(內含運費80元)<br> 付款方式為：貨到付款 </td>  
+							<td colspan="5" style="color: red;">總金額為：${sessionScope.total}元 &nbsp;&nbsp;&nbsp;(內含運費80元)<br> 付款方式為：貨到付款 </td>  
 						</tr>
 					</table>
 				<span>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
-				<h3>配送資訊</h3>
+				<h2>配送資訊</h2>
 				<form action="<%=request.getContextPath()%>/shop/shopBackAction_ordersend" method="post">
 					收貨人姓名：<input type="text" name="shop_Order_Bean.ORDER_USER_NAME" value="${session.loginOK}" size="10"><br> 
 					連絡電話：<input type="text" name="shop_Order_Bean.ORDER_USER_PHONE" value="${session.memberPHONE}"><br>

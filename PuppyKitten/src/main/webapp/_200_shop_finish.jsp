@@ -41,12 +41,12 @@ line-height: 40px;
 <body>
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
-		<article class="art">
-			<h3>${session.loginOK}的訂單資訊</h3>
-					<table style="border:3px #cccccc solid; cellpadding: 10; border=1 ; ">
+		<article class="art" style="background:rgba(250, 235, 215, 0.4);">
+			<h2>${session.loginOK}的訂單資訊</h2>
+					<table style="cellpadding: 10; border=1 ; ">
 						<tr>
 							<th style="width: 100px;">訂單編號</th>
-							<th style="width: 100px;">訂購日期</th>
+							<th style="width: 200px;">訂購日期</th>
 							<th style="width: 150px;">收貨人</th>
 							<th style="width: 350px;">配送地址</th>
 							<th style="width: 100px;">總金額</th>

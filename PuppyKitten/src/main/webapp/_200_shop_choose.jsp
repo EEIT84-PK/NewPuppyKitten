@@ -111,7 +111,7 @@ $(function(){
 <body>
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
-		<article style="width: 1500px;background:rgba(229, 190, 157, 0.6);border-radius:25px;">
+		<article style="width: 1500px;background:rgba(250, 235, 215, 0.4);border-radius:25px;">
 							
 							<div class="choose_1">
 								<div class="choose_pro1">
