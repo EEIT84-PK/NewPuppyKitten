@@ -3,6 +3,7 @@ package _500_controller;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -215,16 +216,22 @@ public class InsertAction extends ActionSupport implements ServletRequestAware {
             
 			service.sendemail(bean.getMEM_EMAIL(), bean.getMEM_NAME(), sum);
 			session.setAttribute("code", sum);
-			this.addFieldError("checkcode", "驗證碼已寄送成功!");
-			System.out.println("寄信成功");
+			this.addFieldError("checkcode", "驗證碼已寄送成功!");			
 			return INPUT;
-		} else {
-			System.out.println("CHECK:" + this.checkcode);
-			System.out.println("SESSION:" + session.getAttribute("code"));
+		} else {			
 			if (checkcode.equals(session.getAttribute("code"))) {
 				
 				bean.setMEN_STATUS(true);
-				service.insert(bean);				
+				service.insert(bean);			
+				String password = new String(bean.getMEM_PASSWORD(), "UTF-8");//因為byte要轉String 要寫這行
+				MemberBean checkBean =service.login(bean.getMEM_ACCOUNT(), password);
+				System.out.println("checkBean="+checkBean);
+				if(checkBean!=null){
+					session.setAttribute("loginOK", bean.getMEM_NAME());
+					session.setAttribute("memberID", bean.getMEM_ID());
+					session.setAttribute("memberADD", bean.getMEM_ADD());
+					session.setAttribute("memberPHONE", bean.getMEM_PHONE());		             
+				}		
 				
 				return SUCCESS;
 			} else {

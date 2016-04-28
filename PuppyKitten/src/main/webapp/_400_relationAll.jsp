@@ -25,8 +25,8 @@ margin-right: 10px;
 <body style="font-family: 微軟正黑體; font-size: large">
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
-		<article style="width: 1500px;border-radius:25px;">
-			<h1 style="color:#400000">寵物聯誼(互相感興趣)</h1>
+		<article style="width: 1500px;border-radius:25px;overflow: hidden;">
+			<h1 style="color:#400000;font-size:40px">互相感興趣</h1>
 			<button class="myButton">
 				<a href="<%=request.getContextPath()%>/_400_index.jsp">回寵物大廳</a>
 			</button><br>			

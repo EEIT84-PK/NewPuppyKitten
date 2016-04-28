@@ -57,7 +57,7 @@
 
 			<form action="<%=request.getContextPath()%>/login/insertAction.action" method="post"
 				enctype="multipart/form-data">
-				<h1 style="color:#400000;font-size: 50px;">
+				<h1 style="color:#400000;font-size: 40px;">
 					會員註冊<img src="<%=request.getContextPath()%>/images/ad/circle.png" id="button">
 				</h1>
 				<table>

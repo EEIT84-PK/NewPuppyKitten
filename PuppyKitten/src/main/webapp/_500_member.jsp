@@ -28,9 +28,9 @@
 <body style="font-family: 微軟正黑體; font-size: large">
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
-		<article style="width: 600px;">
+		<article style="width: 1000px;">
 
-			<h1 style="font-size:32px;color:#400000">會員專區</h1>
+			<h1 style="font-size:40px;color:#400000">會員專區</h1>
 
 
 

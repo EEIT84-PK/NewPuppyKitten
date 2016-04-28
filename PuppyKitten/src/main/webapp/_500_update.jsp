@@ -41,7 +41,7 @@
 
 	<section>
 		<article>
-			<h1 style="color:#400000">修改資料</h1>
+			<h1 style="color:#400000;font-size:40px;">修改資料</h1>
 			<form action="login/updateAction.action" method="post"
 				enctype="multipart/form-data">
 				<input type="hidden" name="memberBean.MEM_ID" value="${bean.MEM_ID}">

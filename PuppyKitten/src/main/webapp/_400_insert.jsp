@@ -20,10 +20,10 @@
 $(function() {	
 	$('#memberID').hide();
 	$("#button").click(function(){
-		$("input[name='petBean.PET_NAME']").val("牙牙");
-		$("input[name='petBean.PET_AGE']").val("1992-12-28");
-		$("input[name='petBean.PET_WEIGHT']").val(20);
-		$("textarea[name='petBean.PET_BODY']").val("我是牙牙，我喜歡玩耍、撒嬌，最愛吃的食物是香蕉！歡迎大家跟我交朋友");
+		$("input[name='petBean.PET_NAME']").val("文文");
+		$("input[name='petBean.PET_AGE']").val("2010-01-03");
+		$("input[name='petBean.PET_WEIGHT']").val(15);
+		$("textarea[name='petBean.PET_BODY']").val("我是文文，對程式語言有極高的興趣，雖然我只是隻小狗狗");
 	});
 	
 	$("input[name='petBean.PET_SEX'][value=${petBean.PET_SEX}]").prop("checked", true);	
@@ -108,8 +108,7 @@ function clearForm() {
 <c:import url="/import/header.jsp"></c:import>
 <section>
 <article style="overflow: hidden;">
-<h1 style="color:#400000;font-size: 50px;">新增寵物資訊<img src="<%=request.getContextPath()%>/images/ad/circle.png" id="button"></h1>
-	<span style="color:red"><s:property value="errorMsg" /></span>
+<h1 style="color:#400000;font-size: 40px;">新增寵物資訊<img src="<%=request.getContextPath()%>/images/ad/circle.png" id="button"></h1>	
 	<form action="<%=request.getContextPath()%>/pet/petAction.action" method="post" enctype="multipart/form-data">
 		<input type="text" id="memberID" name="petBean.PET_OWN_ID" size="20" value="${session.memberID}"><BR>		
 		寵物名字： <input type="text" name="petBean.PET_NAME" size="10" value="${petBean.PET_NAME}" id="PET_NAME"> 
@@ -136,7 +135,7 @@ function clearForm() {
 			<span class="error">${request.PET_IMAGE}</span><BR>
 			<font color="red"><b><s:fielderror/></b></font>							 
 		介紹：<BR>
-			<textarea name="petBean.PET_BODY" cols="50" rows="10" id="PET_BODY"><s:property value="petBean.PET_BODY" /></textarea>
+			<pre><textarea name="petBean.PET_BODY" cols="50" rows="10" id="PET_BODY"><s:property value="petBean.PET_BODY" /></textarea></pre>
 			<span class="error">${request.PET_BODY}</span><BR>
 			<input type="submit" value="送出"><input type="button" value="清除" onclick="clearForm()">
 

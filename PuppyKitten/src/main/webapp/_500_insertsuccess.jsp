@@ -14,7 +14,7 @@
 
 	<section>
 		<article>
-           <h1 style="font-size: 50px;">註冊成功</h1>
+           <h1 style="font-size: 40px;">註冊成功</h1>
 			<h2><a href="<%=request.getContextPath()%>/index.jsp">請回首頁</a></h2>
 						
 					

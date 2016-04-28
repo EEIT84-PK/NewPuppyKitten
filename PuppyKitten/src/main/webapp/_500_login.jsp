@@ -26,15 +26,15 @@
 		<article style="width:410px;">
 			<form action="<%=request.getContextPath()%>/login/loginAction.action"
 				method="post">
-				<h1  style="color:#400000;font-size:35px;">登入會員</h1>
+				<h1  style="color:#400000;font-size:40px;">登入會員</h1>
 				<table>
 					<tr>
-						<td style="font-size: 20px">帳號:</td>
+						<td style="font-size: 16px">帳號:</td>
 						<td><input id="tags" type="text" name="account" value=""></td>
 						<td style="color: red">${errors.account[0]}</td>
 					</tr>
 					<tr>
-						<td style="font-size: 20px">密碼:<b></td>
+						<td style="font-size: 16px">密碼:<b></td>
 						<td><input id="tags" type="password" name="password" value=""></td>
 						<td style="color: red">${errors.password[0]}<span>${errors.loginerror[0]}</span><span>${errorMsg}</span></td>
 						<td></td>
@@ -42,8 +42,11 @@
 					<tr>
 						<td></td>
 						
-						<td><input style="font-size: 10px; float:center;" type="submit" value="登入"><a
-							href="<%=request.getContextPath()%>/_500_forgetpassword.jsp">忘記密碼</a></td>
+						<td>							
+							<input style="font-size: 10px; float:center;" type="submit" value="登入">
+							<a style="font-size:14px"
+							href="<%=request.getContextPath()%>/_500_forgetpassword.jsp">忘記密碼</a>
+						</td>
 						
 					</tr>
 				</table>

@@ -52,9 +52,9 @@ if('${blockade}'==""){
 <body style="font-family: 微軟正黑體; font-size: large">
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
-		<article class="article">
+		<article class="article" style="overflow: hidden;">
 		
-			<h2 style="color:#400000">寵物聯誼(配對系統)</h2>					
+			<h2 style="color:#400000;font-size:40px">配對系統</h2>					
 			<font color="#FF0088" style="font-size:25px">對此對象感興趣嗎？</font><br><br>	
 			<a class="link" href='<c:url value="/petLike/PetLikeAction.action" ></c:url>'><img src="<%=request.getContextPath()%>/images/_400/YES.png" width="150" height="60"></a>
 			<a class="link2" href='<c:url value="/petNotLike/PetNotLikeAction.action" ></c:url>'><img src="<%=request.getContextPath()%>/images/_400/NO.png" width="150" height="60"></a>
