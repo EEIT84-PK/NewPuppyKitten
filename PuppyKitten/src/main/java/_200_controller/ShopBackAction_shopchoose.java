@@ -60,6 +60,7 @@ public class ShopBackAction_shopchoose extends ActionSupport implements ServletR
 		Integer id=shop_Buy_Bean.getBUY_PRO_ID();
 		shopbean.setPRO_ID(id);
 		List<ShopBean> list=service.select(shopbean);
+
 		setShopbean(list.get(0));
 		//優惠方案
 		int buy1;
@@ -148,11 +149,7 @@ public class ShopBackAction_shopchoose extends ActionSupport implements ServletR
 				service.update(shop_Buy_Bean);
 			}
 		}
-		
 
-
-		
-		
 		//金額總和
 		List<Shop_Buy_Bean> shop_Buy_list = service.select_buy(shop_Buy_Bean);
 		request.getSession().setAttribute("shop_Buy_list", shop_Buy_list);

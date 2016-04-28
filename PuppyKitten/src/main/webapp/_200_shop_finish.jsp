@@ -60,7 +60,7 @@ line-height: 40px;
 							<td>${shop_Order_Bean.ORDER_TOTAL_PRICE}</td>
 						</tr>
 						<tr>
-							<td colspan="5" style="color: red;font-weight: 600;">感謝您的訂購，商品我們將會在三日內寄出，期待您再度光臨，謝謝!!</td>  
+							<td colspan="5" style="color: red;font-weight: 600;text-align: right;">感謝您的訂購，商品我們將會在三日內寄出，期待您再度光臨，謝謝!!</td>  
 						</tr>				
 					</table>
 		</article>

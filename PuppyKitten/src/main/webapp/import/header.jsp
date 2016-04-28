@@ -15,6 +15,8 @@
 				<div class="sub">
 					<ul>
 						<li><a href='<c:url value="/shop/shopBackAction_goshop.action"/>'>購物中心</a></li>
+						<li><a href='<c:url value="/shop/shopBackAction_goshop.action"/>'>品牌介紹</a></li>
+						<li><a href='<c:url value="/shop/shopBackAction_goshop.action"/>'>紅利兌換</a></li>
 					</ul>
 				</div>
 			</div>
@@ -23,6 +25,8 @@
 				<div class="sub">
 					<ul>
 						<li><a href='<c:url value="/petInterceptor/petIndex.action" ></c:url>'>寵物大廳</a></li>
+						<li><a href='<c:url value="/petInterceptor/petIndex.action" ></c:url>'>品種介紹</a></li>
+						<li><a href='<c:url value="/petInterceptor/petIndex.action" ></c:url>'>幸福宣言</a></li>
 					</ul>
 				</div>
 			</div>
@@ -30,7 +34,8 @@
 				<div class="main">寵物旅遊</div>
 				<div class="sub">
 					<ul>
-						<li><a href="<c:url value="/_300_google.jsp"/>">店家位置</a></li>
+						<li><a href="<c:url value="/_300_google.jsp"/>">商家資訊</a></li>
+						<li><a href="<c:url value="/_300_google.jsp"/>">熱門景點</a></li>
 					</ul>
 				</div>
 			</div>
@@ -38,8 +43,8 @@
 				<div class="main">討論區</div>
 				<div class="sub">
 					<ul>
-						<li><a
-							href='<c:url value="/article/articleAction.action" ></c:url>'>討論大廳</a></li>
+						<li><a href='<c:url value="/article/articleAction.action" ></c:url>'>討論大廳</a></li>
+						<li><a href='<c:url value="/article/articleAction.action" ></c:url>'>留言專區</a></li>
 					</ul>
 				</div>
 			</div>

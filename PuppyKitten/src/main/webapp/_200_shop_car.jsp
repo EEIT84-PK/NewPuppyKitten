@@ -39,6 +39,7 @@
 		<table border="1" style="text-align: center;">
 			<thead>
 				<tr>
+
 					<th style="width: 100px;">商品編號</th>
 					<th style="width: 350px;">商品名稱</th>
 					<th style="width: 100px;">購買數量</th>
