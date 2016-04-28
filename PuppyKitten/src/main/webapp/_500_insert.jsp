@@ -25,10 +25,10 @@
 		})
 
 		$("#button").click(function() {
-			$("#MEM_ACCOUNT").val("kuan8041");
+			$("#MEM_ACCOUNT").val("eeit10");
 			$("#MEM_PASSWORD").val("123456");
 			$("#password").val("123456")
-			$("#MEM_NAME").val("李奧納多");
+			$("#MEM_NAME").val("小陳");
 			$("#MEM_IDCARD").val("F128579032");
 			$("#age").val("1990-04-02");
 			$("#MEM_ADD").val("新北市淡水區49巷2之1號");
