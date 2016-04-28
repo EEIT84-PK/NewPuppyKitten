@@ -18,6 +18,7 @@
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script type="text/javascript">
 $(function() {	
+	$('#memberID').hide();
 	$("#button").click(function(){
 		$("input[name='petBean.PET_NAME']").val("牙牙");
 		$("input[name='petBean.PET_AGE']").val("1992-12-28");
@@ -106,11 +107,11 @@ function clearForm() {
 <body style="font-family: 微軟正黑體; font-size: large">
 <c:import url="/import/header.jsp"></c:import>
 <section>
-<article>
-<h1 style="color:#400000">寵物聯誼(新增寵物資訊)</h1>
-	<font color="red"><b><s:property value="errorMsg" /></b></font>
+<article style="overflow: hidden;">
+<h1 style="color:#400000;font-size: 50px;">新增寵物資訊<img src="<%=request.getContextPath()%>/images/ad/circle.png" id="button"></h1>
+	<span style="color:red"><s:property value="errorMsg" /></span>
 	<form action="<%=request.getContextPath()%>/pet/petAction.action" method="post" enctype="multipart/form-data">
-		會員編號：<input type="text" name="petBean.PET_OWN_ID" size="20" value="${session.memberID}" readonly="readonly"><BR>		
+		<input type="text" id="memberID" name="petBean.PET_OWN_ID" size="20" value="${session.memberID}"><BR>		
 		寵物名字： <input type="text" name="petBean.PET_NAME" size="10" value="${petBean.PET_NAME}" id="PET_NAME"> 
 		<span class="error">${request.PET_NAME}</span><BR>
 		出生年月日： <input type="text" name="petBean.PET_AGE" size="10" id="age" value="${date}" id="PET_AGE">
@@ -138,7 +139,7 @@ function clearForm() {
 			<textarea name="petBean.PET_BODY" cols="50" rows="10" id="PET_BODY"><s:property value="petBean.PET_BODY" /></textarea>
 			<span class="error">${request.PET_BODY}</span><BR>
 			<input type="submit" value="送出"><input type="button" value="清除" onclick="clearForm()">
-			<button type="button" id="button">一鍵輸入</button><br>
+
 	</form>	
 </article>
 </section>	

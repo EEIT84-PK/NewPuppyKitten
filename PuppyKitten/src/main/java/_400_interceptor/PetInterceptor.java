@@ -53,7 +53,7 @@ public class PetInterceptor extends AbstractInterceptor implements ServletReques
 			req=ServletActionContext.getRequest();
 			String location=req.getRequestURI();
 			session.put("location", location);
-			ctx.put("errorMsg", "尚未新增寵物資訊，請先新增寵物資訊");
+			ctx.put("errorMsg", "尚未新增寵物資訊");
 			return "insertPet";
 		}
 		return invocation.invoke();

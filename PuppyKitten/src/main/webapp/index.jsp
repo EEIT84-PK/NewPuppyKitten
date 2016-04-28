@@ -6,6 +6,11 @@
 <head>
 <c:import url="/import/head.jsp"></c:import>
 <title>米沃貓窩</title>
+<style>
+body{
+background-image:url("/PuppyKitten/images/backgroundindex.png");
+}
+</style>
 </head>
 <body>
 
