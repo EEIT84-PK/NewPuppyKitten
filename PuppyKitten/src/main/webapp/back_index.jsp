@@ -328,20 +328,24 @@
 					<br> <input type="text" id="val_3" name="shopbean.PRO_PROJECT"
 						value="${shopbean.PRO_PROJECT}">
 					<div id="price_5">
-						<div id="price_5" style="float: left;">指定價格：</div>
+						<div id="price_5" style="float: left;">販售價格：</div>
 						<input type="text" name="shopbean.PRO_PRICE" id="price_1"
 							value="${shopbean.PRO_PRICE}" style="font-size: 16px; width: 50%"><span
 							class="errorInsert">${errors.errorInsertPrice[0]}</span><br>
 						<br>
 					</div>
 					<div id="price_6">
-						<div style="float: left;">買：</div>
-						<input type="number" name="shopbean.PRO_BUY1" id="price_2"
-							value="${shopbean.PRO_BUY1}"><span class="errorInsert">${errors.errorInsert_Buy1[0]}</span>
-						<div style="float: left;">送：</div>
-						<input type="number" name="shopbean.PRO_BUY2" id="price_3"
-							value="${shopbean.PRO_BUY2}"><span class="errorInsert">${errors.errorInsert_Buy2[0]}</span><br>
-						<br>
+					<div style="float: left;padding-left: 55px;">
+						買：</div><input type="text" name="shopbean.PRO_BUY1" id="price_2"
+							value="${shopbean.PRO_BUY1}" style="height: 46px;width: 700px;">
+							<span class="errorInsert">${errors.errorInsert_Buy1[0]}</span>
+					<br><br>
+					<div style="float: left;padding-left: 55px;">	
+						送：</div><input type="text" name="shopbean.PRO_BUY2" id="price_3"
+							value="${shopbean.PRO_BUY2}" style="height: 46px;width: 700px;">
+							<span class="errorInsert">${errors.errorInsert_Buy2[0]}</span>
+							
+					<br><br>
 					</div>
 					<div style="float: left;">商品重量：</div>
 					<input type="text" name="shopbean.PRO_WEIGHT"
@@ -416,50 +420,43 @@
 					<div style="float: left;">優惠方案：</div>
 					<select id="sel_9" style="font-size: 16px; width: 50%">
 						<option>請選擇</option>
-						<option value="指定價格"
-							<c:if test="${shopbean.PRO_KIND == '指定價格'}">selected="selected"</c:if>>指定價格</option>
-						<option value="買幾送幾"
-							<c:if test="${shopbean.PRO_KIND == '買幾送幾'}">selected="selected"</c:if>>買幾送幾</option>
-					</select><span class="errorUpdate">${errors.errorUpdateProject[0]}</span><br>
-					<br> <input id="val_9" type="text" name="shopbean.PRO_PROJECT"
-						value="${shopbean.PRO_PROJECT}">
+						<option value="指定價格" <c:if test="${shopbean.PRO_KIND == '指定價格'}">selected="selected"</c:if>>指定價格</option>
+						<option value="買幾送幾" <c:if test="${shopbean.PRO_KIND == '買幾送幾'}">selected="selected"</c:if>>買幾送幾</option>
+					</select>
+					<span class="errorUpdate">${errors.errorUpdateProject[0]}</span>
+					<br><br> 
+					<input id="val_9" type="text" name="shopbean.PRO_PROJECT" value="${shopbean.PRO_PROJECT}">
 					<div id="price_55">
 						<div style="float: left;">指定價格：</div>
-						<input type="text" name="shopbean.PRO_PRICE" id="price_1"
-							value="${shopbean.PRO_PRICE}" style="font-size: 16px; width: 50%"><span
-							class="errorInsert">${errors.errorUpdatePrice[0]}</span> <br>
+						<input type="text" name="shopbean.PRO_PRICE" id="price_1" value="${shopbean.PRO_PRICE}" style="font-size: 16px; width: 50%">
+						<span class="errorInsert">${errors.errorUpdatePrice[0]}</span> 
+						<br>
 						<br>
 					</div>
 					<div id="price_66">
 						<div style="float: left;">買：</div>
-						<input type="text" name="shopbean.PRO_BUY1" id="price_2"
-							value="${shopbean.PRO_BUY1}" style="font-size: 16px; width: 50%"><span
-							class="errorInsert">${errors.errorUpdate_Buy1[0]}</span>
+						<input type="text" name="shopbean.PRO_BUY1" id="price_2" value="${shopbean.PRO_BUY1}" style="font-size: 16px; width: 50%">
+						<span class="errorInsert">${errors.errorUpdate_Buy1[0]}</span>
 						<div style="float: left;">送：</div>
-						<input type="text" name="shopbean.PRO_BUY2" id="price_3"
-							value="${shopbean.PRO_BUY2}" style="font-size: 16px; width: 50%"><span
-							class="errorInsert">${errors.errorUpdate_Buy2[0]}</span><br>
+						<input type="text" name="shopbean.PRO_BUY2" id="price_3" value="${shopbean.PRO_BUY2}" style="font-size: 16px; width: 50%">
+						<span class="errorInsert">${errors.errorUpdate_Buy2[0]}</span><br>
 						<br>
 					</div>
 					<div style="float: left;">商品重量：</div>
-					<input type="text" name="shopbean.PRO_WEIGHT"
-						value="${shopbean.PRO_WEIGHT}" style="font-size: 16px; width: 50%"><br>
+						<input type="text" name="shopbean.PRO_WEIGHT" value="${shopbean.PRO_WEIGHT}" style="font-size: 16px; width: 50%"><br>
 					<br>
 					<div style="float: left;">庫存數量：</div>
-					<input type="text" name="shopbean.PRO_STOCK"
-						value="${shopbean.PRO_STOCK}" style="font-size: 16px; width: 50%"><span
-						class="errorUpdate">${errors.errorUpdateStock[0]}</span><br>
-					<br>
+						<input type="text" name="shopbean.PRO_STOCK" value="${shopbean.PRO_STOCK}" style="font-size: 16px; width: 50%">
+						<span class="errorUpdate">${errors.errorUpdateStock[0]}</span><br>
+						<br>
 					<div style="float: left;">商品照片：</div>
-					<br> <input type="file" name="PRO_IMAGE"
-						value="${shopbean.PRO_IMAGE}"
-						style="cursor: pointer; font-size: 15px; float: left;"><br>
-					<span class="errorUpdate">${errors.errorUpdateImage[0]}</span><br>
-					<br>
+						<br> 
+					<input type="file" name="PRO_IMAGE" value="${shopbean.PRO_IMAGE}" style="cursor: pointer; font-size: 15px; float: left;"><br>
+						<span class="errorUpdate">${errors.errorUpdateImage[0]}</span><br>
+						<br>
 					<div style="float: left;">商品介紹：</div>
-					<br>
+						<br>
 					<textarea name="shopbean.PRO_BODY" id="content" rows="10" cols="80"></textarea>
-
 					<table>
 						<tr>
 							<th style="vertical-align: bottom;"></th>
