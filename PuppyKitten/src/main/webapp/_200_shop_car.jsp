@@ -43,12 +43,12 @@
 		<table border="1">
 			<thead>
 				<tr>
-					<th>商品編號</th>
-					<th>商品名稱</th>
-					<th>購買數量</th>
-					<th>售價</th>
-					<th>小計</th>
-					<th>功能</th>
+					<th style="width: 100px">商品編號</th>
+					<th style="width: 450px">商品名稱</th>
+					<th style="width: 100px">購買數量</th>
+					<th style="width: 100px">售價</th>
+					<th style="width: 100px">小計</th>
+					<th style="width: 100px">功能</th>
 				</tr>
 			</thead>
 

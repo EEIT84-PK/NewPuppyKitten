@@ -71,7 +71,7 @@
 		</action>
 
 		<action name="shopBackAction_shopchoose" class="_200_controller.ShopBackAction_shopchoose">
-		<result name="input">/_200_shop_choose.jsp</result>
+			<result name="input">/_200_shop_choose.jsp</result>
 			<result name="success">/_200_shop_index.jsp</result>
 		</action>
 
