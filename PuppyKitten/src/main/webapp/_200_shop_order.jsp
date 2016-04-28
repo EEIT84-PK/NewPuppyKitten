@@ -66,7 +66,7 @@ line-height: 40px;
 				</c:when>
 			</c:choose>
 						<tr>
-							<td colspan="5" style="color: red;">總金額為：${sessionScope.total}元 &nbsp;&nbsp;&nbsp;(內含運費80元)<br> 付款方式為：貨到付款 </td>  
+							<td colspan="5" style="color: red;font-weight: 600;">總金額為：${sessionScope.total}元 &nbsp;&nbsp;&nbsp;(內含運費80元)<br> 付款方式為：貨到付款 </td>  
 						</tr>
 					</table>
 				<span>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
