@@ -16,7 +16,14 @@ td {
 	word-break: break-all;
 	height:35px;
 }
-
+	.myButton{
+background:rgba(250, 235, 215, 0.4);
+width: 150px;
+height:35px;
+font-size:16px;
+font-family: "微軟正黑體";
+margin-right: 10px;
+}	
 </style>
 <script type="text/javascript">
 
@@ -37,36 +44,36 @@ $(function() {
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
 		<article >
-			<h1 style="font-size: 50px;">會員資料(個人資料)</h1>
-			<table border="0" width="420px"style="border:5px #fbe3c0 solid;padding:5px;border-collapse: collapse;background:rgba(250, 235, 215, 0.8);">
+			<h1 style="color:#400000">會員資料(個人資料)</h1>
+			<table border="0" style="border-collapse: collapse;width:650px;background:rgba(250, 235, 215, 0.4); border-radius:10px;">
              
-				<tr style="font-size:20px;border-collapse:collapse;background:rgba(250, 235, 215, 0.4);" >
+				<tr >
 					<td >姓名:</td>
-					<td>${bean.MEM_NAME}</td>
+					<td style="width:450px">${bean.MEM_NAME}</td>
 				</tr>
-				<tr style="font-size:20px;">
+				<tr >
 					<td>身分證字號:</td>
-					<td>${bean.MEM_IDCARD}</td>
+					<td style="width:450px">${bean.MEM_IDCARD}</td>
 				</tr>
-				<tr style="font-size:20px;border-collapse:collapse;background:rgba(250, 235, 215, 0.4);">
+				<tr >
 					<td>生日:</td>
-					<td><fmt:formatDate pattern="yyyy-MM-dd" value="${bean.MEM_BIRTHDAY}"/></td>
+					<td style="width:450px"><fmt:formatDate pattern="yyyy-MM-dd" value="${bean.MEM_BIRTHDAY}"/></td>
 				</tr>
-				<tr style="font-size:20px;">
+				<tr >
 					<td >地址:</td>
-					<td>${bean.MEM_ADD}</td>
+					<td style="width:450px">${bean.MEM_ADD}</td>
 				</tr>
-				<tr style="font-size:20px;border-collapse:collapse;background:rgba(250, 235, 215, 0.4);">
+				<tr >
 					<td>手機:</td>
-					<td>${bean.MEM_PHONE}</td>
+					<td style="width:450px">${bean.MEM_PHONE}</td>
 				</tr>
-				<tr style="font-size:20px;">
+				<tr >
 					<td >信箱:</td>
-					<td>${bean.MEM_EMAIL}</td>
+					<td style="width:450px">${bean.MEM_EMAIL}</td>
 				</tr>
 			
 			</table>
-			<table >
+			<table table border="0" style="border-collapse: collapse;width:700px;background:rgba(250, 235, 215, 0.4); border-radius:10px;">
 			<form
 				action="<%=request.getContextPath()%>/_500_update.jsp">
 				<input style="font-size:12px" type="submit" value="修改資料">

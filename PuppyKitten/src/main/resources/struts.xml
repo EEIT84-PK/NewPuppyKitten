@@ -27,8 +27,8 @@
 			<result name="success">/back_index.jsp</result>
 		</action>
 		<action name="uploadAction" class="_100_controller.UploadAction">
-			<result name="success">/_100_insert.jsp</result>
-			<result name="input">/_100_insert.jsp</result>
+			<result name="success">/_100_article.jsp</result>
+			<result name="input">/_100_article.jsp</result>
 		</action>
 	</package>
 

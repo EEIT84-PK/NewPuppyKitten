@@ -41,9 +41,9 @@ $(function(){
  	border-bottom: 1px solid #DDDDDD; 
 	margin: 20px;
 	height: 50px;
-	text-shadow: 2px 2px 5px red;
+	color:#886600;
 	font-size: 25px;
-	
+	font-weight: 800;
 }
 
 .choose_pro2 {
@@ -111,7 +111,7 @@ $(function(){
 <body>
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
-		<article style="width: 1500px;background:rgba(229, 190, 157, 0.6);border-radius:25px;">
+		<article style="width: 1500px;background:rgba(250, 235, 215, 0.4);border-radius:25px;">
 							
 							<div class="choose_1">
 								<div class="choose_pro1">
@@ -124,22 +124,23 @@ $(function(){
 								</div>
 
 								<div class="choose_pro3">
-								<span>商品介紹</span><br><br><span>${shopbean.PRO_BODY}</span><br> <br>
+								<h3>商品介紹</h3><span>${shopbean.PRO_BODY}</span><br> <br>
 								</div>
 								<div class="choose_pro6">	
 									<div class="choose_pro5">
 											<form action="<%=request.getContextPath()%>/shop/shopBackAction_shopchoose" method="post">
 												購買數量：<input type="number" name="shop_Buy_Bean.BUY_NUMBER" value="1">
-													<input class="button1" type="submit" value="加入購物車" style="font-size: 14px;"><br>${errors.number[0]}
+													<input class="button1" type="submit" value="加入購物車" style="font-size: 14px;"><br>${errors.number[0]}${errors.nologin[0]}
 													<input class="wo" type="text" name="shop_Buy_Bean.BUY_PRO_ID" value="${shopbean.PRO_ID}">
 													<input class="wo" type="text" name="shop_Buy_Bean.BUY_USER_ID" value="${session.memberID}">
 													<input class="wo" type="text" name="shop_Buy_Bean.BUY_NAME" value="${shopbean.PRO_NAME}">
-													<input class="wo" type="text" name="shop_Buy_Bean.BUY_NEW_PRICE" value="${shopbean.PRO_PRICE}">
+													<input class="wo" type="text" name="shop_Buy_Bean.BUY_OLD_PRICE" value="${shopbean.PRO_PRICE}">
 											</form>
 									</div>
 									<div class="choose_pro4">
-											<span>建議售價：<span>${shopbean.PRO_PRICE}</span>元</span><c:choose><c:when test="${shopbean.PRO_PROJECT==指定價格}"><br><span>優惠方案：無</span></c:when><c:otherwise><br><span>優惠方案：${shopbean.PRO_PROJECT}</span></c:otherwise></c:choose><br>
-											<span>剩餘數量：<span>${shopbean.PRO_STOCK}</span>個</span> 
+											<span>建議售價：${shopbean.PRO_PRICE}元</span><br>
+											<span>優惠方案：${shopbean.PRO_PROJECT}</span><br>
+											<span>剩餘數量：${shopbean.PRO_STOCK}個</span> 
 									</div>
 								</div>
 							</div>

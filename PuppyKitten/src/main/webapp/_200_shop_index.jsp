@@ -86,7 +86,9 @@ border-radius: 5px;
 /* 	border: 1px solid red; */
 	margin: 10px;
 	height: 35px;
-	text-shadow: 2px 2px 5px red;
+	color:#886600;
+	font-weight: 600;
+/* 	text-shadow: 2px 2px 5px red; */
 	font-size: 20px;
 }
 
@@ -113,7 +115,7 @@ border-radius: 5px;
 	margin: 10px;
 	width: 450px;
 	height: 250px;
- 	background:rgba(220, 155, 3, 1); 
+ 	background:rgba(250, 235, 215, 0.4); 
  	border-radius:25px;
  	
 }
@@ -180,8 +182,9 @@ border-radius: 5px;
 								</div>
 							<form action="<%=request.getContextPath()%>/shop/shopBackAction_shopindex" method="post">
 								<div class="index_pro3">
-									<span>建議售價：<span>${shop.PRO_PRICE}</span>元</span><br>
-									<span>剩餘數量：<span>${shop.PRO_STOCK}</span>個
+									<span>建議售價：${shop.PRO_PRICE}元</span><br>
+									<span>優惠方案：${shop.PRO_PROJECT}</span><br>
+									<span>剩餘數量：${shop.PRO_STOCK}個
 									</span><br> <br> 
 									<input class="button2" type="submit" value="商品資訊"><br><br>
 									<br><br><br><br><br><br>
@@ -193,6 +196,7 @@ border-radius: 5px;
 									<input class="hi" type="text" name="shopbean.PRO_PRICE" value="${shop.PRO_PRICE}">
 									<input class="hi" type="text" name="shopbean.PRO_STOCK" value="${shop.PRO_STOCK}">
 									<input class="hi" type="text" name="shopbean.PRO_IMAGE" value="${shop.PRO_IMAGE}">
+									<input class="hi" type="text" name="shopbean.PRO_PROJECT" value="${shop.PRO_PROJECT}">
 								</div>
 							</form>
 						</div>

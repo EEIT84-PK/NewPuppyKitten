@@ -59,15 +59,32 @@ public class ShopBackAction_cardelete extends ActionSupport implements ServletRe
 
 	public String execute() {
 		ShopService service = new ShopService();
-		service.delete_car(shop_Buy_Bean.getBUY_ID());
 		
+		//刪除購物車的項目
+		System.out.println("購物車的ID:"+shop_Buy_Bean.getBUY_ID());
+		service.delete_car(shop_Buy_Bean.getBUY_ID());
+		System.out.println("刪除成功");
+		
+		//取得這筆商品的資料
+		System.out.println("商品的ID:"+shopBean.getPRO_ID());
+		List<ShopBean> list=service.select(shopBean);
+		System.out.println("商品查詢成功");
+		//把購物車數量加回商品的庫存數量
+		setShopBean(list.get(0));
+		shopBean.setPRO_STOCK(list.get(0).getPRO_STOCK()+shop_Buy_Bean.getBUY_NUMBER());
+		service.update(shopBean);
+		
+		//查詢剩餘購物車項目
 		List<Shop_Buy_Bean> shop_Buy_list = service.select_buy(shop_Buy_Bean);
 		request.getSession().setAttribute("shop_Buy_list", shop_Buy_list);
+		
+		//重新計算總金額
 		Integer total=0;
 		for(Shop_Buy_Bean bean : shop_Buy_list){
 			total+=bean.getBUY_LITTLE_TOTAL();
 		}
 		request.getSession().setAttribute("total", total);
+		
 		
 		return "success";
 	}

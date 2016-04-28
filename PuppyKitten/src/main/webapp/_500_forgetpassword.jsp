@@ -24,7 +24,7 @@
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
 		<article>
-			<h1 style="font-size: 50px;">忘記密碼</h1>
+			<h1 style="color:#400000;font-size: 35px;">忘記密碼</h1>
 				<form action="<%=request.getContextPath()%>/login/forgetPassword.action" method="post">
 				<table>
 					<tr>
