@@ -115,7 +115,7 @@ border-radius: 5px;
 	margin: 10px;
 	width: 450px;
 	height: 250px;
- 	background:rgba(229, 190, 157, 0.6); 
+ 	background:rgba(250, 235, 215, 0.4); 
  	border-radius:25px;
  	
 }

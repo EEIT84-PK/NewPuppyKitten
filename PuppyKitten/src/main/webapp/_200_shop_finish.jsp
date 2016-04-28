@@ -41,12 +41,12 @@ line-height: 40px;
 <body>
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
-		<article class="art">
-			<h3>${session.loginOK}的訂單資訊</h3>
-					<table style="border:3px #cccccc solid; cellpadding: 10; border=1 ; ">
+		<article class="art" style="background:rgba(250, 235, 215, 0.4);">
+			<h2>${session.loginOK}的訂單資訊</h2>
+					<table style="cellpadding: 10; border=1 ; ">
 						<tr>
 							<th style="width: 100px;">訂單編號</th>
-							<th style="width: 100px;">訂購日期</th>
+							<th style="width: 200px;">訂購日期</th>
 							<th style="width: 150px;">收貨人</th>
 							<th style="width: 350px;">配送地址</th>
 							<th style="width: 100px;">總金額</th>
@@ -60,7 +60,7 @@ line-height: 40px;
 							<td>${shop_Order_Bean.ORDER_TOTAL_PRICE}</td>
 						</tr>
 						<tr>
-							<td colspan="5">感謝您的訂購，商品我們將會在三日內寄出，期待您再度光臨，謝謝!!</td>  
+							<td colspan="5" style="color: red;font-weight: 600;text-align: right;">感謝您的訂購，商品我們將會在三日內寄出，期待您再度光臨，謝謝!!</td>  
 						</tr>				
 					</table>
 		</article>

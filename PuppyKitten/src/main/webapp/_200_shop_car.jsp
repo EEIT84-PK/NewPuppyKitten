@@ -34,6 +34,7 @@
 <body>
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
+	<fieldset style="background:rgba(250, 235, 215, 0.4);border: none;bor">
 		<h2>購物車清單</h2>
 		<table border="1" style="text-align: center;">
 			<thead>
@@ -83,18 +84,19 @@
 			</c:choose>
 			<tfoot>
 				<tr>
-					<td colspan="9" style="text-align: right;">金額總計：${sessionScope.total}元</td>
+					<td colspan="9" style="text-align: right;color: red;font-weight: 600;">金額總計：${sessionScope.total}元</td>
 				</tr>
 			</tfoot>
 		</table>
 
 		<form
 			action="<%=request.getContextPath()%>/shop/shopBackAction_carsend"
-			method="post">
+			method="post"><br>
 			<input type="submit" value="下一步" onclick="location"
 				style="cursor: pointer;"> <input id="ja" type="text"
 				name="shop_Buy_Bean.BUY_USER_ID" value="${session.memberID}">
 		</form>
+		</fieldset>
 	</section>
 	<c:import url="/import/footer.jsp"></c:import>
 </body>
