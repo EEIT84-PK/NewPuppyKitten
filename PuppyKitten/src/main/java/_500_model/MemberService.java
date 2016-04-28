@@ -150,7 +150,7 @@ public class MemberService {
 		return dao.selectId2(MEM_ID);
 	}
 	
-	public List<MemberBean> selectBlockade(String MEN_STATUS) {		
+	public List<MemberBean> selectBlockade(boolean MEN_STATUS) {		
 		return dao.selectBlockade(MEN_STATUS);
 	}
 	// email寄信

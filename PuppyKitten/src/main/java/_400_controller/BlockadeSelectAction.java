@@ -33,7 +33,7 @@ public class BlockadeSelectAction extends ActionSupport implements ServletReques
 	public String execute(){
 		MemberService mService=new MemberService();
 		HttpSession session=req.getSession();
-		List<MemberBean>select=mService.selectBlockade("0");
+		List<MemberBean>select=mService.selectBlockade(false);
 		List<MemberBean> list = new ArrayList<MemberBean>();
 		for(int i=0;i<select.size();i++){
 			list.add(select.get(i));

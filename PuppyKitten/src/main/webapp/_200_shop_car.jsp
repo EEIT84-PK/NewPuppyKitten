@@ -11,12 +11,7 @@
 <script type="text/javascript">
 	$(function() {
 		$('.buy_order').hide();
-		$('.fa').hide();
 		$('#ja').hide();
-
-// 		$('.del_pro').click(function() {
-// 			 			$('.pro_tr').css("background","red");
-// 		})
 	});
 </script>
 <style type="text/css">
@@ -40,15 +35,19 @@
 	<c:import url="/import/header.jsp"></c:import>
 	<section>
 		<h2>購物車清單</h2>
-		<table border="1">
+		<table border="1" style="text-align: center;">
 			<thead>
 				<tr>
-					<th style="width: 100px">商品編號</th>
-					<th style="width: 450px">商品名稱</th>
-					<th style="width: 100px">購買數量</th>
-					<th style="width: 100px">售價</th>
-					<th style="width: 100px">小計</th>
-					<th style="width: 100px">功能</th>
+
+					<th style="width: 100px;">商品編號</th>
+					<th style="width: 350px;">商品名稱</th>
+					<th style="width: 100px;">購買數量</th>
+					<th style="width: 100px;">單價</th>
+					<th style="width: 100px;">原售價</th>
+					<th style="width: 100px;">優惠價</th>
+					<th style="width: 100px;">優惠方案</th>
+					<th style="width: 100px;">小計</th>
+					<th style="width: 50px;">功能</th>
 				</tr>
 			</thead>
 
@@ -61,18 +60,18 @@
 								<td>${buy.BUY_PRO_ID}</td>
 								<td>${buy.BUY_NAME}</td>
 								<td>${buy.BUY_NUMBER}</td>
+								<td>${buy.BUY_OLD_PRICE}</td>
+								<td>${buy.BUY_OLD_PRICE*buy.BUY_NUMBER}</td>
 								<td>${buy.BUY_NEW_PRICE}</td>
+								<td>${buy.BUY_PROJECT}</td>
 								<td>${buy.BUY_LITTLE_TOTAL}</td>
 								<td>
-									<form
-										action="<%=request.getContextPath()%>/shop/shopBackAction_cardelete"
-										method="post">
-										<input class="buy_order" type="text"
-											name="shop_Buy_Bean.BUY_ID" value="${buy.BUY_ID}"> 
-											<input class="fa" type="text" name="shop_Buy_Bean.BUY_USER_ID"
-											value="${session.memberID}"><input
-											class="del_pro" type="submit" value="移除"
-											style="cursor: pointer;">
+									<form action="<%=request.getContextPath()%>/shop/shopBackAction_cardelete" method="post">
+										<input class="buy_order" type="text" name="shopBean.PRO_ID" value="${buy.BUY_PRO_ID}"> 
+										<input class="buy_order" type="text" name="shop_Buy_Bean.BUY_ID" value="${buy.BUY_ID}"> 
+										<input class="buy_order" type="text" name="shop_Buy_Bean.BUY_NUMBER" value="${buy.BUY_NUMBER}"> 
+										<input class="buy_order" type="text" name="shop_Buy_Bean.BUY_USER_ID" value="${session.memberID}">
+										<input class="del_pro" type="submit" value="移除" style="cursor: pointer;">
 									</form>
 								</td>
 							</tr>
@@ -84,17 +83,11 @@
 			</c:choose>
 			<tfoot>
 				<tr>
-					<td colspan="6">金額總計：${sessionScope.total}元</td>
+					<td colspan="9" style="text-align: right;">金額總計：${sessionScope.total}元</td>
 				</tr>
 			</tfoot>
 		</table>
-<!-- 		<form -->
-<%-- 			action="<%=request.getContextPath()%>/shop/shopBackAction_carrefresh" --%>
-<!-- 			method="post"> -->
-<!-- 			<input class="fa" type="text" name="shop_Buy_Bean.BUY_USER_ID" -->
-<%-- 				value="${session.memberID}"> <input type="submit" --%>
-<!-- 				value="整理購物清單" style="cursor: pointer;"> -->
-<!-- 		</form> -->
+
 		<form
 			action="<%=request.getContextPath()%>/shop/shopBackAction_carsend"
 			method="post">

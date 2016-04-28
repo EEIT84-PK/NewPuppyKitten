@@ -55,10 +55,10 @@ line-height: 40px;
 			<c:choose>
 				<c:when test="${not empty shop_Buy_list}">
 					<c:forEach var="buy" items="${shop_Buy_list}">
-						<tr>
+						<tr style="text-align: center;">
 							<td>${buy.BUY_PRO_ID}</td>
 							<td>${buy.BUY_NAME}</td>
-							<td>${buy.BUY_NEW_PRICE}</td>
+							<td>${buy.BUY_OLD_PRICE}</td>
 							<td>${buy.BUY_NUMBER}</td>
 							<td>${buy.BUY_LITTLE_TOTAL}</td>
 						</tr>
