@@ -183,7 +183,7 @@ border-radius: 5px;
 							<form action="<%=request.getContextPath()%>/shop/shopBackAction_shopindex" method="post">
 								<div class="index_pro3">
 									<span>建議售價：${shop.PRO_PRICE}元</span><br>
-									<span>建議售價：${shop.PRO_PROJECT}</span><br>
+									<span>優惠方案：${shop.PRO_PROJECT}</span><br>
 									<span>剩餘數量：${shop.PRO_STOCK}個
 									</span><br> <br> 
 									<input class="button2" type="submit" value="商品資訊"><br><br>
