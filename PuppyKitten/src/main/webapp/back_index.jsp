@@ -25,9 +25,12 @@
 	
 	$("#button_insert").click(function(){		
 		$("#insert_name").val("8in1愛犬(抗菌除臭)乾洗慕斯");
-		$("input[name='shopbean.PRO_WEIGHT']").val("350");
-		$("input[name='shopbean.PRO_STOCK']").val("100");
-		$("textarea[name='shopbean.PRO_BODY']").val("使用獨特配方，免用水清洗，即可乾淨除臭皮膚毛髮，無酒精配方可以取代愛犬傳統洗澡方式	方便使用於8週以上幼犬及老犬，受傷之愛犬及不容易清洗的愛犬身上。");
+		$("#price_1").val("200");
+		$("#price_2").val("2");
+		$("#price_3").val("1");
+		$("#insert_WEIGHT").val("350");
+		$("#insert_STOCK").val("100");
+		$("#content").val("使用獨特配方，免用水清洗，即可乾淨除臭皮膚毛髮，無酒精配方可以取代愛犬傳統洗澡方式	方便使用於8週以上幼犬及老犬，受傷之愛犬及不容易清洗的愛犬身上。");
 	});
 	});
 </script>
@@ -372,7 +375,7 @@
 					<div style="float: left;">商品介紹：</div>
 					<br>
 					<pre>
-						<textarea id="content" cols="50" rows="6" name="shopbean.PRO_BODY"></textarea>
+						<textarea id="content" cols="50" rows="6" style="font-size: 16px;" name="shopbean.PRO_BODY"></textarea>
 					</pre>
 					<br> <input type="submit" value="新增上架"
 						style="cursor: pointer; font-size: 15px; float: left;">
