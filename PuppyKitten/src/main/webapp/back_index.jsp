@@ -346,12 +346,12 @@
 						<br>
 					</div>
 					<div id="price_6">
-					<div style="float: left;padding-left: 55px;">
+					<div style="float: left;padding-left: 55px;font-size: 16px;">
 						買：</div><input type="text" name="shopbean.PRO_BUY1" id="price_2"
 							value="${shopbean.PRO_BUY1}" style="height: 46px;width: 700px;">
 							<span class="errorInsert">${errors.errorInsert_Buy1[0]}</span>
 					<br><br>
-					<div style="float: left;padding-left: 55px;">	
+					<div style="float: left;padding-left: 55px;font-size: 16px;">	
 						送：</div><input type="text" name="shopbean.PRO_BUY2" id="price_3"
 							value="${shopbean.PRO_BUY2}" style="height: 46px;width: 700px;">
 							<span class="errorInsert">${errors.errorInsert_Buy2[0]}</span>

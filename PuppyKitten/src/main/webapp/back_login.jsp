@@ -24,7 +24,7 @@
 }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>米沃貓窩 - 後台登入系統</title>
 </head>
 <body style="background-image: url('/PuppyKitten/images/bg03.jpg')">
 	<div>
