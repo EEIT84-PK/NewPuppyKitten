@@ -6,9 +6,9 @@
 		
 		<!-- JDBC連線池的設定 -->
 		<property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
-		<property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;DatabaseName=PuppyKitten</property>
-		<property name="hibernate.connection.username">sa</property>
-		<property name="hibernate.connection.password">sa123456</property>  
+		<property name="hibernate.connection.url">jdbc:sqlserver://qxxt0mzqsm.database.windows.net:1433;DatabaseName=PuppyKitten</property>
+		<property name="hibernate.connection.username">PuppyKitten</property>
+		<property name="hibernate.connection.password">Sa123456</property>  
 		<!-- 增強為C3P0連線池的設定 -->
 		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
 		<property name="hibernate.c3p0.min_size">5</property>
