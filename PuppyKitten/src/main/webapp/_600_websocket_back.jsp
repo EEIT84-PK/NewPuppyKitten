@@ -5,7 +5,7 @@
 			
 
 		
-			var websocket = new WebSocket("ws://localhost:8080/PuppyKitten/chatEndpoint.chat");
+			var websocket = new WebSocket("ws://"+location.host+"/PuppyKitten/chatEndpoint.chat");
 			websocket.onopen = function processOpen(){
 			}
 			websocket.onmessage = function processMessage(message) {
