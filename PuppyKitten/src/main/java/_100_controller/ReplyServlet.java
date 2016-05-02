@@ -19,7 +19,6 @@ import _100_model.MessageService;
 public class ReplyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		response.setContentType("text/plain; charset=UTF-8");
 		PrintWriter out;
 		StringBuilder output = new StringBuilder();

@@ -85,7 +85,7 @@ CREATE TABLE Message (
    MSG_MEM_ID  varchar(20),
    MSG_BODY     varchar(300),
    MSG_REBODY    varchar(300),
-   MSG_TIME     Datetime
+   MSG_TIME    varchar(20)
 );
 
 DROP TABLE Product_body;
