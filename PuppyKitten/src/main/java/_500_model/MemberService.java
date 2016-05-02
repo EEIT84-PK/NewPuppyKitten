@@ -174,12 +174,12 @@ public class MemberService {
 					}
 				});
 		try {
-			Message message = new MimeMessage(session);
+			MimeMessage message = new MimeMessage(session);
 			message.setFrom(new InternetAddress(from));
 			message.setRecipients(Message.RecipientType.TO,
 					InternetAddress.parse(to));
-			message.setSubject("米沃貓窩會員認證");// 主旨
-			message.setText(user + "你好!您的驗證碼為" + checkcode);// 內文
+			message.setSubject("米沃貓窩會員認證","UTF-8");// 主旨
+			message.setText(user + "你好!!您的驗證碼為" + checkcode,"UTF-8");// 內文
 			Transport.send(message);
 		} catch (MessagingException e) {
 			throw new RuntimeException(e);
@@ -205,12 +205,12 @@ public class MemberService {
 					}
 				});
 		try {
-			Message message = new MimeMessage(session);
+			MimeMessage message = new MimeMessage(session);
 			message.setFrom(new InternetAddress(from));
 			message.setRecipients(Message.RecipientType.TO,
 					InternetAddress.parse(to));
-			message.setSubject("米沃貓窩忘記密碼");// 主旨
-			message.setText(user + "帳戶你好!您的新密碼為" + newpwd);// 內文
+			message.setSubject("米沃貓窩忘記密碼","UTF-8");// 主旨
+			message.setText(user + "帳戶你好!您的新密碼為" + newpwd,"UTF-8");// 內文
 			Transport.send(message);
 		} catch (MessagingException e) {
 			throw new RuntimeException(e);

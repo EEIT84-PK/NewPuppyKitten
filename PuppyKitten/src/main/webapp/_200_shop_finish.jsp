@@ -36,7 +36,7 @@ line-height: 40px;
 </style>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>米沃貓窩 -後台系統</title>
+<title>米沃貓窩-訂購完成</title>
 </head>
 <body>
 	<c:import url="/import/header.jsp"></c:import>
