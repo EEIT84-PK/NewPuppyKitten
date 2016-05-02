@@ -548,7 +548,7 @@ insert into interest values('5046','5043','like')
 insert into interest values('5046','5045','like')
 insert into interest values('5046','5004','like')
 
-INSERT INTO GoogleMap values ('寵物醫院','文心動物醫院','02-2236-0117','台北市','文山區','台北市文山區木柵路一段102號',NULL);
+INSERT INTO GoogleMap values ('寵物醫院','OOXX動物醫院','02-2225-5222','台北市','文山區','台北市文山區木柵路一段102號',NULL);
 INSERT INTO GoogleMap values ('寵物用品店','凱朵寵物精品生活館','02-2358-3000','台北市','中正區','台北市中正區羅斯福路二段7之1號',NULL);
 INSERT INTO GoogleMap values ('寵物餐廳','gobar狗吧寵物餐廳','02-2918-3696','新北市','新店區','新北市新店區環河路1-1號1F',NULL);
 INSERT INTO GoogleMap values ('寵物用品店','喜羊羊寵物生活館','02-2933-7700','台北市','文山區','台北市文山區景興路169號',NULL);
