@@ -21,6 +21,12 @@
 					websocket.send(text.value);
 					text.value="";
 				});
+				$('#ws1').click(function(){
+					$('#text').val("因為有人檢舉您的寵物圖片含有色情成份，所以將您封鎖。");
+				});
+				$('#ws2').click(function(){
+					$('#text').val("好，再給您一次機會。已經將您的帳號恢復正常。");
+				});
 			});
 		</script>
 		<textarea style="font-size: 20px;" id="area" readonly="readonly" rows="10" cols="45" ></textarea><br>

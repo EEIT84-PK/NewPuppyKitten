@@ -36,7 +36,7 @@
 	<section>
 	<fieldset style="background:rgba(250, 235, 215, 0.4);border: none;bor">
 		<h2>購物車清單</h2>
-		<table border="1" style="text-align: center;">
+		<table style="text-align: center;">
 			<thead>
 				<tr>
 
@@ -83,6 +83,7 @@
 				</c:when>
 			</c:choose>
 			<tfoot>
+			<tr><td colspan="9" ><hr></td></tr>
 				<tr>
 					<td colspan="9" style="text-align: right;color: red;font-weight: 600;">金額總計：${sessionScope.total}元</td>
 				</tr>

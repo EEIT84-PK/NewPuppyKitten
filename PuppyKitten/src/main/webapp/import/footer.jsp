@@ -22,4 +22,14 @@ websocket.onmessage = function processMessage(message) {
 	}
 	
 }
+
+
+$(function(){
+	$('#ws1').click(function(){
+		$('#text').val("客服，我是小林，請問為什麼我的帳號被封鎖了？");
+	});
+	$('#ws2').click(function(){
+		$('#text').val("可以再給我一次機會嗎？");
+	});
+});
 </script>

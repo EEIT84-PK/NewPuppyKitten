@@ -811,7 +811,9 @@
 <section id="websocket" class="four">
 			<div class="container" style="min-height: 800px">
 				<header>
-					<h2 style="text-align: left">客服中心訊息</h2>
+					<h2 style="text-align: left">客服中心訊息</h2>.<img id="ws1" src="<%=request.getContextPath()%>/images/ad/circle.png" style="float: left;margin-left:10px;display: block;cursor: pointer;" />
+    	<img id="ws2" src="<%=request.getContextPath()%>/images/ad/circle.png" style="float: left;margin-left:10px;display: block;cursor: pointer;" />
+		
 				</header>
 <div id="websocketdiv" style="float: left"><c:import url="/_600_websocket_back.jsp"></c:import></div>
 
