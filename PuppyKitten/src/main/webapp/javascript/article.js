@@ -115,7 +115,10 @@ $(function(){
 			if(request.status==200) {
 					$('#success').hide().fadeIn(1000).html(request.responseText);
 					$('#msgdiv').fadeIn(1000);
+					
 					$('.reply').click(function(){
+						$('.reply').hide();
+						$('.reply2').hide();
 						var $reply=$(this).siblings().eq(2).val();
 						var $time =$(this).siblings().eq(0).text();
 						var $queryString = "&reply="+$reply+"&time="+$time+"&dummy="+new Date().getTime();

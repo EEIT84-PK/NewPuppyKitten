@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" type="<%=request.getContextPath()%>/image/x-icon" href="<%=request.getContextPath()%>/images/smalllogo.png">
+
 <style type="text/css">
 #titlecolor {
 	font-size: 80px;

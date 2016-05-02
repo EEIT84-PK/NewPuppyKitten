@@ -4,6 +4,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC>
 <html>
+<link rel="shortcut icon" type="<%=request.getContextPath()%>/image/x-icon" href="<%=request.getContextPath()%>/images/smalllogo.png">
+
 <script src="<%=request.getContextPath()%>/assets/js/jquery.min.js"></script>
 <script
 	src="<%=request.getContextPath()%>/assets/js/jquery.scrolly.min.js"></script>

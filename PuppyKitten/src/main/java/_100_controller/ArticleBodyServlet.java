@@ -50,7 +50,7 @@ public class ArticleBodyServlet extends HttpServlet {
 					}
 					
 					if(bean.getART_MEM_ID().equals(session.getAttribute("loginOK"))&&MSGlist.get(i).getMSG_REBODY()==null){
-						output.append("<input /><input class='reply' type='button' value='回覆'/></div>");
+						output.append("<input class='reply2' value='只要500元就能享受天王級的美味' /><input class='reply' type='button' value='回覆'/></div>");
 					}
 					
 					

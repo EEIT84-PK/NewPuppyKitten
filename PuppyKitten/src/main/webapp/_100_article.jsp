@@ -109,7 +109,7 @@ list-style: none;
 姓名:<br><s:textfield id="msgname" value="匿名"></s:textfield><br>
 </c:otherwise>
 </c:choose>
-留言內容:<br><s:textarea id="msgarea" cols="55" rows="5" value=""></s:textarea><br>
+留言內容:<br><s:textarea id="msgarea" cols="55" rows="5" value="請問這間寵物餐廳價位多少??"></s:textarea><br>
 
 <input id="msgsubmit" type="button" style="float:right" value="送出" />
 
