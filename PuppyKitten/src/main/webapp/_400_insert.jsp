@@ -135,7 +135,7 @@ function clearForm() {
 			<span class="error">${request.PET_IMAGE}</span><BR>
 			<font color="red"><b><s:fielderror/></b></font>							 
 		介紹：<BR>
-			<pre><textarea name="petBean.PET_BODY" cols="50" rows="10" id="PET_BODY"><s:property value="petBean.PET_BODY" /></textarea></pre>
+			<pre><textarea name="petBean.PET_BODY" cols="50" rows="3" id="PET_BODY"><s:property value="petBean.PET_BODY" /></textarea></pre>
 			<span class="error">${request.PET_BODY}</span><BR>
 			<input type="submit" value="送出"><input type="button" value="清除" onclick="clearForm()">
 

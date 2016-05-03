@@ -10,7 +10,11 @@
 <title>米沃貓窩 - 討論區</title>
 <script src="<%=request.getContextPath()%>/javascript/article.js"></script>
 <script type="text/javascript">
-
+	$(function(){
+		$('#button').click(function(){
+			$('#msgarea').val('請問這間寵物餐廳價位多少??');
+		});
+	});
 </script>
 <style>
 #thead{
@@ -109,7 +113,8 @@ list-style: none;
 姓名:<br><s:textfield id="msgname" value="匿名"></s:textfield><br>
 </c:otherwise>
 </c:choose>
-留言內容:<br><s:textarea id="msgarea" cols="55" rows="5" value="請問這間寵物餐廳價位多少??"></s:textarea><br>
+留言內容:<img src="<%=request.getContextPath()%>/images/ad/circle.png" id="button">
+<br><s:textarea id="msgarea" cols="55" rows="5" value=""></s:textarea><br>
 
 <input id="msgsubmit" type="button" style="float:right" value="送出" />
 

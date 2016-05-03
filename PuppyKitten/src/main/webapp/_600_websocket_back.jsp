@@ -29,5 +29,5 @@
 				});
 			});
 		</script>
-		<textarea style="font-size: 20px;" id="area" readonly="readonly" rows="10" cols="45" ></textarea><br>
-		<input type="text" id="text" size="48" style="font-size: 16px;margin-left: 42px;" /><input style="font-size: 20px;margin-left: 15px;" id="sendmsg" type="button" value="送出" />
+		<textarea style="font-size: 20px;" id="area" readonly="readonly" rows="10" cols="78" ></textarea><br>
+		<input type="text" id="text" size="80" style="font-size: 16px;margin-left: 42px;" /><input style="font-size: 20px;margin-left: 15px;" id="sendmsg" type="button" value="送出" />
