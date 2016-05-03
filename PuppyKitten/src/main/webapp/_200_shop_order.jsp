@@ -69,7 +69,7 @@ line-height: 40px;
 							<td colspan="5" style="color: red;font-weight: 600;text-align: right;">總金額為：${sessionScope.total}元 &nbsp;&nbsp;&nbsp;(內含運費80元)<br> 付款方式為：貨到付款 </td>  
 						</tr>
 					</table>
-				<span>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
+				<span>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
 				<h2>配送資訊</h2>
 				<form action="<%=request.getContextPath()%>/shop/shopBackAction_ordersend" method="post">
 					收貨人姓名：<input type="text" name="shop_Order_Bean.ORDER_USER_NAME" value="${session.loginOK}" size="10"><br> 
